@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -20,18 +22,23 @@ class _LoginPageState extends State<LoginPage> {
                 radius: 40,
                 backgroundImage: AssetImage('resources/images/avatar/me.png'),
               ),
-              Text('Lukas'), // TODO: font styles
+              Text(
+                'Lukas Vinther Offenberg Larsen',
+                style: Theme.of(context).textTheme.headline1,
+              ), // TODO: font styles
               Text('Software Development Student'),
               Text('IT University of Copenhagen'),
               Container(
                 padding: EdgeInsets.all(10),
                 margin: EdgeInsets.all(10),
-                decoration: new BoxDecoration(color: Colors.red, boxShadow: [
-                  new BoxShadow(
-                    color: Colors.black,
-                    blurRadius: 20,
-                  ),
-                ]),
+                decoration: new BoxDecoration(
+                    color: Theme.of(context).colorScheme.primaryVariant,
+                    boxShadow: [
+                      new BoxShadow(
+                        color: Colors.black,
+                        blurRadius: 20,
+                      ),
+                    ]),
                 child: Row(
                   children: [
                     Icon(Icons.mail),
@@ -45,12 +52,14 @@ class _LoginPageState extends State<LoginPage> {
               Container(
                 padding: EdgeInsets.all(10),
                 margin: EdgeInsets.all(10),
-                decoration: new BoxDecoration(color: Colors.red, boxShadow: [
-                  new BoxShadow(
-                    color: Colors.black,
-                    blurRadius: 20,
-                  ),
-                ]),
+                decoration: new BoxDecoration(
+                    color: Theme.of(context).colorScheme.primaryVariant,
+                    boxShadow: [
+                      new BoxShadow(
+                        color: Colors.black,
+                        blurRadius: 20,
+                      ),
+                    ]),
                 child: Row(
                   children: [
                     Icon(Icons.phone),
