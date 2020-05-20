@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:temp/model/sorting/animation/insertion_sort_animation.dart';
 import 'package:temp/model/sorting/insertion_sort.dart';
 import 'package:temp/model/util/random_generator.dart';
 
@@ -13,8 +14,7 @@ class _AlgorithmPageState extends State<AlgorithmPage> {
   List list = RandomGenerator().generatRandomIntegers(100, 100);
 
   _sort() {
-    insertion_sort.sort(list);
-    //setState(() {});
+    insertion_sort.sortAnimation(list, setState);
   }
 
   @override
@@ -64,9 +64,7 @@ class BarPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(CustomPainter oldPainter) {
-    //return oldPainter.myParameter != myParameter;
-    // TODO: implement shouldRepaint
-    throw UnimplementedError();
+    return true;
   }
 }
 

@@ -4,9 +4,22 @@ class InsertionSort {
 
     int length = toBeSorted.length;
     for (int i = 0; i < toBeSorted.length; i++) {
+      for (int j = i; j > 0 && less(toBeSorted[j], toBeSorted[j - 1]); j--) {
+        exchange(toBeSorted, j, j - 1);
+      }
+    }
+  }
+
+  void sortAnimation(List toBeSorted, Function state) async {
+    if (toBeSorted.length == 0) return;
+
+    int length = toBeSorted.length;
+    for (int i = 0; i < toBeSorted.length; i++) {
       for (int j = i; j > 0 && less(toBeSorted[j], toBeSorted[j-1]); j--) {
         exchange(toBeSorted, j, j-1);
-        setState(() {})
+        
+        await Future.delayed(Duration(microseconds: 500));
+        state(() {});
       }
     }
   }
@@ -18,6 +31,6 @@ class InsertionSort {
   void exchange(List list, int i, int j) {
     var temp = list[i];
     list[i] = list[j];
-    list[j] = temp; 
+    list[j] = temp;
   }
 }
