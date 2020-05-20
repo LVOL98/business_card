@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
   /* AppTheme._(); // What does this do? */
@@ -15,16 +16,22 @@ class AppTheme {
       primary: const Color.fromRGBO(58, 64, 90, 1.0),
       onPrimary: Colors.white, // TODO
       primaryVariant: const Color.fromRGBO(77, 83, 107, 1.0),
-      secondary: Color.fromRGBO(129, 178, 154, 1.0),
+      secondary: const Color.fromRGBO(129, 178, 154, 1.0),
       secondaryVariant: Colors.white, // TODO
+    ),
+    buttonTheme: ButtonThemeData(
+      buttonColor: Color.fromRGBO(129, 178, 154, 1.0), // TODO reference secondary color
     ),
     textTheme: TextTheme(
       headline1: TextStyle(
-          color: Colors.pink
-          ),
+        color: Colors.white,
+        fontSize: 40,
+        fontFamily: GoogleFonts.dancingScript().fontFamily,
+      ),
       subtitle1: TextStyle(
-          color: Colors.yellow
-          ),
+        color: Colors.white,
+        fontFamily: GoogleFonts.lato().fontFamily,
+      ),
       bodyText2: TextStyle(
         color: Colors.white,
       ),

@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -26,8 +24,14 @@ class _LoginPageState extends State<LoginPage> {
                 'Lukas Vinther Offenberg Larsen',
                 style: Theme.of(context).textTheme.headline1,
               ), // TODO: font styles
-              Text('Software Development Student'),
-              Text('IT University of Copenhagen'),
+              Text(
+                'Software Development Student',
+                style: Theme.of(context).textTheme.subtitle1,
+              ),
+              Text(
+                'IT University of Copenhagen',
+                style: Theme.of(context).textTheme.subtitle1,
+              ),
               Container(
                 padding: EdgeInsets.all(10),
                 margin: EdgeInsets.all(10),
