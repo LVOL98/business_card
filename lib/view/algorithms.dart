@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:temp/model/sorting/insertion_sort.dart';
 import 'package:temp/model/util/random_generator.dart';
 
 class AlgorithmPage extends StatefulWidget {
@@ -8,9 +9,13 @@ class AlgorithmPage extends StatefulWidget {
 }
 
 class _AlgorithmPageState extends State<AlgorithmPage> {
+  var insertion_sort = InsertionSort();
   List list = RandomGenerator().generatRandomIntegers(100, 100);
 
-  
+  _sort() {
+    insertion_sort.sort(list);
+    //setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +40,10 @@ class _AlgorithmPageState extends State<AlgorithmPage> {
               }).toList(),
             ),
           ),
+          RaisedButton(
+            onPressed: (_sort),
+            child: Text('Sort'),
+          ),
         ],
       ),
     );
@@ -42,14 +51,15 @@ class _AlgorithmPageState extends State<AlgorithmPage> {
 }
 
 class BarPainter extends CustomPainter {
-  double width, row; 
+  double width, row;
   int length;
 
   BarPainter(this.width, this.row, this.length);
 
   @override
   void paint(Canvas canvas, Size size) {
-    canvas.drawLine(Offset(row, 0), Offset(row, length.ceilToDouble()), Paint());
+    canvas.drawLine(
+        Offset(row, 0), Offset(row, length.ceilToDouble()), Paint());
   }
 
   @override
@@ -59,3 +69,5 @@ class BarPainter extends CustomPainter {
     throw UnimplementedError();
   }
 }
+
+// https://www.youtube.com/watch?v=IMK4yqlT24Q
