@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:temp/model/sorting/animation/insertion_sort_animation.dart';
 import 'package:temp/model/sorting/insertion_sort.dart';
+import 'package:temp/model/sorting/quick_sort.dart';
 import 'package:temp/model/util/random_generator.dart';
 
 class AlgorithmPage extends StatefulWidget {
@@ -11,33 +11,51 @@ class AlgorithmPage extends StatefulWidget {
 
 class _AlgorithmPageState extends State<AlgorithmPage> {
   var insertion_sort = InsertionSort();
-  List list = RandomGenerator().generatRandomIntegers(100, 100);
+  var quick_sort = QuickSort();
+  List list_for_insertion_sort =
+      RandomGenerator().generatRandomIntegers(100, 100);
+  List list_for_quick_sort = RandomGenerator().generatRandomIntegers(100, 100);
 
   _sort() {
-    insertion_sort.sortAnimation(list, setState);
+    insertion_sort.sortAnimation(list_for_insertion_sort, setState);
+    quick_sort.sort(list_for_quick_sort);
   }
 
   @override
   Widget build(BuildContext context) {
     double count = 0;
+    double anotherCoutner = 0;
 
     return Scaffold(
       body: Column(
         children: [
           Text('I\'m actually beeing used'),
           Container(
-            child: Row(
-              children: list.map((number) {
-                count++;
+            child: Column(
+              children: [
+                Row(
+                  children: list_for_insertion_sort.map((number) {
+                    count++;
 
-                return CustomPaint(
-                  painter: BarPainter(
-                    2,
-                    count,
-                    number,
-                  ),
-                );
-              }).toList(),
+                    return CustomPaint(
+                      painter: BarPainter(
+                        2,
+                        count,
+                        number,
+                      ),
+                    );
+                  }).toList(),
+                ),
+                Row(
+                  children: list_for_insertion_sort.map((number) {
+                    anotherCoutner++;
+
+                    return CustomPaint(
+                      painter: BarPainter(2, anotherCoutner, number),
+                    );
+                  }).toList(),
+                ),
+              ],
             ),
           ),
           RaisedButton(
@@ -58,8 +76,8 @@ class BarPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    canvas.drawLine(
-        Offset(row, 0), Offset(row, length.ceilToDouble()), Paint());
+    canvas.drawLine(Offset(width * row, 0),
+        Offset(width * row, length.ceilToDouble()), Paint());
   }
 
   @override

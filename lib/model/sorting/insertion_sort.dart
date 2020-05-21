@@ -4,8 +4,8 @@ class InsertionSort {
 
     int length = toBeSorted.length;
     for (int i = 0; i < toBeSorted.length; i++) {
-      for (int j = i; j > 0 && less(toBeSorted[j], toBeSorted[j - 1]); j--) {
-        exchange(toBeSorted, j, j - 1);
+      for (int j = i; j > 0 && _less(toBeSorted[j], toBeSorted[j - 1]); j--) {
+        _exchange(toBeSorted, j, j - 1);
       }
     }
   }
@@ -15,8 +15,8 @@ class InsertionSort {
 
     int length = toBeSorted.length;
     for (int i = 0; i < toBeSorted.length; i++) {
-      for (int j = i; j > 0 && less(toBeSorted[j], toBeSorted[j-1]); j--) {
-        exchange(toBeSorted, j, j-1);
+      for (int j = i; j > 0 && _less(toBeSorted[j], toBeSorted[j-1]); j--) {
+        _exchange(toBeSorted, j, j-1);
         
         await Future.delayed(Duration(microseconds: 500));
         state(() {});
@@ -24,11 +24,11 @@ class InsertionSort {
     }
   }
 
-  bool less(v, w) {
+  bool _less(v, w) {
     return v.compareTo(w) < 0;
   }
 
-  void exchange(List list, int i, int j) {
+  void _exchange(List list, int i, int j) {
     var temp = list[i];
     list[i] = list[j];
     list[j] = temp;
