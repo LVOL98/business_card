@@ -16,9 +16,14 @@ class _AlgorithmPageState extends State<AlgorithmPage> {
       RandomGenerator().generatRandomIntegers(100, 100);
   List list_for_quick_sort = RandomGenerator().generatRandomIntegers(100, 100);
 
-  _sort() {
+  _sortAnimation() {
     insertion_sort.sortAnimation(list_for_insertion_sort, setState);
-    quick_sort.sort(list_for_quick_sort);
+  }
+
+  void initState() {
+    super.initState();
+
+    //_sortAnimation();
   }
 
   @override
@@ -27,42 +32,46 @@ class _AlgorithmPageState extends State<AlgorithmPage> {
     double anotherCoutner = 0;
 
     return Scaffold(
-      body: Column(
-        children: [
-          Text('I\'m actually beeing used'),
-          Container(
-            child: Column(
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Column(
               children: [
-                Row(
-                  children: list_for_insertion_sort.map((number) {
-                    count++;
+                Text(MediaQuery.of(context).size.width.toString()),
+                Container(
+                  margin: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width * 0.25, 0, 0, 0),
+                  child: Row(
+                    children: list_for_insertion_sort.map((number) {
+                      count++;
 
-                    return CustomPaint(
-                      painter: BarPainter(
-                        2,
-                        count,
-                        number,
-                      ),
-                    );
-                  }).toList(),
+                      return CustomPaint(
+                        painter: BarPainter(
+                          2,
+                          count,
+                          number,
+                        ),
+                      );
+                    }).toList(),
+                  ),
                 ),
-                Row(
-                  children: list_for_insertion_sort.map((number) {
-                    anotherCoutner++;
+                /* Row(
+                    children: list_for_insertion_sort.map((number) {
+                      //anotherCoutner++;
 
-                    return CustomPaint(
-                      painter: BarPainter(2, anotherCoutner, number),
-                    );
-                  }).toList(),
-                ),
+                      return CustomPaint(
+                        painter: BarPainter(2, anotherCoutner, number),
+                      );
+                    }).toList(),
+                  ), */
               ],
             ),
-          ),
-          RaisedButton(
-            onPressed: (_sort),
-            child: Text('Sort'),
-          ),
-        ],
+            RaisedButton(
+              onPressed: (_sortAnimation),
+              child: Text('Sort'),
+            ),
+          ],
+        ),
       ),
     );
   }
