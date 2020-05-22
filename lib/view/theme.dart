@@ -5,7 +5,7 @@ class AppTheme {
   /* AppTheme._(); // What does this do? */
 
   static final ThemeData lighTheme = ThemeData(
-    scaffoldBackgroundColor: Colors.grey,
+    scaffoldBackgroundColor: Color.fromRGBO(75, 153, 128, 1),
     appBarTheme: AppBarTheme(
       color: Colors.white,
       iconTheme: IconThemeData(
@@ -13,10 +13,10 @@ class AppTheme {
       ),
     ),
     colorScheme: ColorScheme.light(
-      primary: const Color.fromRGBO(58, 64, 90, 1.0),
+      primary: const Color.fromRGBO(129, 178, 154, 1.0),
       onPrimary: Colors.white, // TODO
-      primaryVariant: const Color.fromRGBO(77, 83, 107, 1.0),
-      secondary: const Color.fromRGBO(129, 178, 154, 1.0),
+      primaryVariant: const Color.fromRGBO(163, 209, 189, 1.0),
+      secondary: const Color.fromRGBO(58, 64, 90, 1.0),
       secondaryVariant: Colors.white, // TODO
     ),
     buttonTheme: ButtonThemeData(

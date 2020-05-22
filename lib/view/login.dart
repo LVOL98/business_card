@@ -22,6 +22,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Text(
                 'Lukas Vinther Offenberg Larsen',
+                textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.headline1,
               ), // TODO: font styles
               Text(
@@ -36,11 +37,11 @@ class _LoginPageState extends State<LoginPage> {
                 padding: EdgeInsets.all(10),
                 margin: EdgeInsets.all(10),
                 decoration: new BoxDecoration(
-                    color: Theme.of(context).colorScheme.primaryVariant,
+                    color: Theme.of(context).colorScheme.secondary,
                     boxShadow: [
                       new BoxShadow(
                         color: Colors.black,
-                        blurRadius: 20,
+                        blurRadius: 2,
                       ),
                     ]),
                 child: Row(
@@ -57,11 +58,11 @@ class _LoginPageState extends State<LoginPage> {
                 padding: EdgeInsets.all(10),
                 margin: EdgeInsets.all(10),
                 decoration: new BoxDecoration(
-                    color: Theme.of(context).colorScheme.primaryVariant,
+                    color: Theme.of(context).colorScheme.secondary,
                     boxShadow: [
                       new BoxShadow(
                         color: Colors.black,
-                        blurRadius: 20,
+                        blurRadius: 2,
                       ),
                     ]),
                 child: Row(
