@@ -34,38 +34,41 @@ class _AlgorithmPageState extends State<AlgorithmPage> {
     return Scaffold(
       body: SafeArea(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Column(
-              children: [
-                Text(MediaQuery.of(context).size.width.toString()),
-                Container(
-                  margin: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width * 0.25, 0, 0, 0),
-                  child: Row(
-                    children: list_for_insertion_sort.map((number) {
-                      count++;
+            Text(MediaQuery.of(context).size.width.toString()),
+            Container(
+              margin: EdgeInsets.fromLTRB(
+                  MediaQuery.of(context).size.width * 0.25, 0, 0, 0),
+              child: Row(
+                children: list_for_insertion_sort.map((number) {
+                  count++;
 
-                      return CustomPaint(
-                        painter: BarPainter(
-                          2,
-                          count,
-                          number,
-                        ),
-                      );
-                    }).toList(),
-                  ),
-                ),
-                /* Row(
-                    children: list_for_insertion_sort.map((number) {
-                      //anotherCoutner++;
-
-                      return CustomPaint(
-                        painter: BarPainter(2, anotherCoutner, number),
-                      );
-                    }).toList(),
-                  ), */
-              ],
+                  return CustomPaint(
+                    painter: BarPainter(
+                      2,
+                      count,
+                      number,
+                    ),
+                  );
+                }).toList(),
+              ),
             ),
+            Padding(padding: EdgeInsets.fromLTRB(0, 100 + MediaQuery.of(context).size.width * 0.05, 0, 0)),
+            Text('Some more text'),
+            Container(
+              margin: EdgeInsets.fromLTRB(
+                  MediaQuery.of(context).size.width * 0.25, 0, 0, 0),
+              child: Row(
+                children: list_for_quick_sort.map((number) {
+                  anotherCoutner++;
+
+                  return CustomPaint(
+                    painter: BarPainter(2, anotherCoutner, number),
+                  );
+                }).toList(),
+              ),
+            ),
+            Padding(padding: EdgeInsets.fromLTRB(0, 100 + MediaQuery.of(context).size.width * 0.05, 0, 0)),
             RaisedButton(
               onPressed: (_sortAnimation),
               child: Text('Sort'),
