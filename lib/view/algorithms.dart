@@ -12,9 +12,15 @@ class AlgorithmPage extends StatefulWidget {
 class _AlgorithmPageState extends State<AlgorithmPage> {
   var insertion_sort = InsertionSort();
   var quick_sort = QuickSort();
-  List list_for_insertion_sort =
-      RandomGenerator().generatRandomIntegers(100, 100);
-  List list_for_quick_sort = RandomGenerator().generatRandomIntegers(100, 100);
+  List list_for_insertion_sort;
+  List list_for_quick_sort;
+
+  _buildLists(int length) {
+    list_for_insertion_sort =
+        RandomGenerator().generatRandomIntegers(length, length);
+    list_for_quick_sort =
+        RandomGenerator().generatRandomIntegers(length, length);
+  }
 
   _sortAnimation() {
     insertion_sort.sortAnimation(list_for_insertion_sort, setState);
@@ -30,6 +36,7 @@ class _AlgorithmPageState extends State<AlgorithmPage> {
   Widget build(BuildContext context) {
     double count = 0;
     double anotherCoutner = 0;
+    _buildLists((MediaQuery.of(context).size.height * 0.15).round());
 
     return Scaffold(
       body: SafeArea(
@@ -38,7 +45,7 @@ class _AlgorithmPageState extends State<AlgorithmPage> {
             Text(MediaQuery.of(context).size.width.toString()),
             Container(
               margin: EdgeInsets.fromLTRB(
-                  MediaQuery.of(context).size.width * 0.25, 0, 0, 0),
+                  MediaQuery.of(context).size.width * 0.225, 0, 0, 0),
               child: Row(
                 children: list_for_insertion_sort.map((number) {
                   count++;
@@ -53,11 +60,13 @@ class _AlgorithmPageState extends State<AlgorithmPage> {
                 }).toList(),
               ),
             ),
-            Padding(padding: EdgeInsets.fromLTRB(0, 100 + MediaQuery.of(context).size.width * 0.05, 0, 0)),
+            Padding(
+                padding: EdgeInsets.fromLTRB(
+                    0, 100 + MediaQuery.of(context).size.height * 0.05, 0, 0)),
             Text('Some more text'),
             Container(
               margin: EdgeInsets.fromLTRB(
-                  MediaQuery.of(context).size.width * 0.25, 0, 0, 0),
+                  MediaQuery.of(context).size.width * 0.225, 0, 0, 0),
               child: Row(
                 children: list_for_quick_sort.map((number) {
                   anotherCoutner++;
@@ -68,7 +77,9 @@ class _AlgorithmPageState extends State<AlgorithmPage> {
                 }).toList(),
               ),
             ),
-            Padding(padding: EdgeInsets.fromLTRB(0, 100 + MediaQuery.of(context).size.width * 0.05, 0, 0)),
+            Padding(
+                padding: EdgeInsets.fromLTRB(
+                    0, 100 + MediaQuery.of(context).size.height * 0.05, 0, 0)),
             RaisedButton(
               onPressed: (_sortAnimation),
               child: Text('Sort'),
