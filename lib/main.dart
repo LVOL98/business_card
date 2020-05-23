@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:temp/view/algorithms.dart';
 import 'package:temp/view/login.dart';
+import 'package:temp/view/master_algorithm_page.dart';
 import 'package:temp/view/theme.dart';
 
 void main() {
   runApp(MaterialApp(
     theme: AppTheme.lighTheme,
     title: 'TODO',
-    home: AlgorithmPage(), // TODO: problably shouldn't be home
+    home: MasterAlgorithmPage(), // TODO: problably shouldn't be home
   ));
 }
 
