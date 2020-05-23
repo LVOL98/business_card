@@ -7,7 +7,7 @@ class AppTheme {
   static final ThemeData lighTheme = ThemeData(
     scaffoldBackgroundColor: Color.fromRGBO(75, 153, 128, 1),
     appBarTheme: AppBarTheme(
-      color: Colors.white,
+      color: Colors.purple,
       iconTheme: IconThemeData(
         color: Colors.white, // TODO
       ),
