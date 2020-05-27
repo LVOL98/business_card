@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:temp/view/home_master.dart';
 
 import 'home_mobile.dart';
 
@@ -79,7 +80,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               RaisedButton(
                 onPressed: () => {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage())) // TODO: aniumations and prettier code
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomePageMaster())) // TODO: aniumations and prettier code
                 },
                 child: Text('Let me show you what I can do!'),
               ),
