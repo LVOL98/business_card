@@ -32,15 +32,19 @@ class RadixTree {
       // Key is longer than the current node
       final String leftOver = key.substring(largestPrefix);
 
+      // Checks wheter the children could hold the last of
+      // the string
       bool found = false;
       for (var child in node.getChildren()) {
         String wtfDart = child.getPrefix();
         if (wtfDart[0] == leftOver[0]) {
           found = true;
           ret = _put(leftOver, value, child);
+          break;
         }
       }
 
+      // No children had the last of the key, makes a new node
       if (!found) {
         RadixNode newNode = new RadixNode(leftOver, value);
         node.getChildren().add(newNode);
@@ -57,9 +61,11 @@ class RadixTree {
       node.getChildren().add(newNode);
 
       if (largestPrefix == key.length) {
+        // Key was equal to the split node
         ret = node.getValue();
         node.setValue(value);
       } else {
+        // key was longer than split node
         RadixNode keyNode = new RadixNode(key.substring(largestPrefix), value);
         node.getChildren().add(keyNode);
       }
