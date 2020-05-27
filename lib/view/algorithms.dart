@@ -10,20 +10,18 @@ class AlgorithmPage extends StatefulWidget {
 }
 
 class _AlgorithmPageState extends State<AlgorithmPage> {
-  var insertion_sort = InsertionSort();
-  var quick_sort = QuickSort();
-  List list_for_insertion_sort;
-  List list_for_quick_sort;
+  var insertionSort = InsertionSort();
+  var quickSort = QuickSort();
+  List insertionSortList = RandomGenerator().generatRandomIntegers(100, 100);
+  List quickSortList;
 
   _buildLists(int length) {
-    list_for_insertion_sort =
-        RandomGenerator().generatRandomIntegers(length, length);
-    list_for_quick_sort =
-        RandomGenerator().generatRandomIntegers(length, length);
+    insertionSortList = RandomGenerator().generatRandomIntegers(length, length);
+    quickSortList = RandomGenerator().generatRandomIntegers(length, length);
   }
 
   _sortAnimation() {
-    insertion_sort.sortAnimation(list_for_insertion_sort, setState);
+    insertionSort.sortAnimation(insertionSortList, setState);
   }
 
   void initState() {
@@ -36,18 +34,18 @@ class _AlgorithmPageState extends State<AlgorithmPage> {
   Widget build(BuildContext context) {
     double count = 0;
     double anotherCoutner = 0;
-    _buildLists((MediaQuery.of(context).size.height * 0.15).round());
+    //_buildLists((MediaQuery.of(context).size.height * 0.15).round()); // TODO: this fucks up the sorting
 
     return Scaffold(
       body: SafeArea(
         child: Column(
           children: [
-            Text(MediaQuery.of(context).size.width.toString()),
+            Text((MediaQuery.of(context).size.height * 0.15).round().toString()),
             Container(
               margin: EdgeInsets.fromLTRB(
                   MediaQuery.of(context).size.width * 0.225, 0, 0, 0),
               child: Row(
-                children: list_for_insertion_sort.map((number) {
+                children: insertionSortList.map((number) {
                   count++;
 
                   return CustomPaint(
@@ -60,15 +58,16 @@ class _AlgorithmPageState extends State<AlgorithmPage> {
                 }).toList(),
               ),
             ),
-            Padding(
-                padding: EdgeInsets.fromLTRB(
-                    0, 100 + MediaQuery.of(context).size.height * 0.05, 0, 0)),
+            /* Padding(
+              padding: EdgeInsets.fromLTRB(
+                  0, 100 + MediaQuery.of(context).size.height * 0.05, 0, 0),
+            ),
             Text('Some more text'),
             Container(
               margin: EdgeInsets.fromLTRB(
                   MediaQuery.of(context).size.width * 0.225, 0, 0, 0),
               child: Row(
-                children: list_for_quick_sort.map((number) {
+                children: quickSortList.map((number) {
                   anotherCoutner++;
 
                   return CustomPaint(
@@ -76,10 +75,11 @@ class _AlgorithmPageState extends State<AlgorithmPage> {
                   );
                 }).toList(),
               ),
-            ),
-            Padding(
-                padding: EdgeInsets.fromLTRB(
-                    0, 100 + MediaQuery.of(context).size.height * 0.05, 0, 0)),
+            ), */
+            /* Padding(
+              padding: EdgeInsets.fromLTRB(
+                  0, 100 + MediaQuery.of(context).size.height * 0.05, 0, 0),
+            ), */
             RaisedButton(
               onPressed: (_sortAnimation),
               child: Text('Sort'),

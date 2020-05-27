@@ -8,7 +8,7 @@ void main() {
   runApp(MaterialApp(
     theme: AppTheme.lighTheme,
     title: 'TODO',
-    home: MasterAlgorithmPage(), // TODO: problably shouldn't be home
+    home: AlgorithmPage(), // TODO: problably shouldn't be home
   ));
 }
 
