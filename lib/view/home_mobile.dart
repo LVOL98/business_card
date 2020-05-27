@@ -10,9 +10,28 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    var _edge_inset = MediaQuery.of(context).size.width * 0.05;
+
     return Scaffold(
       appBar: TopNav().getAppBar(),
-      body: SafeArea(child: Text('yay')),
+      drawer: TopNav().getDrawer(),
+      body: Container(
+        padding: EdgeInsets.all(_edge_inset),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+                'This will be a paragrpah about my knowledge of algorithms. This will be a paragrpah about my knowledge of algorithms. This will be a paragrpah about my knowledge of algorithms. This will be a paragrpah about my knowledge of algorithms'),
+            FlutterLogo(
+              size: 100,
+            ),
+            RaisedButton(
+              onPressed: () {},
+              child: Text('Go To Algoritms'),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
