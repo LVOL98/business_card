@@ -8,4 +8,6 @@ class RadixNode {
   getPrefix() { return _prefix; }
 
   getValue() { return _value; }
+
+  setValue (int value) { this._value = value; }
 }
