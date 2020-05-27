@@ -27,7 +27,19 @@ class _HomePageState extends State<HomePage> {
             ),
             RaisedButton(
               onPressed: () {},
-              child: Text('Go To Algoritms'),
+              child: Text('Go To Algorithms'),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(0, _edge_inset, 0, 0),
+            ),
+            Text(
+                'This will be a paragrpah about my knowledge of web development. This will be a paragrpah about my knowledge of web development. This will be a paragrpah about my knowledge of web development. This will be a paragrpah about my knowledge of web development'),
+            FlutterLogo(
+              size: 100,
+            ),
+            RaisedButton(
+              onPressed: () {},
+              child: Text('Go To Web Development'),
             ),
           ],
         ),
