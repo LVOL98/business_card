@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:temp/view/home_master.dart';
 
+import 'animations/page_load.dart';
 import 'home_mobile.dart';
 
 class LoginPage extends StatefulWidget {
@@ -80,12 +81,13 @@ class _LoginPageState extends State<LoginPage> {
               ),
               RaisedButton(
                 onPressed: () => {
-                  Navigator.of(context).push(_createRoute())
+                  //Navigator.of(context).push(_createRoute())
                   /* Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
                               HomePageMaster())) */ // TODO: aniumations and prettier code
+                  Navigator.push(context, PageLoad(page: HomePageMaster()))
                 },
                 child: Text('Let me show you what I can do!'),
               ),
