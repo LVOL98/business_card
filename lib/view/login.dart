@@ -80,7 +80,12 @@ class _LoginPageState extends State<LoginPage> {
               ),
               RaisedButton(
                 onPressed: () => {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomePageMaster())) // TODO: aniumations and prettier code
+                  Navigator.of(context).push(_createRoute())
+                  /* Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              HomePageMaster())) */ // TODO: aniumations and prettier code
                 },
                 child: Text('Let me show you what I can do!'),
               ),
@@ -89,5 +94,21 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  Route _createRoute() {
+    return PageRouteBuilder(
+        pageBuilder: (context, animation, secondaryAnimation) =>
+            HomePageMaster(),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          var begin = Offset(0.0, 1.0);
+          var end = Offset.zero;
+          var curveTween = Curves.ease;
+          var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curveTween));
+          var offsetAnimation = animation.drive(tween);
+
+
+          return SlideTransition(position: offsetAnimation, child: child);
+        });
   }
 }
