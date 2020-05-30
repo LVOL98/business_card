@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:temp/view/components/topnav.dart';
+import 'package:temp/view/home_content.dart';
 
 class HomePageMobile extends StatefulWidget {
   @override
@@ -10,6 +11,7 @@ class HomePageMobile extends StatefulWidget {
 class _HomePageMobileState extends State<HomePageMobile> {
   @override
   Widget build(BuildContext context) {
+    var _home_content = HomeContent();
     var _edge_inset = MediaQuery.of(context).size.width * 0.05;
 
     return Container(
@@ -17,18 +19,7 @@ class _HomePageMobileState extends State<HomePageMobile> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(
-              'This will be a paragrpah about my knowledge of algorithms. This will be a paragrpah about my knowledge of algorithms. This will be a paragrpah about my knowledge of algorithms. This will be a paragrpah about my knowledge of algorithms'),
-          FlutterLogo(
-            size: 100,
-          ),
-          RaisedButton(
-            onPressed: () {},
-            child: Text('Go To Algorithms'),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(0, _edge_inset, 0, 0),
-          ),
+          _home_content.algorithmsInfo(),
           Text(
               'This will be a paragrpah about my knowledge of web development. This will be a paragrpah about my knowledge of web development. This will be a paragrpah about my knowledge of web development. This will be a paragrpah about my knowledge of web development'),
           FlutterLogo(
