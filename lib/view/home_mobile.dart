@@ -20,15 +20,7 @@ class _HomePageMobileState extends State<HomePageMobile> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           _home_content.algorithmsInfo(),
-          Text(
-              'This will be a paragrpah about my knowledge of web development. This will be a paragrpah about my knowledge of web development. This will be a paragrpah about my knowledge of web development. This will be a paragrpah about my knowledge of web development'),
-          FlutterLogo(
-            size: 100,
-          ),
-          RaisedButton(
-            onPressed: () {},
-            child: Text('Go To Web Development'),
-          ),
+          _home_content.webInfo(),
         ],
       ),
     );
