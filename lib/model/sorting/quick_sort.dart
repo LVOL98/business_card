@@ -1,7 +1,7 @@
 class QuickSort {
   void sort(List list) {
     list.shuffle();
-    _sort(list, 0, list.length);
+    _sort(list, 0, list.length - 1);
   }
 
   void _sort(List list, int low, int high) {
@@ -19,7 +19,7 @@ class QuickSort {
 
     while (true) {
       while (_less(list[++i], toCompare)) if (i == high) break;
-      while (_less(toCompare, list[--j])) if (i == high) break;
+      while (_less(toCompare, list[--j])) if (j == low) break;
       if (j <= i) break;
       _exchange(list, i, j);
     }

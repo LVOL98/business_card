@@ -22,6 +22,11 @@ void main() {
 
   group('TODO', () {
     setUp();
+
+    test('TODO', () {
+      List list = [2, 1];
+      quick_sort.sort(list);
+    });
     
     test('TODO', () {
       List list = buildWorstCaseIntegers(100, 'int');
