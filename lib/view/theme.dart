@@ -2,11 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
-  /* AppTheme._(); // What does this do? */
+  //AppTheme._(); // What does this do?
   static const _primary_blue = Color.fromRGBO(58, 64, 90, 1.0);
+  static const _secondary_blue = Color.fromRGBO(77, 83, 107, 1.0);
+  static const _primary_green = Color.fromRGBO(75, 153, 128, 1.0);
+  static const _secondary_green = Color.fromRGBO(129, 178, 154, 1.0);
+  static const _tertiary_green = Color.fromRGBO(163, 209, 189, 1.0);
+  static const _primary_red = Color.fromRGBO(224, 122, 95, 1.0);
+  static const _secondary_red = Color.fromRGBO(230, 143, 115, 1.0);
 
   static final ThemeData lighTheme = ThemeData(
-    scaffoldBackgroundColor: Color.fromRGBO(75, 153, 128, 1),
+    scaffoldBackgroundColor: _primary_green,
     appBarTheme: AppBarTheme(
       color: _primary_blue,
       iconTheme: IconThemeData(
@@ -14,14 +20,14 @@ class AppTheme {
       ),
     ),
     colorScheme: ColorScheme.light(
-      primary: const Color.fromRGBO(129, 178, 154, 1.0),
+      primary: _secondary_green,
       onPrimary: Colors.white, // TODO
-      primaryVariant: const Color.fromRGBO(163, 209, 189, 1.0),
+      primaryVariant: _tertiary_green,
       secondary: _primary_blue,
       secondaryVariant: Colors.white, // TODO
     ),
     buttonTheme: ButtonThemeData(
-      buttonColor: Color.fromRGBO(129, 178, 154, 1.0), // TODO reference secondary color
+      buttonColor: _secondary_green, // TODO reference secondary color
     ),
     textTheme: TextTheme(
       headline1: TextStyle(

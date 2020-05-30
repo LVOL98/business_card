@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class InfoBox {
-  standardHomeInfo(String infoText, String buttonText, var inset_bottom) {
+  standardHomeInfo(String infoText, String buttonText, var inset) {
     return Column(
       children: [
         Text(infoText),
@@ -14,7 +14,7 @@ class InfoBox {
           child: Text(buttonText),
         ),
         Padding(
-          padding: EdgeInsets.fromLTRB(0, inset_bottom, 0, 0),
+          padding: EdgeInsets.fromLTRB(inset, 0, inset, inset),
         ),
       ],
     );

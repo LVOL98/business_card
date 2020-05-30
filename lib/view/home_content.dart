@@ -8,7 +8,7 @@ class HomeContent {
   var _info_box = InfoBox();
 
   algorithmsInfo() {
-    return _info_box.standardHomeInfo('Let me show you waht i can do with algoritms', 'Go To Algorithms', insetBottom);
+    return _info_box.standardHomeInfo('Let me show you waht i can do with algoritms. Let me show you waht i can do with algoritms.', 'Go To Algorithms', insetBottom);
   }
 
   webInfo() {
