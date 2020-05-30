@@ -13,7 +13,7 @@ class _AlgorithmPageState extends State<AlgorithmPage> {
   var insertionSort = InsertionSort();
   var quickSort = QuickSort();
   List insertionSortList = RandomGenerator().generatRandomIntegers(100, 100);
-  List quickSortList;
+  List quickSortList = RandomGenerator().generatRandomIntegers(100, 100);
 
   _buildLists(int length) {
     insertionSortList = RandomGenerator().generatRandomIntegers(length, length);
@@ -21,7 +21,9 @@ class _AlgorithmPageState extends State<AlgorithmPage> {
   }
 
   _sortAnimation() {
+    quickSort.setState(setState);
     insertionSort.sortAnimation(insertionSortList, setState);
+    quickSort.sort(quickSortList);
   }
 
   void initState() {
@@ -58,7 +60,7 @@ class _AlgorithmPageState extends State<AlgorithmPage> {
                 }).toList(),
               ),
             ),
-            /* Padding(
+            Padding(
               padding: EdgeInsets.fromLTRB(
                   0, 100 + MediaQuery.of(context).size.height * 0.05, 0, 0),
             ),
@@ -75,11 +77,11 @@ class _AlgorithmPageState extends State<AlgorithmPage> {
                   );
                 }).toList(),
               ),
-            ), */
-            /* Padding(
+            ),
+            Padding(
               padding: EdgeInsets.fromLTRB(
                   0, 100 + MediaQuery.of(context).size.height * 0.05, 0, 0),
-            ), */
+            ),
             RaisedButton(
               onPressed: (_sortAnimation),
               child: Text('Sort'),

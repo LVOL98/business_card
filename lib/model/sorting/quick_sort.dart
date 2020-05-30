@@ -1,4 +1,10 @@
 class QuickSort {
+  Function state;
+
+  setState(Function state) {
+    this.state = state;
+  }
+
   void sort(List list) {
     list.shuffle();
     _sort(list, 0, list.length - 1);
@@ -11,7 +17,7 @@ class QuickSort {
     _sort(list, j + 1, high);
   }
 
-  int _partition(List list, int low, int high) {
+  _partition(List list, int low, int high) async {
     int i = low;
     int j = high + 1;
 
@@ -22,8 +28,14 @@ class QuickSort {
       while (_less(toCompare, list[--j])) if (j == low) break;
       if (j <= i) break;
       _exchange(list, i, j);
+
+      await Future.delayed(Duration(microseconds: 500));
+      state(() {});
     }
     _exchange(list, low, j);
+    await Future.delayed(Duration(microseconds: 500));
+    state(() {});
+
     return j;
   }
 
