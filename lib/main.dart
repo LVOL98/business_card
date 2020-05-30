@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:temp/view/animations/page_load.dart';
 import 'package:temp/view/login.dart';
 import 'package:temp/view/theme.dart';
 
 void main() {
   runApp(MaterialApp(
+    onGenerateRoute: (settings) => PageLoad(),
+    //showPerformanceOverlay: true,
     theme: AppTheme.lighTheme,
     title: 'TODO',
     home: LoginPage(), // TODO: problably shouldn't be home
