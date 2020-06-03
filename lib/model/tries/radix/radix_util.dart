@@ -2,7 +2,7 @@ import 'dart:math';
 
 class RadixUtil {
   /**
-   * TODO: doc
+   * TODO: doc (made with '///')
    */
   static largestPrefixLength(String a, String b) {
     var len = 0;
