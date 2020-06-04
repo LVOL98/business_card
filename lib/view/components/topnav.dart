@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class TopNav {
   getAppBar() {
     return AppBar(
-      title: Text('Test'),
+      title: Text('TBA'),
     );
   }
 
@@ -17,17 +17,6 @@ class TopNav {
               color: Colors.green,
             ),
             child: Text('Header'),
-          ),
-          ListTile(
-            leading: Icon(Icons.message),
-            title: Text('First'),
-            /* onTap: () {
-              //Navigator.pop(context);
-            }, */
-          ),
-          ListTile(
-            leading: Icon(Icons.today),
-            title: Text('Second'),
           ),
         ],
       ),

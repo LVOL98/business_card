@@ -2,22 +2,33 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:temp/view/home_master.dart';
 
-import 'home_mobile.dart';
-
 class LoginPage extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
+  
+
   @override
   Widget build(BuildContext context) {
+    var _edgeInset;
+    if (MediaQuery.of(context).size.width > 1200) {
+      _edgeInset = 300;
+    } else if (MediaQuery.of(context).size.width > 1000) {
+      _edgeInset = 250;
+    } else {
+      _edgeInset = 15;
+    }
+
     return Scaffold(
-      body: Container(
-        margin: EdgeInsets.all(15),
+      body: Center(
+
+        //margin: EdgeInsets.all(_edgeInset),
         child: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               CircleAvatar(
                 radius: 40,
@@ -37,6 +48,7 @@ class _LoginPageState extends State<LoginPage> {
                 style: Theme.of(context).textTheme.subtitle1,
               ),
               Container(
+                width: 450,
                 padding: EdgeInsets.all(10),
                 margin: EdgeInsets.all(10),
                 decoration: new BoxDecoration(
@@ -58,6 +70,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               Container(
+                width: 450,
                 padding: EdgeInsets.all(10),
                 margin: EdgeInsets.all(10),
                 decoration: new BoxDecoration(
