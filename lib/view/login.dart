@@ -20,96 +20,90 @@ class _LoginPageState extends State<LoginPage> {
       body: Container(
         margin: EdgeInsets.all(15),
         child: SafeArea(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CircleAvatar(
+                radius: 40,
+                backgroundImage: AssetImage('resources/images/avatar/me.png'),
+              ),
+              Text(
+                'Lukas Vinther Offenberg Larsen',
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.headline1,
+              ), // TODO: font styles
+              Text(
+                'Software Development Student',
+                style: Theme.of(context).textTheme.subtitle1,
+              ),
+              Text(
+                'IT University of Copenhagen',
+                style: Theme.of(context).textTheme.subtitle1,
+              ),
+              Container(
+                padding: EdgeInsets.all(10),
+                margin: EdgeInsets.all(10),
+                decoration: new BoxDecoration(
+                    color: Theme.of(context).colorScheme.secondary,
+                    boxShadow: [
+                      new BoxShadow(
+                        color: Colors.black,
+                        blurRadius: 2,
+                      ),
+                    ]),
+                child: Row(
                   children: [
-                    CircleAvatar(
-                      radius: 40,
-                      backgroundImage:
-                          AssetImage('resources/images/avatar/me.png'),
+                    Icon(Icons.mail),
+                    SizedBox(
+                      width: 10,
                     ),
-                    Text(
-                      'Lukas Vinther Offenberg Larsen',
-                      textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.headline1,
-                    ), // TODO: font styles
-                    Text(
-                      'Software Development Student',
-                      style: Theme.of(context).textTheme.subtitle1,
-                    ),
-                    Text(
-                      'IT University of Copenhagen',
-                      style: Theme.of(context).textTheme.subtitle1,
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      margin: EdgeInsets.all(10),
-                      decoration: new BoxDecoration(
-                          color: Theme.of(context).colorScheme.secondary,
-                          boxShadow: [
-                            new BoxShadow(
-                              color: Colors.black,
-                              blurRadius: 2,
-                            ),
-                          ]),
-                      child: Row(
-                        children: [
-                          Icon(Icons.mail),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text('lukas98@live.dk'),
-                        ],
+                    Text('lukas98@live.dk'),
+                  ],
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(10),
+                margin: EdgeInsets.all(10),
+                decoration: new BoxDecoration(
+                    color: Theme.of(context).colorScheme.secondary,
+                    boxShadow: [
+                      new BoxShadow(
+                        color: Colors.black,
+                        blurRadius: 2,
                       ),
+                    ]),
+                child: Row(
+                  children: [
+                    Icon(Icons.phone),
+                    SizedBox(
+                      width: 10,
                     ),
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      margin: EdgeInsets.all(10),
-                      decoration: new BoxDecoration(
-                          color: Theme.of(context).colorScheme.secondary,
-                          boxShadow: [
-                            new BoxShadow(
-                              color: Colors.black,
-                              blurRadius: 2,
-                            ),
-                          ]),
-                      child: Row(
-                        children: [
-                          Icon(Icons.phone),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text('+45 24 78 59 44'),
-                        ],
-                      ),
-                    ),
-                    RaisedButton(
-                      onPressed: () async => {
-                        /* setState(() {
-                          isLoading = true;
-                        }), */
-                        _loadAnimations.stadardCircleLoad(context, 'test'),
-                        await Future.delayed(Duration(seconds: 3)),
-                        /* setState(() {
-                          isLoading = false;
-                        }), */
+                    Text('+45 24 78 59 44'),
+                  ],
+                ),
+              ),
+              RaisedButton(
+                onPressed: () async => {
+                  // TODO: make animations a part of the materialRoute
+                  _loadAnimations.stadardCircleLoad(context, 'test'),
+                  await Future.delayed(Duration(seconds: 3)),
 
-                        //Navigator.of(context).push(_createRoute())
-                        /* Navigator.push(
+                  //Navigator.of(context).push(_createRoute())
+                  /* Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
                               HomePageMaster())) */ // TODO: aniumations and prettier code
-                        Navigator.push(
-                          context,
-                          PageLoad(page: HomePageMaster()),
-                        )
-                      },
-                      child: Text('Let me show you what I can do!'),
-                    ),
-                  ],
-                ),
+                  Navigator.push(
+                    context,
+                    PageLoad(page: HomePageMaster()),
+                  )
+                },
+                child: Text('Let me show you what I can do!'),
               ),
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -121,7 +115,7 @@ class _LoginPageState extends State<LoginPage> {
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           var begin = Offset(0.0, 1.0);
           var end = Offset.zero;
-          var curveTween = Curves.ease;
+          var curveTween = Curves.easeIn;
           var tween = Tween(begin: begin, end: end)
               .chain(CurveTween(curve: curveTween));
           var offsetAnimation = animation.drive(tween);
