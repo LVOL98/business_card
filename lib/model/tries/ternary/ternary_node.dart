@@ -41,4 +41,9 @@ class TernaryNode {
   TernaryNode getRightChild() {
     return _right;
   }
+
+  @override
+  String toString() {
+    return 'Chatacter: ' + _char + ', value: ' + _value.toString();
+  }
 }

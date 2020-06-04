@@ -14,12 +14,14 @@ void main() {
   }
 
   group('Put method', () {
-    setUp();
 
     test('TODO', () {
+      setUp();
       _ternaryTrie.put("ab", 1); 
-      _ternaryTrie.put("aa", 2); 
-      print('dopne');
+      _ternaryTrie.put("aa", 2);
+      for (var element in _ternaryTrie.getStrings()) {
+        print(element);
+      }
     });
   });
 

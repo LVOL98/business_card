@@ -1,6 +1,7 @@
 import 'dart:collection';
 
 import 'package:temp/model/tries/ternary/ternary_node.dart';
+import 'package:temp/model/tries/ternary/ternary_util.dart';
 
 class TernaryTrie {
   TernaryNode _root;
@@ -45,14 +46,18 @@ class TernaryTrie {
   }
 
   getStrings() {
-    Queue<String> returnQueue;
-    _collect(_root, new StringBuffer(), returnQueue);
+    Queue<String> returnQueue = new Queue();
+    _collect(_root, '', returnQueue);
+    return returnQueue;
   }
 
-  _collect(TernaryNode node, StringBuffer prefix, Queue<String> queue) {
+  _collect(TernaryNode node, String prefix, Queue<String> queue) {
     if (node == null) return ;
     _collect(node.getLeftChild(), prefix, queue);
-    if (node.getValue() != null) queue.add(prefix.toString());
-    _collect(node.getMidChild(), prefix.write(node.getChar()), queue);
+    if (node.getValue() != null) queue.add(prefix + node.getChar());
+    prefix = prefix + node.getChar();
+    _collect(node.getMidChild(), prefix, queue);
+    prefix = TernaryUtil.removeLastCharacter(prefix);
+    _collect(node.getRightChild(), prefix, queue);
   }
 }
