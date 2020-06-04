@@ -14,12 +14,21 @@ class _HomePageWebState extends State<HomePageWeb> {
     var _home_content = HomeContent(_edge_inset);
 
     return Container(
-      padding: EdgeInsets.all(_edge_inset),
+      margin: EdgeInsets.fromLTRB(_edge_inset, 0, _edge_inset, 0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Expanded(child: _home_content.algorithmsInfo()),
-          Expanded(child:_home_content.webInfo()),
+          Expanded(
+            child: Container(
+                margin: EdgeInsets.fromLTRB(_edge_inset, 0, _edge_inset, 0),
+                child: _home_content.algorithmsInfo()),
+          ),
+          Expanded(
+            child: Container(
+              margin: EdgeInsets.fromLTRB(_edge_inset, 0, _edge_inset, 0),
+              child: _home_content.webInfo(),
+            ),
+          ),
         ],
       ),
     );
