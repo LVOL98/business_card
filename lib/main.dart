@@ -5,7 +5,7 @@ import 'package:temp/view/theme.dart';
 void main() {
   runApp(MaterialApp(
     theme: AppTheme.lighTheme,
-    title: 'TODO',
+    title: 'LVOL',
     home: LoginPage(), // TODO: problably shouldn't be home
   ));
 }
