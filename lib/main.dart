@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:temp/theme/style.dart';
 import 'package:temp/view/login.dart';
-import 'package:temp/view/theme.dart';
 
 void main() {
   runApp(MaterialApp(
-    theme: AppTheme.lighTheme,
+    theme: AppStyle.lighTheme,
     title: 'TODO',
     home: LoginPage(), // TODO: problably shouldn't be home
   ));
