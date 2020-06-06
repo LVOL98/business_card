@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:temp/theme/style.dart';
-import 'package:temp/view/login.dart';
+import 'package:temp/view/login/login_master.dart';
 
 class Main extends StatelessWidget {
   @override

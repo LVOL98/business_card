@@ -8,7 +8,7 @@ class HomeContent {
   var _infoBox = InfoBox();
 
   aboutInfo() {
-    return _infoBox.standardHomeInfo('Some fancy text here!', 'About me', insetBottom);
+    return _infoBox.standardHomeInfo('Some fancy text here! Some fancy text here! Some fancy text here!', 'About me', insetBottom);
   }
 
   algorithmsInfo() {
