@@ -19,15 +19,11 @@ class TopNav {
             child: Text('Header'),
           ),
           ListTile(
-            leading: Icon(Icons.message),
-            title: Text('First'),
+            leading: Icon(Icons.account_circle),
+            title: Text('About Me'),
             /* onTap: () {
               //Navigator.pop(context);
             }, */
-          ),
-          ListTile(
-            leading: Icon(Icons.today),
-            title: Text('Second'),
           ),
         ],
       ),

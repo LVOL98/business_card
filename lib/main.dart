@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:temp/routes.dart';
 import 'package:temp/theme/style.dart';
-import 'package:temp/view/login/login_master.dart';
+import 'package:temp/view/front/front_master.dart';
 
 class Main extends StatelessWidget {
   @override
@@ -8,7 +9,9 @@ class Main extends StatelessWidget {
     return MaterialApp(
       theme: AppStyle.lighTheme,
       title: 'TODO',
-      home: LoginPage(), // TODO: problably shouldn't be home
+      initialRoute: '/',
+      routes: routes,
+      //home: FrontPageMaster(), // TODO: is this needed
     );
   }
 }

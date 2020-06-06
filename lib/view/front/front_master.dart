@@ -1,15 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:temp/view/front/front_content.dart';
 import 'package:temp/view/home/home_master.dart';
-import 'package:temp/view/login/login_content.dart';
 
-class LoginPage extends StatefulWidget {
+class FrontPageMaster extends StatefulWidget {
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _FrontPageMasterState createState() => _FrontPageMasterState();
 }
 
-class _LoginPageState extends State<LoginPage> {
-  LoginContent _loginContent = new LoginContent();
+class _FrontPageMasterState extends State<FrontPageMaster> {
+  FrontContent _frontContent = new FrontContent();
 
   @override
   Widget build(BuildContext context) {
@@ -36,12 +36,12 @@ class _LoginPageState extends State<LoginPage> {
                 'IT University of Copenhagen',
                 style: Theme.of(context).textTheme.subtitle1,
               ),
-              _loginContent.standardSquareBox(
+              _frontContent.standardSquareBox(
                 context,
                 Icons.mail,
                 'lukas98@live.dk',
               ),
-              _loginContent.standardSquareBox(
+              _frontContent.standardSquareBox(
                 context,
                 Icons.phone,
                 '+45 24 78 59 44',

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class LoginContent {
+class FrontContent {
   Widget standardSquareBox(var context, IconData iconData, String boxText) {
     return Container(
       width: 450,
