@@ -48,11 +48,7 @@ class _FrontPageMasterState extends State<FrontPageMaster> {
               ),
               RaisedButton(
                 onPressed: () => {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              HomePageMaster())) // TODO: aniumations and prettier code
+                  Navigator.pushNamed(context, '/home'),
                 },
                 child: Text('Let me show you what I can do!'),
               ),

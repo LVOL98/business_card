@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class InfoBox {
-  standardHomeInfo(String infoText, String buttonText, var inset) {
+  standardHomeInfo(var context, String infoText, String buttonText, var inset,
+      String navigateTo) {
     return Column(
       children: [
         Text(infoText),
@@ -10,7 +11,7 @@ class InfoBox {
           size: 100,
         ),
         RaisedButton(
-          onPressed: () {},
+          onPressed: () => Navigator.pushNamed(context, navigateTo),
           child: Text(buttonText),
         ),
         Padding(

@@ -11,7 +11,7 @@ class _HomePageWebState extends State<HomePageWeb> {
   @override
   Widget build(BuildContext context) {
     var _edge_inset = MediaQuery.of(context).size.width * 0.05;
-    var _home_content = HomeContent(_edge_inset);
+    var _home_content = HomeContent(context, _edge_inset);
 
     return Container(
       margin: EdgeInsets.fromLTRB(_edge_inset, 0, _edge_inset, 0),

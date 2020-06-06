@@ -12,7 +12,7 @@ class _HomePageMobileState extends State<HomePageMobile> {
   @override
   Widget build(BuildContext context) {
     var _edge_inset = MediaQuery.of(context).size.width * 0.05;
-    var _home_content = HomeContent(_edge_inset);
+    var _home_content = HomeContent(context, _edge_inset);
 
     return Container(
       padding: EdgeInsets.all(_edge_inset),

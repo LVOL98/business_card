@@ -8,7 +8,7 @@ class Main extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: AppStyle.lighTheme,
-      title: 'TODO',
+      title: 'LVOL',
       initialRoute: '/',
       routes: routes,
       //home: FrontPageMaster(), // TODO: is this needed
