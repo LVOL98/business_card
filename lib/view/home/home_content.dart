@@ -1,4 +1,4 @@
-import 'package:temp/components/info_box.dart';
+import 'package:temp/components/text_picture_button.dart';
 
 class HomeContent {
   var _context;
@@ -6,10 +6,9 @@ class HomeContent {
 
   HomeContent(this._context, this._insetBottom);
 
-  var _infoBox = InfoBox();
 
   aboutInfo() {
-    return _infoBox.standardHomeInfo(
+    return topTextPictureButton(
         _context,
         'Some fancy text here! Some fancy text here! Some fancy text here!',
         'About me',
@@ -18,7 +17,7 @@ class HomeContent {
   }
 
   algorithmsInfo() { // TODO: routes
-    return _infoBox.standardHomeInfo(
+    return topTextPictureButton(
         _context,
         'Let me show you waht i can do with algoritms. Let me show you waht i can do with algoritms.',
         'Go To Algorithms',
@@ -27,7 +26,7 @@ class HomeContent {
   }
 
   webInfo() { // TODO: routes
-    return _infoBox.standardHomeInfo(
+    return topTextPictureButton(
         _context,
         'This will be a paragrpah about my knowledge of web development.',
         'Go To Web Development',

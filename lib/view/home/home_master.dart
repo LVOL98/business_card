@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:temp/components/topnav.dart';
+import 'package:temp/view/responsive/orientation_layout.dart';
+import 'package:temp/view/responsive/screen_type_layout.dart';
 
 import 'home_mobile.dart';
 import 'home_web.dart';
@@ -18,20 +20,11 @@ class _HomePageMasterState extends State<HomePageMaster> {
     return Scaffold(
       appBar: TopNav().getAppBar(),
       drawer: TopNav().getDrawer(),
-      body: OrientationBuilder(
-        builder: (context, orientation) {
-          if (MediaQuery.of(context).size.width > 600) {
-            isLargeScreen = true;
-          } else {
-            isLargeScreen = false;
-          }
-
-          if (isLargeScreen) {
-            return HomePageWeb();
-          } else {
-            return HomePageMobile();
-          }
-        },
+      body: ScreenTypeLayout(
+        mobile: OrientationLayout(
+          portrait: HomePageMobile(),
+          landscape: HomePageMobile(),
+        ),
       ),
     );
   }
