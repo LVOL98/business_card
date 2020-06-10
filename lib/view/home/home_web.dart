@@ -23,6 +23,16 @@ class _HomePageWebState extends State<HomePageWeb> {
                 margin: EdgeInsets.fromLTRB(_edge_inset, 0, _edge_inset, 0),
                 child: _home_content.aboutInfo()),
           ),
+          Expanded(
+            child: Container(
+                margin: EdgeInsets.fromLTRB(_edge_inset, 0, _edge_inset, 0),
+                child: _home_content.algorithmsInfo()),
+          ),
+          Expanded(
+            child: Container(
+                margin: EdgeInsets.fromLTRB(_edge_inset, 0, _edge_inset, 0),
+                child: _home_content.webInfo()),
+          ),
         ],
       ),
     );

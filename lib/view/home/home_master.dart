@@ -25,6 +25,10 @@ class _HomePageMasterState extends State<HomePageMaster> {
           portrait: HomePageMobile(),
           landscape: HomePageMobile(),
         ),
+        desktop: OrientationLayout(
+          portrait: HomePageWeb(),
+          landscape: HomePageWeb(),
+        ),
       ),
     );
   }

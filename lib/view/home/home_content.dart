@@ -19,7 +19,7 @@ class HomeContent {
   algorithmsInfo() { // TODO: routes
     return topTextPictureButton(
         _context,
-        'Let me show you waht i can do with algoritms. Let me show you waht i can do with algoritms.',
+        'COMING: This section will contain example of algoritms, with both vizualisation and use cases',
         'Go To Algorithms',
         _insetBottom,
         '');
@@ -28,7 +28,7 @@ class HomeContent {
   webInfo() { // TODO: routes
     return topTextPictureButton(
         _context,
-        'This will be a paragrpah about my knowledge of web development.',
+        'COMING: This section will contain various stuff that has connection to the web, which include api calls, html, css, js and some frameworks (specifically matrialize)',
         'Go To Web Development',
         _insetBottom,
         '');
