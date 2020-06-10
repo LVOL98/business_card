@@ -24,4 +24,5 @@ flutter:
 
   assets:
     - resources/images/avatar/
+    - resources/images/
     - resources/misc/

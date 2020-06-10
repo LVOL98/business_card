@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:temp/components/background_mobile.dart';
 
 import 'home_content.dart';
 
@@ -14,15 +15,18 @@ class _HomePageMobileState extends State<HomePageMobile> {
     var _edge_inset = MediaQuery.of(context).size.width * 0.05;
     var _home_content = HomeContent(context, _edge_inset);
 
-    return Container(
-      padding: EdgeInsets.all(_edge_inset),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          _home_content.aboutInfo(),
-          _home_content.algorithmsInfo(),
-          _home_content.webInfo(),
-        ],
+    return needName(
+      context,
+      Container(
+        padding: EdgeInsets.all(_edge_inset),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            _home_content.aboutInfo(),
+            _home_content.algorithmsInfo(),
+            //_home_content.webInfo(),
+          ],
+        ),
       ),
     );
   }
