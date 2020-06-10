@@ -7,14 +7,7 @@ import 'package:temp/view/responsive/screen_type_layout.dart';
 import 'home_mobile.dart';
 import 'home_web.dart';
 
-class HomePageMaster extends StatefulWidget {
-  @override
-  _HomePageMasterState createState() => _HomePageMasterState();
-}
-
-class _HomePageMasterState extends State<HomePageMaster> {
-  bool isLargeScreen;
-
+class HomePageMaster extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
