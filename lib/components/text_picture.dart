@@ -8,3 +8,30 @@ Widget pitureLeft(Image image, String text) {
     ]),
   );
 }
+
+Widget pictureTop(String picturePath, String text) {
+  return Container(
+    child: Column(children: [
+      FlutterLogo(
+        size: 100,
+      ),
+      Text(text),
+    ]),
+  );
+}
+
+Widget pictureBack(var context, String pictureURL, String text) {
+  return Stack(
+    children: [
+      Image.asset(
+        pictureURL,
+        fit: BoxFit.fill,
+      ),
+      Text(
+        text,
+        style: Theme.of(context).textTheme.bodyText1,
+        textAlign: TextAlign.center,
+      ),
+    ],
+  );
+}

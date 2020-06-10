@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:temp/components/text_picture.dart';
 import 'package:temp/view/about/about_content.dart';
 
 class AboutPageMobile extends StatefulWidget {
@@ -17,8 +18,12 @@ class _AboutPageMobileState extends State<AboutPageMobile> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          content['Initial Description'],
-          content['Education'],
+          Text(
+            content['Initial Description'],
+            style: Theme.of(context).textTheme.bodyText1,
+            textAlign: TextAlign.center,
+          ),
+          pictureBack(context, content['Education-Picture'], content['Education-Text']),
         ],
       ),
     );

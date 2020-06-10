@@ -39,8 +39,9 @@ class AppStyle {
         color: Colors.white,
         fontFamily: GoogleFonts.lato().fontFamily,
       ),
-      bodyText2: TextStyle(
+      bodyText1: TextStyle(
         color: Colors.white,
+        fontFamily: GoogleFonts.lato().fontFamily,
       ),
     ),
   );
