@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:temp/components/floatingbox.dart';
 import 'package:temp/components/text_picture.dart';
 import 'package:temp/view/about/about_content.dart';
 
@@ -23,7 +24,10 @@ class _AboutPageMobileState extends State<AboutPageMobile> {
             style: Theme.of(context).textTheme.bodyText1,
             textAlign: TextAlign.center,
           ),
-          pictureBack(context, content['Education-Picture'], content['Education-Text']),
+          pictureBack(
+              context, content['Education-Picture'], content['Education-Text']),
+          floatingBox(context, 'This is a test',
+              'This is what the test should contain'),
         ],
       ),
     );
