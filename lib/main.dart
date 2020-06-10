@@ -11,6 +11,7 @@ class Main extends StatelessWidget {
       title: 'LVOL',
       initialRoute: '/',
       routes: routes,
+      //home: FrontPageMaster(), // TODO: is this needed
     );
   }
 }
