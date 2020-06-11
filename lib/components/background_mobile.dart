@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 
+
 Widget needName(var context, Widget content) {
   return DecoratedBox(
     decoration: BoxDecoration(
-        image: DecorationImage(
-            image: AssetImage('resources/images/DSC_0015.jpg'),
-            fit: BoxFit.fill)),
+      image: DecorationImage(
+        alignment: Alignment.topCenter,
+        image: AssetImage('resources/images/test.jpg'),
+        //fit: BoxFit.fitHeight,
+      ),
+    ),
     child: CustomScrollView(
       slivers: <Widget>[
         SliverAppBar(
@@ -14,8 +18,12 @@ Widget needName(var context, Widget content) {
           flexibleSpace: FlexibleSpaceBar(
             collapseMode: CollapseMode.pin,
             background: Container(
-              color: Colors.transparent,
-              //decoration: BoxDecoration(image: DecorationImage(image: AssetImage('resources/images/DSC_0015.jpg'), fit: BoxFit.cover)),
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('resources/images/test.jpg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
           ),
         ),
@@ -24,7 +32,7 @@ Widget needName(var context, Widget content) {
             [
               Container(
                 decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.primary,
+                    color: Theme.of(context).scaffoldBackgroundColor,
                     borderRadius: BorderRadius.horizontal(
                       left: Radius.circular(20),
                       right: Radius.circular(20),
@@ -38,3 +46,5 @@ Widget needName(var context, Widget content) {
     ),
   );
 }
+
+//https://stackoverflow.com/questions/56204912/flutter-scrollable-stack-with-height-greater-than-screen-height

@@ -25,6 +25,7 @@ class _HomePageMobileState extends State<HomePageMobile> {
             _home_content.aboutInfo(),
             _home_content.algorithmsInfo(),
             _home_content.webInfo(),
+            _home_content.webInfo(),
           ],
         ),
       ),
