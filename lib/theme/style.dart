@@ -35,6 +35,11 @@ class AppStyle {
         fontSize: 40,
         fontFamily: GoogleFonts.dancingScript().fontFamily,
       ),
+      headline2: TextStyle(
+        color: Colors.white,
+        fontSize: 35,
+        fontFamily: GoogleFonts.lato().fontFamily,
+      ),
       subtitle1: TextStyle(
         color: Colors.white,
         fontFamily: GoogleFonts.lato().fontFamily,

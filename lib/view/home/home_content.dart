@@ -1,3 +1,6 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:temp/components/info_card.dart';
 import 'package:temp/components/text_picture_button.dart';
 
 class HomeContent {
@@ -8,12 +11,14 @@ class HomeContent {
 
 
   aboutInfo() {
-    return topTextPictureButton(
+    return infoCard(_context, '', 'A Headline', 'COMING: A section that summarize who I am', size: MediaQuery.of(_context).size.width * 0.9, color: Colors.orange);
+
+    /* return topTextPictureButton(
         _context,
         'Some fancy text here! Some fancy text here! Some fancy text here!',
         'About me',
         _insetBottom,
-        '/home/about');
+        '/home/about'); */
   }
 
   algorithmsInfo() { // TODO: routes
