@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-Widget infoCard(var context, String route, String headline, String body,
-    {var size, Color color}) {
+Widget infoCard(var context, String route, String pictureURL, String headline,
+    String body,
+    {String readMoreText, var size, Color textColor}) {
+  print(readMoreText);
   return Container(
     width: size,
     child: Card(
@@ -10,15 +12,13 @@ Widget infoCard(var context, String route, String headline, String body,
       child: InkWell(
         child: Stack(
           children: [
-            Image(
-              image: AssetImage('resources/misc/ITU.jpg'),
-            ),
+            Image.asset(pictureURL),
             Column(
               children: [
                 Text(
                   headline,
                   style: TextStyle(
-                    color: color,
+                    color: textColor,
                     fontFamily:
                         Theme.of(context).textTheme.headline2.fontFamily,
                     fontSize: Theme.of(context).textTheme.headline2.fontSize,
@@ -27,10 +27,19 @@ Widget infoCard(var context, String route, String headline, String body,
                 Text(
                   body,
                   style: TextStyle(
-                    color: color,
+                    color: textColor,
                     fontFamily:
                         Theme.of(context).textTheme.bodyText1.fontFamily,
                     fontSize: Theme.of(context).textTheme.bodyText1.fontSize,
+                  ),
+                ),
+                Container(
+                  alignment: Alignment.bottomRight,
+                  child: Text(
+                    readMoreText == null ? 'Read More >' : readMoreText,
+                    style: TextStyle(
+                      color: Colors.purple,
+                    ),
                   ),
                 ),
               ],

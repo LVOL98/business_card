@@ -9,9 +9,10 @@ class HomeContent {
 
   HomeContent(this._context, this._insetBottom);
 
-
   aboutInfo() {
-    return infoCard(_context, '', 'A Headline', 'COMING: A section that summarize who I am', size: MediaQuery.of(_context).size.width * 0.9, color: Colors.orange);
+    return infoCard(_context, '', 'resources/misc/ITU.jpg', 'A Headline',
+        'COMING: A section that summarize who I am',
+        size: MediaQuery.of(_context).size.width * 0.9, textColor: Colors.orange);
 
     /* return topTextPictureButton(
         _context,
@@ -21,16 +22,20 @@ class HomeContent {
         '/home/about'); */
   }
 
-  algorithmsInfo() { // TODO: routes
+  algorithmsInfo() {
+    return infoCard(_context, '', 'resources/misc/ITU.jpg', 'Algorithms', 'COMING: This section will contain example of algoritms, with both vizualisation and use cases', readMoreText: 'test');
+
+   /*  // TODO: routes
     return topTextPictureButton(
         _context,
-        'COMING: This section will contain example of algoritms, with both vizualisation and use cases',
+        '',
         'Go To Algorithms',
         _insetBottom,
-        '');
+        ''); */
   }
 
-  webInfo() { // TODO: routes
+  webInfo() {
+    // TODO: routes
     return topTextPictureButton(
         _context,
         'COMING: This section will contain various stuff that has connection to the web, which include api calls, html, css, js and some frameworks (specifically matrialize)',

@@ -16,15 +16,15 @@ Widget needName(var context, Widget content) {
           backgroundColor: Colors.transparent,
           expandedHeight: 100,
           flexibleSpace: FlexibleSpaceBar(
-            collapseMode: CollapseMode.pin,
-            background: Container(
+            collapseMode: CollapseMode.parallax,
+            /* background: Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('resources/images/test.jpg'),
                   fit: BoxFit.cover,
                 ),
               ),
-            ),
+            ), */
           ),
         ),
         SliverList(
