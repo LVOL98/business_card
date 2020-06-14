@@ -12,7 +12,8 @@ class HomeContent {
   aboutInfo() {
     return infoCard(_context, '', 'resources/misc/ITU.jpg', 'A Headline',
         'COMING: A section that summarize who I am',
-        size: MediaQuery.of(_context).size.width * 0.9, textColor: Colors.orange);
+        size: MediaQuery.of(_context).size.width * 0.9,
+        textColor: Colors.orange);
 
     /* return topTextPictureButton(
         _context,
@@ -23,9 +24,11 @@ class HomeContent {
   }
 
   algorithmsInfo() {
-    return infoCard(_context, '', 'resources/misc/ITU.jpg', 'Algorithms', 'COMING: This section will contain example of algoritms, with both vizualisation and use cases', readMoreText: 'test');
+    return infoCard(_context, '', 'resources/misc/Algo.jpg', 'Algorithms',
+        'COMING: This section will contain example of algoritms, with both vizualisation and use cases',
+        readMoreText: 'Learn more here >');
 
-   /*  // TODO: routes
+    /*  // TODO: routes
     return topTextPictureButton(
         _context,
         '',
@@ -35,12 +38,20 @@ class HomeContent {
   }
 
   webInfo() {
-    // TODO: routes
+    return infoCard(
+      _context,
+      '',
+      'resources/misc/web.jpg',
+      'Web Development (Front end)',
+      'COMING: This section will contain various stuff that has connection to the web, which include api calls, html, css, js and some frameworks (specifically matrialize)',
+    );
+
+    /* // TODO: routes
     return topTextPictureButton(
         _context,
         'COMING: This section will contain various stuff that has connection to the web, which include api calls, html, css, js and some frameworks (specifically matrialize)',
         'Go To Web Development',
         _insetBottom,
-        '');
+        ''); */
   }
 }

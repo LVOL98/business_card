@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 Widget infoCard(var context, String route, String pictureURL, String headline,
     String body,
     {String readMoreText, var size, Color textColor}) {
-  print(readMoreText);
   return Container(
     width: size,
     child: Card(
@@ -12,7 +11,7 @@ Widget infoCard(var context, String route, String pictureURL, String headline,
       child: InkWell(
         child: Stack(
           children: [
-            Image.asset(pictureURL),
+            Image.asset(pictureURL, fit: BoxFit.fill,),
             Column(
               children: [
                 Text(
