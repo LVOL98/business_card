@@ -4,9 +4,9 @@ import 'package:temp/components/dialogs/not_implemented.dart';
 
 Widget infoCard(
     var context, String route, String pictureURL, String headline, String body,
-    {String readMoreText, var widthSize, var heightSize, Color textColor}) {
+    {String readMoreText, var widthSize, var heightSize, Color textColor, EdgeInsetsGeometry margin}) {
   return Container(
-    margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
+    margin: margin == null ? EdgeInsets.fromLTRB(10, 10, 10, 10) : margin,
     width: widthSize,
     height: heightSize,
     decoration: BoxDecoration(

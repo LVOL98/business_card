@@ -19,14 +19,13 @@ class _HomePageMobileState extends State<HomePageMobile> {
     return needName(
       context,
       Container(
-        padding: EdgeInsets.all(_edgeInset),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            _homeContent.aboutInfo(height: _cardHeight),
-            _homeContent.algorithmsInfo(height: _cardHeight),
-            _homeContent.webInfo(height: _cardHeight),
-            _homeContent.webInfo(height: _cardHeight),
+            _homeContent.aboutInfo(),
+            _homeContent.algorithmsInfo(),
+            _homeContent.webInfo(),
+            _homeContent.webInfo(),
           ],
         ),
       ),
