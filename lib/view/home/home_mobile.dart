@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:temp/components/background_mobile.dart';
+import 'package:temp/components/background_structure.dart';
 
 import 'home_content.dart';
 
@@ -16,8 +16,9 @@ class _HomePageMobileState extends State<HomePageMobile> {
     var _homeContent = HomeContent(context, _edgeInset);
     var _cardHeight = MediaQuery.of(context).size.height * 0.25;
 
-    return needName(
+    return topPictureBackgroundStructure(
       context,
+      'resources/images/test.jpg',
       Container(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
