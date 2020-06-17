@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:temp/components/topnav.dart';
+import 'package:temp/components/nav/topnav.dart';
 import 'package:temp/view/responsive/orientation_layout.dart';
 import 'package:temp/view/responsive/screen_type_layout.dart';
 

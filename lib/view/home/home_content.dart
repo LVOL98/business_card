@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:temp/components/info_card.dart';
-import 'package:temp/components/text_picture_button.dart';
+import 'package:temp/components/cards/info_card.dart';
 
 class HomeContent {
   var _context;

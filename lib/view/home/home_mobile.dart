@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:temp/components/background_structure.dart';
+import 'package:temp/components/structure/background_structure.dart';
 
 import 'home_content.dart';
 
