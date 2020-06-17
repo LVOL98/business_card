@@ -2,6 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:temp/components/dialogs/not_implemented.dart';
 
+/// Creates a card with a defined picture as backgrind, Which then contains a title togheter with 
+/// text and a text prompt to read more
+/// 
+/// The [route] variable is meant as the route defined in the Material App route structure
 Widget infoCard(
     var context, String route, String pictureURL, String headline, String body,
     {String readMoreText, var widthSize, var heightSize, Color textColor, EdgeInsetsGeometry margin}) {
