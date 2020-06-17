@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:temp/components/dialogs/not_implemented.dart';
 
 Widget infoCard(
     var context, String route, String pictureURL, String headline, String body,
@@ -23,18 +24,20 @@ Widget infoCard(
             Text(
               headline,
               style: TextStyle(
-                color: textColor == null ? Theme.of(context).textTheme.headline2.color : textColor,
-                fontFamily:
-                    Theme.of(context).textTheme.headline2.fontFamily,
+                color: textColor == null
+                    ? Theme.of(context).textTheme.headline2.color
+                    : textColor,
+                fontFamily: Theme.of(context).textTheme.headline2.fontFamily,
                 fontSize: Theme.of(context).textTheme.headline2.fontSize,
               ),
             ),
             Text(
               body,
               style: TextStyle(
-                color: textColor == null ? Theme.of(context).textTheme.bodyText1.color : textColor,
-                fontFamily:
-                    Theme.of(context).textTheme.bodyText1.fontFamily,
+                color: textColor == null
+                    ? Theme.of(context).textTheme.bodyText1.color
+                    : textColor,
+                fontFamily: Theme.of(context).textTheme.bodyText1.fontFamily,
                 fontSize: Theme.of(context).textTheme.bodyText1.fontSize,
               ),
             ),
@@ -43,16 +46,19 @@ Widget infoCard(
               child: Text(
                 readMoreText == null ? 'Read More >' : readMoreText,
                 style: TextStyle(
-                  color: textColor == null ? Theme.of(context).textTheme.bodyText1.color : textColor,
-                  fontFamily:
-                      Theme.of(context).textTheme.bodyText1.fontFamily,
+                  color: textColor == null
+                      ? Theme.of(context).textTheme.bodyText1.color
+                      : textColor,
+                  fontFamily: Theme.of(context).textTheme.bodyText1.fontFamily,
                   fontSize: Theme.of(context).textTheme.bodyText1.fontSize,
                 ),
               ),
             ),
           ],
-        ),
-        onTap: () => Navigator.pushNamed(context, route),
+        ), 
+        onTap: () => route == '' || route == null
+            ? notImplementedYetAlert(context)
+            : Navigator.pushNamed(context, route),
       ),
     ),
   );
