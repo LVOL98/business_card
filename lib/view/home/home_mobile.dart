@@ -12,20 +12,21 @@ class HomePageMobile extends StatefulWidget {
 class _HomePageMobileState extends State<HomePageMobile> {
   @override
   Widget build(BuildContext context) {
-    var _edge_inset = MediaQuery.of(context).size.width * 0.05;
-    var _home_content = HomeContent(context, _edge_inset);
+    var _edgeInset = MediaQuery.of(context).size.width * 0.05;
+    var _homeContent = HomeContent(context, _edgeInset);
+    var _cardHeight = MediaQuery.of(context).size.height * 0.25;
 
     return needName(
       context,
       Container(
-        padding: EdgeInsets.all(_edge_inset),
+        padding: EdgeInsets.all(_edgeInset),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            _home_content.aboutInfo(),
-            _home_content.algorithmsInfo(),
-            _home_content.webInfo(),
-            _home_content.webInfo(),
+            _homeContent.aboutInfo(height: _cardHeight),
+            _homeContent.algorithmsInfo(height: _cardHeight),
+            _homeContent.webInfo(height: _cardHeight),
+            _homeContent.webInfo(height: _cardHeight),
           ],
         ),
       ),

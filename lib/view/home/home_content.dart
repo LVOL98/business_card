@@ -9,54 +9,40 @@ class HomeContent {
 
   HomeContent(this._context, this._insetBottom);
 
-  aboutInfo() {
+  aboutInfo({var width, var height}) {
     return infoCard(
       _context,
       '',
       'resources/misc/ITU2.jpg',
       'A Headline',
       'COMING: A section that summarize who I am',
-      widthSize: MediaQuery.of(_context).size.width * 0.9,
-      heightSize: MediaQuery.of(_context).size.width * 0.25,
+      widthSize: width,
+      heightSize: height,
     );
-
-    /* return topTextPictureButton(
-        _context,
-        'Some fancy text here! Some fancy text here! Some fancy text here!',
-        'About me',
-        _insetBottom,
-        '/home/about'); */
   }
 
-  algorithmsInfo() {
-    return infoCard(_context, '', 'resources/misc/Algo.jpg', 'Algorithms',
-        'COMING: This section will contain example of algoritms, with both vizualisation and use cases',
-        readMoreText: 'Learn more here >');
-
-    /*  // TODO: routes
-    return topTextPictureButton(
-        _context,
-        '',
-        'Go To Algorithms',
-        _insetBottom,
-        ''); */
+  algorithmsInfo({var width, var height}) {
+    return infoCard(
+      _context,
+      '',
+      'resources/misc/Algo.jpg',
+      'Algorithms',
+      'COMING: This section will contain example of algoritms, with both vizualisation and use cases',
+      readMoreText: 'Learn more here >',
+      widthSize: width,
+      heightSize: height,
+    );
   }
 
-  webInfo() {
+  webInfo({var width, var height}) {
     return infoCard(
       _context,
       '',
       'resources/misc/web.jpg',
       'Web Development (Front end)',
       'COMING: This section will contain various stuff that has connection to the web, which include api calls, html, css, js and some frameworks (specifically matrialize)',
+      widthSize: width,
+      heightSize: height,
     );
-
-    /* // TODO: routes
-    return topTextPictureButton(
-        _context,
-        'COMING: This section will contain various stuff that has connection to the web, which include api calls, html, css, js and some frameworks (specifically matrialize)',
-        'Go To Web Development',
-        _insetBottom,
-        ''); */
   }
 }

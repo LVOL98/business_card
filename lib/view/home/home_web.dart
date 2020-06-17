@@ -10,29 +10,26 @@ class HomePageWeb extends StatefulWidget {
 class _HomePageWebState extends State<HomePageWeb> {
   @override
   Widget build(BuildContext context) {
-    var _edge_inset = MediaQuery.of(context).size.width * 0.05;
-    var _home_content = HomeContent(context, _edge_inset);
+    var _edgeInset = MediaQuery.of(context).size.width * 0.05;
+    var _homeContent = HomeContent(context, _edgeInset);
+    var _cardWidth = MediaQuery.of(context).size.width * 0.45;
 
     return Container(
-      margin: EdgeInsets.fromLTRB(_edge_inset, 0, _edge_inset, 0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+      padding: EdgeInsets.all(_edgeInset),
+      child: Column(
         children: [
-          Expanded(
-            child: Container(
-                margin: EdgeInsets.fromLTRB(_edge_inset, 0, _edge_inset, 0),
-                child: _home_content.aboutInfo()),
+          Row(
+            children: [
+              _homeContent.aboutInfo(width: _cardWidth),
+              _homeContent.algorithmsInfo(width: _cardWidth),
+            ],
           ),
-          Expanded(
-            child: Container(
-                margin: EdgeInsets.fromLTRB(_edge_inset, 0, _edge_inset, 0),
-                child: _home_content.algorithmsInfo()),
-          ),
-          Expanded(
-            child: Container(
-                margin: EdgeInsets.fromLTRB(_edge_inset, 0, _edge_inset, 0),
-                child: _home_content.webInfo()),
-          ),
+          Row(
+            children: [
+              _homeContent.webInfo(width: _cardWidth),
+              _homeContent.webInfo(width: _cardWidth),
+            ],
+          )
         ],
       ),
     );

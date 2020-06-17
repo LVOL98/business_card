@@ -30,6 +30,7 @@ Widget infoCard(
                 fontFamily: Theme.of(context).textTheme.headline2.fontFamily,
                 fontSize: Theme.of(context).textTheme.headline2.fontSize,
               ),
+              textAlign: TextAlign.left,
             ),
             Text(
               body,
@@ -55,7 +56,7 @@ Widget infoCard(
               ),
             ),
           ],
-        ), 
+        ),
         onTap: () => route == '' || route == null
             ? notImplementedYetAlert(context)
             : Navigator.pushNamed(context, route),
