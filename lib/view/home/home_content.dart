@@ -10,11 +10,15 @@ class HomeContent {
   HomeContent(this._context, this._insetBottom);
 
   aboutInfo() {
-    return infoCard(_context, '', 'resources/misc/ITU2.jpg', 'A Headline',
-        'COMING: A section that summarize who I am',
-        widthSize: MediaQuery.of(_context).size.width * 0.9,
-        heightSize: MediaQuery.of(_context).size.width * 0.25,
-        textColor: Colors.orange);
+    return infoCard(
+      _context,
+      '',
+      'resources/misc/ITU2.jpg',
+      'A Headline',
+      'COMING: A section that summarize who I am',
+      widthSize: MediaQuery.of(_context).size.width * 0.9,
+      heightSize: MediaQuery.of(_context).size.width * 0.25,
+    );
 
     /* return topTextPictureButton(
         _context,

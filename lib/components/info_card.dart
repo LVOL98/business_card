@@ -23,7 +23,7 @@ Widget infoCard(
             Text(
               headline,
               style: TextStyle(
-                color: textColor,
+                color: textColor == null ? Theme.of(context).textTheme.headline2.color : textColor,
                 fontFamily:
                     Theme.of(context).textTheme.headline2.fontFamily,
                 fontSize: Theme.of(context).textTheme.headline2.fontSize,
@@ -32,7 +32,7 @@ Widget infoCard(
             Text(
               body,
               style: TextStyle(
-                color: textColor,
+                color: textColor == null ? Theme.of(context).textTheme.bodyText1.color : textColor,
                 fontFamily:
                     Theme.of(context).textTheme.bodyText1.fontFamily,
                 fontSize: Theme.of(context).textTheme.bodyText1.fontSize,
@@ -43,7 +43,7 @@ Widget infoCard(
               child: Text(
                 readMoreText == null ? 'Read More >' : readMoreText,
                 style: TextStyle(
-                  color: textColor,
+                  color: textColor == null ? Theme.of(context).textTheme.bodyText1.color : textColor,
                   fontFamily:
                       Theme.of(context).textTheme.bodyText1.fontFamily,
                   fontSize: Theme.of(context).textTheme.bodyText1.fontSize,
