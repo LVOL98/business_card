@@ -22,19 +22,7 @@ class _HomePageWebState extends State<HomePageWeb> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                _homeContent.aboutInfo(width: _cardWidth),
-                _homeContent.algorithmsInfo(width: _cardWidth),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                _homeContent.webInfo(width: _cardWidth),
-              ],
-            )
+            _homeContent.aboutInfo(false),
           ],
         ),
       ),

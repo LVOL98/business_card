@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:temp/components/cards/info_card.dart';
+import 'package:temp/components/cards/info_section.dart';
 
 class HomeContent {
   var _context;
@@ -8,26 +9,29 @@ class HomeContent {
 
   HomeContent(this._context, this._insetBottom);
 
-  aboutInfo({var width, var height}) {
-    return infoCard(
-      _context,
-      '',
-      'resources/misc/ITU2.jpg',
-      'A Headline',
-      'COMING: A section that summarize who I am',
-      widthSize: width,
-      heightSize: height,
-    );
+  aboutInfo(bool mobile, {var width, var height}) {
+    if (mobile) {
+      return infoCard(
+        _context,
+        'A Headline',
+        'COMING: A section that summarize who I am',
+        'resources/misc/ITU2.jpg',
+        '',
+        widthSize: width,
+        heightSize: height,
+      );
+    } else {
+      return infoSection('resources/misc/ITU2.jpg');
+    }
   }
 
   algorithmsInfo({var width, var height}) {
     return infoCard(
       _context,
-      '',
-      'resources/misc/Algo.jpg',
       'Algorithms',
       'COMING: This section will contain example of algoritms, with both vizualisation and use cases',
-      readMoreText: 'Learn more here >',
+      'resources/misc/Algo.jpg',
+      '',
       widthSize: width,
       heightSize: height,
     );
@@ -36,10 +40,10 @@ class HomeContent {
   webInfo({var width, var height}) {
     return infoCard(
       _context,
-      '',
-      'resources/misc/web.jpg',
       'Web Development (Front end)',
       'COMING: This section will contain various stuff that has connection to the web, which include api calls, html, css, js and some frameworks (specifically matrialize)',
+      'resources/misc/web.jpg',
+      '',
       widthSize: width,
       heightSize: height,
     );

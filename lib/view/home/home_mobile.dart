@@ -23,7 +23,7 @@ class _HomePageMobileState extends State<HomePageMobile> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            _homeContent.aboutInfo(),
+            _homeContent.aboutInfo(true),
             _homeContent.algorithmsInfo(),
             _homeContent.webInfo(),
             _homeContent.webInfo(),
