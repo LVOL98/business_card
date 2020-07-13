@@ -15,11 +15,12 @@ Widget infoCard(
   var widthSize,
   var heightSize,
   var margin,
-  String secondaryURL,
-  String secondaryTitle,
+  String secondaryRoute, // TODO: need to be implemented
+  String secondaryTitle, // TODO: need to be implemented
 }) {
   return Card(
-    margin: margin == null ? EdgeInsets.fromLTRB(10, 10, 10, 10) : margin,
+    shadowColor: Colors.black,
+    margin: margin == null ? EdgeInsets.all(15) : margin,
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -43,13 +44,18 @@ Widget infoCard(
         ),
         ButtonBar(
           children: [
+            if (secondaryTitle != null && secondaryRoute != null) FlatButton(
+              child: Text(secondaryTitle),
+              onPressed: () => secondaryRoute == '' || route == null
+                  ? notImplementedYetAlert(context)
+                  : Navigator.pushNamed(context, route),
+            ),
             FlatButton(
               child: Text('Read More >'),
               onPressed: () => route == '' || route == null
-                ? notImplementedYetAlert(context)
-                : Navigator.pushNamed(context, route),
+                  ? notImplementedYetAlert(context)
+                  : Navigator.pushNamed(context, route),
             ),
-            
           ],
         )
       ],
