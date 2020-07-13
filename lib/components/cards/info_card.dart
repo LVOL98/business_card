@@ -20,6 +20,7 @@ Widget infoCard(
       ),
     ),
     child: Card(
+      margin: EdgeInsets.fromLTRB(0, 0, 0, 0), // needed or else the on hover shadow effect will have an inset
       color: Colors.transparent,
       shadowColor: Colors.black,
       child: InkWell(
