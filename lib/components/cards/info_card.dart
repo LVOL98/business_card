@@ -15,14 +15,13 @@ Widget infoCard(
   var widthSize,
   var heightSize,
   var margin,
-  String secondaryRoute, // TODO: need to be implemented
-  String secondaryTitle, // TODO: need to be implemented
+  String secondaryRoute,
+  String secondaryTitle,
 }) {
   return Card(
     shadowColor: Colors.black,
     margin: margin == null ? EdgeInsets.all(15) : margin,
     child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Image.asset(
           pictureURL,
@@ -34,22 +33,31 @@ Widget infoCard(
               : heightSize,
           fit: BoxFit.cover,
         ),
-        Text(
-          title,
-          style: Theme.of(context).textTheme.headline2,
-        ),
-        Text(
-          body,
-          style: Theme.of(context).textTheme.bodyText1,
+        Padding(
+          padding: EdgeInsets.all(5),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: Theme.of(context).textTheme.headline2,
+              ),
+              Text(
+                body,
+                style: Theme.of(context).textTheme.bodyText1,
+              ),
+            ],
+          ),
         ),
         ButtonBar(
           children: [
-            if (secondaryTitle != null && secondaryRoute != null) FlatButton(
-              child: Text(secondaryTitle),
-              onPressed: () => secondaryRoute == '' || route == null
-                  ? notImplementedYetAlert(context)
-                  : Navigator.pushNamed(context, route),
-            ),
+            if (secondaryTitle != null && secondaryRoute != null)
+              FlatButton(
+                child: Text(secondaryTitle),
+                onPressed: () => secondaryRoute == '' || route == null
+                    ? notImplementedYetAlert(context)
+                    : Navigator.pushNamed(context, route),
+              ),
             FlatButton(
               child: Text('Read More >'),
               onPressed: () => route == '' || route == null
