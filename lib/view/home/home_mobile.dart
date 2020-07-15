@@ -21,12 +21,10 @@ class _HomePageMobileState extends State<HomePageMobile> {
       'resources/images/test.jpg',
       Container(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             _homeContent.aboutInfo(true),
-            _homeContent.algorithmsInfo(),
-            _homeContent.webInfo(),
-            _homeContent.webInfo(),
+            _homeContent.algorithmsInfo(true),
+            _homeContent.webInfo(true),
           ],
         ),
       ),

@@ -8,9 +8,9 @@ import 'package:temp/components/dialogs/not_implemented.dart';
 /// The [route] variable is meant as the route defined in the Material App route structure
 Widget infoCard(
   var context,
+  String pictureURL,
   String title,
   String body,
-  String pictureURL,
   String route, {
   var widthSize,
   var heightSize,
@@ -19,9 +19,11 @@ Widget infoCard(
   String secondaryTitle,
 }) {
   return Card(
+    color: Theme.of(context).colorScheme.secondary,
     shadowColor: Colors.black,
     margin: margin == null ? EdgeInsets.all(15) : margin,
     child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Image.asset(
           pictureURL,

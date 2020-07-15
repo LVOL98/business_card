@@ -20,9 +20,10 @@ class _HomePageWebState extends State<HomePageWeb> {
       'resources/images/test.jpg',
       Container(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             _homeContent.aboutInfo(false),
+            //_homeContent.algorithmsInfo(false),
+            _homeContent.webInfo(false),
           ],
         ),
       ),
