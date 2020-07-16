@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:temp/components/cards/info_card.dart';
-import 'package:temp/components/cards/normal_listtile.dart';
-import 'package:temp/components/cards/reverse_listtile.dart';
+import 'package:temp/components/cards/normal_icon_listtile.dart';
+import 'package:temp/components/cards/standard_card.dart';
 
 class HomeContent {
   var _context;
@@ -10,9 +11,12 @@ class HomeContent {
 
   aboutInfo(bool mobile, {var width, var height}) {
     String pictureURL = 'resources/misc/ITU2.jpg';
+    IconData iconData = Icons.perm_contact_calendar;
     String title = 'A Headline';
     String body = 'COMING: A section that summarize who I am';
+    String route = '';
     if (mobile) {
+      return normalIconListTile(_context, iconData, title, body, route);
       return infoCard(
         _context,
         pictureURL,
@@ -23,7 +27,7 @@ class HomeContent {
         heightSize: height,
       );
     } else {
-      return normalListTile(_context, pictureURL, title, body);
+      //return normalListTile(_context, pictureURL, title, body);
     }
   }
 
@@ -43,7 +47,7 @@ class HomeContent {
         heightSize: height,
       );
     } else {
-      normalListTile(_context, pictureURL, title, body);
+      //normalListTile(_context, pictureURL, title, body);
     }
   }
 
@@ -63,7 +67,7 @@ class HomeContent {
         heightSize: height,
       );
     } else {
-      return normalListTile(_context, pictureURL, title, body);
+      //return normalListTile(_context, pictureURL, title, body);
     }
   }
 }

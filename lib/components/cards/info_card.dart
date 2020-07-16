@@ -31,7 +31,7 @@ Widget infoCard(
               ? MediaQuery.of(context).size.width * 1
               : widthSize,
           height: heightSize == null
-              ? MediaQuery.of(context).size.height * 0.25
+              ? MediaQuery.of(context).size.height * 0.15
               : heightSize,
           fit: BoxFit.cover,
         ),
