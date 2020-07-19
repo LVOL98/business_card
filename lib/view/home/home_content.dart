@@ -7,23 +7,24 @@ import 'package:temp/components/cards/standard_card.dart';
 class HomeContent {
   var _context;
   var _insetBottom;
+  double iconSizeMobile = 35.0;
 
   HomeContent(this._context, this._insetBottom);
 
   linkdInButton() {
-    return iconButtonText(_context, Icons.ac_unit, 'LinkIn');
+    return iconButtonText(_context, Icons.ac_unit, 'LinkIn', 'https://www.linkedin.com/in/lukas-vinther-offenberg-7818a3125/', iconSize: iconSizeMobile);
   }
 
   gitHubButton() {
-    return iconButtonText(_context, Icons.ac_unit, 'GitHub');
+    return iconButtonText(_context, Icons.ac_unit, 'GitHub', '', iconSize: iconSizeMobile);
   }
 
   phoneNumberButton() {
-    return iconButtonText(_context, Icons.call, 'Phone Number');
+    return iconButtonText(_context, Icons.call, 'Phone Number', '', iconSize: iconSizeMobile);
   }
 
   eMailButton() {
-    return iconButtonText(_context, Icons.email, 'E-Mail');
+    return iconButtonText(_context, Icons.email, 'E-Mail', '', iconSize: iconSizeMobile);
   }
 
   aboutInfo(bool mobile, {var width, var height}) {

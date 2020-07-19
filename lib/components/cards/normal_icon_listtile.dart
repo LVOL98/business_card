@@ -9,24 +9,28 @@ Widget normalIconListTile(
     margin: EdgeInsets.all(20),
     color: Theme.of(context).colorScheme.secondary,
     child: ListTile(
-        leading: Icon(
-          iconData,
-          size: MediaQuery.of(context).size.width * 0.1,
-          color: Colors.white,
+      leading: Icon(
+        iconData,
+        size: MediaQuery.of(context).size.width * 0.1,
+        color: Colors.white,
+      ),
+      title: Text(
+        title,
+        style: Theme.of(context).textTheme.headline2,
+      ),
+      subtitle: Text(
+        body,
+        style: Theme.of(context).textTheme.bodyText1,
+      ),
+      trailing: FlatButton(
+        child: Text(
+          'Read More >',
+          style: TextStyle(color: Theme.of(context).colorScheme.primary),
         ),
-        title: Text(
-          title,
-          style: Theme.of(context).textTheme.headline2,
-        ),
-        subtitle: Text(
-          body,
-          style: Theme.of(context).textTheme.bodyText1,
-        ),
-        trailing: FlatButton(
-          child: Text('Read More >', style: TextStyle(color: Theme.of(context).colorScheme.primary),),
-          onPressed: () => route == '' || route == null
-              ? notImplementedYetAlert(context)
-              : Navigator.pushNamed(context, route),
-        )),
+        onPressed: () => route == '' || route == null
+            ? notImplementedYetAlert(context)
+            : Navigator.pushNamed(context, route),
+      ),
+    ),
   );
 }
