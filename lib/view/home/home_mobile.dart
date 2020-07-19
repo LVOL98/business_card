@@ -14,7 +14,7 @@ class _HomePageMobileState extends State<HomePageMobile> {
   @override
   Widget build(BuildContext context) {
     var _edgeInset = MediaQuery.of(context).size.width * 0.05;
-    var _homeContent = HomeContent(context, _edgeInset);
+    var _homeContent = HomeContent(context);
     var _cardHeight = MediaQuery.of(context).size.height * 0.25;
 
     return topPictureBackgroundStructure(
@@ -35,6 +35,7 @@ class _HomePageMobileState extends State<HomePageMobile> {
                 ],
               ),
             ),
+            _homeContent.aboutInfo(true),
             _homeContent.algorithmsInfo(true),
             _homeContent.webInfo(true),
           ],

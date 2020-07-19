@@ -12,7 +12,7 @@ class _HomePageWebState extends State<HomePageWeb> {
   @override
   Widget build(BuildContext context) {
     var _edgeInset = MediaQuery.of(context).size.width * 0.05;
-    var _homeContent = HomeContent(context, _edgeInset);
+    var _homeContent = HomeContent(context);
     var _cardWidth = MediaQuery.of(context).size.width * 0.45;
 
     return topPictureBackgroundStructure(
