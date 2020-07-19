@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:temp/components/buttons/icon_button_text.dart';
 import 'package:temp/components/cards/info_card.dart';
 import 'package:temp/components/cards/normal_icon_listtile.dart';
 import 'package:temp/components/cards/standard_card.dart';
@@ -9,6 +10,22 @@ class HomeContent {
 
   HomeContent(this._context, this._insetBottom);
 
+  linkdInButton() {
+    return iconButtonText(_context, Icons.ac_unit, 'LinkIn');
+  }
+
+  gitHubButton() {
+    return iconButtonText(_context, Icons.ac_unit, 'GitHub');
+  }
+
+  phoneNumberButton() {
+    return iconButtonText(_context, Icons.call, 'Phone Number');
+  }
+
+  eMailButton() {
+    return iconButtonText(_context, Icons.email, 'E-Mail');
+  }
+
   aboutInfo(bool mobile, {var width, var height}) {
     String pictureURL = 'resources/misc/ITU2.jpg';
     IconData iconData = Icons.perm_contact_calendar;
@@ -17,7 +34,7 @@ class HomeContent {
     String route = '';
     if (mobile) {
       return normalIconListTile(_context, iconData, title, body, route);
-      return infoCard(
+      /* return infoCard(
         _context,
         pictureURL,
         title,
@@ -25,7 +42,7 @@ class HomeContent {
         '',
         widthSize: width,
         heightSize: height,
-      );
+      ); */
     } else {
       //return normalListTile(_context, pictureURL, title, body);
     }

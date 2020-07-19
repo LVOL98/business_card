@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:temp/components/buttons/icon_button_text.dart';
 import 'package:temp/components/structure/background_structure.dart';
 
 import 'home_content.dart';
@@ -22,6 +23,18 @@ class _HomePageMobileState extends State<HomePageMobile> {
       Container(
         child: Column(
           children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(40, 0, 40, 0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  _homeContent.linkdInButton(),
+                  _homeContent.gitHubButton(),
+                  _homeContent.phoneNumberButton(),
+                  _homeContent.eMailButton(),
+                ],
+              ),
+            ),
             _homeContent.aboutInfo(true),
             _homeContent.algorithmsInfo(true),
             _homeContent.webInfo(true),

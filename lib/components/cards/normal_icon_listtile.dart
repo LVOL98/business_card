@@ -9,7 +9,6 @@ Widget normalIconListTile(
     margin: EdgeInsets.all(20),
     color: Theme.of(context).colorScheme.secondary,
     child: ListTile(
-      mouseCursor: IgnorePointer,
         leading: Icon(
           iconData,
           size: MediaQuery.of(context).size.width * 0.1,
