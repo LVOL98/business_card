@@ -53,8 +53,9 @@ class HomeContent {
   aboutInfo(bool mobile) {
     String pictureURL = 'resources/misc/ITU2.jpg';
     IconData iconData = Icons.perm_contact_calendar;
-    String title = 'A Headline';
-    String body = 'COMING: A section that summarize who I am';
+    String title = 'About Me';
+    String body =
+        'COMING: If you want to learn more about me and who I am, you can look into this section, where I tell about what I like to do besides programming';
     String route = '';
     if (mobile) {
       return Container(
