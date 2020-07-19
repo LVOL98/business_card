@@ -4,10 +4,13 @@ import 'package:temp/components/dialogs/not_implemented.dart';
 import 'package:temp/exceptions/route_exception.dart';
 import 'package:temp/theme/style.dart';
 
-/// Creates a card with the flutter ListTile layout
+/// Creates a card with the flutter ListTile layout, where the [iconData]
+/// will be shown to the left of the text, and the next arrow will be 
+/// to the right of the text
+/// 
 /// Only [route] can be set as null, without breaking the program. If it is 
-/// the case that the [route] is null or '', the program will thow a 
-/// RouteException
+/// the case that the [route] is null or '', the program will throw a 
+/// RouteException (TODO)
 Widget normalIconListTile(
     var context, IconData iconData, String title, String body, String route,
     {var widthSize, var heightSize, EdgeInsets margin}) {

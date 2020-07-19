@@ -2,6 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:temp/components/dialogs/not_implemented.dart';
 
+/// Creates a card with the flutter ListTile layout, where the [iconData]
+/// will be shown to the right of the text, and the next arrow will be 
+/// to the left of the text
+/// 
+/// Only [route] can be set as null, without breaking the program. If it is 
+/// the case that the [route] is null or '', the program will throw a 
+/// RouteException (TODO)
 Widget reverseIconListTile(
     var context, IconData iconData, String title, String body, String route,
     {var widthSize, var heightSize, EdgeInsets margin}) {
