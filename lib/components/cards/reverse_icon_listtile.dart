@@ -33,7 +33,7 @@ Widget reverseIconListTile(
           ),
           trailing: Icon(
             iconData,
-            size: MediaQuery.of(context).size.width * 0.15,
+            size: MediaQuery.of(context).size.width * 0.1,
             color: Colors.white,
           ),
           onTap: () => route == '' || route == null

@@ -21,9 +21,10 @@ class _HomePageWebState extends State<HomePageWeb> {
       Container(
         child: Column(
           children: [
-            _homeContent.aboutInfo(false),
-            //_homeContent.algorithmsInfo(false),
-            _homeContent.webInfo(false),
+            _homeContent.topButtonRow(),
+            _homeContent.aboutInfo(true),
+            _homeContent.algorithmsInfo(true),
+            _homeContent.webInfo(true),
           ],
         ),
       ),

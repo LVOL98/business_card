@@ -23,18 +23,7 @@ class _HomePageMobileState extends State<HomePageMobile> {
       Container(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(40, 0, 40, 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  _homeContent.linkdInButton(),
-                  _homeContent.gitHubButton(),
-                  _homeContent.phoneNumberButton(),
-                  _homeContent.eMailButton(),
-                ],
-              ),
-            ),
+            _homeContent.topButtonRow(),
             _homeContent.aboutInfo(true),
             _homeContent.algorithmsInfo(true),
             _homeContent.webInfo(true),

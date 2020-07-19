@@ -5,6 +5,7 @@ import 'package:temp/components/cards/normal_icon_listtile.dart';
 import 'package:temp/components/cards/reverse_icon_listtile.dart';
 import 'package:temp/components/cards/standard_card.dart';
 import 'package:temp/components/dialogs/not_implemented.dart';
+import 'package:temp/exceptions/route_exception.dart';
 
 class HomeContent {
   var _context;
@@ -32,6 +33,21 @@ class HomeContent {
   eMailButton() {
     return iconButtonText(_context, Icons.email, 'E-Mail', '',
         iconSize: iconSizeMobile);
+  }
+
+  topButtonRow() {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(40, 0, 40, 0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          linkdInButton(),
+          gitHubButton(),
+          phoneNumberButton(),
+          eMailButton(),
+        ],
+      ),
+    );
   }
 
   aboutInfo(bool mobile) {
@@ -83,8 +99,12 @@ class HomeContent {
     String body =
         'COMING: This section will contain example of algoritms, with both vizualisation and use cases';
     if (mobile) {
-      return normalIconListTile(_context, Icons.settings, title, body, '',
-          margin: _inset);
+      try {
+        return normalIconListTile(_context, Icons.settings, title, body, '',
+            margin: _inset);
+      } on RouteException {
+        print('found');
+      }
     } else {
       //normalListTile(_context, pictureURL, title, body);
     }

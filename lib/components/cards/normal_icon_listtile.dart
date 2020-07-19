@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:temp/components/dialogs/not_implemented.dart';
+import 'package:temp/exceptions/route_exception.dart';
 import 'package:temp/theme/style.dart';
 
+/// Creates a card with the flutter ListTile layout
+/// Only [route] can be set as null, without breaking the program. If it is 
+/// the case that the [route] is null or '', the program will thow a 
+/// RouteException
 Widget normalIconListTile(
     var context, IconData iconData, String title, String body, String route,
     {var widthSize, var heightSize, EdgeInsets margin}) {
@@ -41,16 +46,6 @@ Widget normalIconListTile(
               ? notImplementedYetAlert(context)
               : Navigator.pushNamed(context, route),
         ),
-        /* ButtonBar(
-          children: [
-            FlatButton(
-              child: Text('Read More >'),
-              onPressed: () => route == '' || route == null
-                  ? notImplementedYetAlert(context)
-                  : Navigator.pushNamed(context, route),
-            ),
-          ],
-        ) */
       ],
     ),
   );
