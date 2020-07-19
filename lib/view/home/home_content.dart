@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:temp/components/buttons/icon_button_text.dart';
 import 'package:temp/components/cards/info_card.dart';
 import 'package:temp/components/cards/normal_icon_listtile.dart';
+import 'package:temp/components/cards/reverse_listtile.dart';
 import 'package:temp/components/cards/standard_card.dart';
 
 class HomeContent {
@@ -55,7 +56,8 @@ class HomeContent {
     String body =
         'COMING: This section will contain example of algoritms, with both vizualisation and use cases';
     if (mobile) {
-      return infoCard(
+      return normalIconListTile(_context, Icons.settings, title, body, '');
+      /* return infoCard(
         _context,
         pictureURL,
         title,
@@ -63,7 +65,7 @@ class HomeContent {
         '',
         widthSize: width,
         heightSize: height,
-      );
+      ); */
     } else {
       //normalListTile(_context, pictureURL, title, body);
     }
@@ -71,10 +73,11 @@ class HomeContent {
 
   webInfo(bool mobile, {var width, var height}) {
     String pictureURL = 'resources/misc/web.jpg';
-    String title = 'Web Development (Front end)';
+    String title = 'Web Development \n(Front end)';
     String body =
         'COMING: This section will contain various stuff that has connection to the web, which include api calls, html, css, js and some frameworks (specifically matrialize)';
     if (mobile) {
+      return reverseListTile(_context, Icons.code, title, body, '');
       return infoCard(
         _context,
         pictureURL,

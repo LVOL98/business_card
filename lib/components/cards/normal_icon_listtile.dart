@@ -8,29 +8,35 @@ Widget normalIconListTile(
   return Card(
     margin: EdgeInsets.all(20),
     color: Theme.of(context).colorScheme.secondary,
-    child: ListTile(
-      leading: Icon(
-        iconData,
-        size: MediaQuery.of(context).size.width * 0.1,
-        color: Colors.white,
-      ),
-      title: Text(
-        title,
-        style: Theme.of(context).textTheme.headline2,
-      ),
-      subtitle: Text(
-        body,
-        style: Theme.of(context).textTheme.bodyText1,
-      ),
-      trailing: FlatButton(
-        child: Text(
-          'Read More >',
-          style: TextStyle(color: Theme.of(context).colorScheme.primary),
+    child: Column(
+      children: [
+        ListTile(
+          mouseCursor: MouseCursor.defer, // removes the clickable cursor
+          leading: Icon(
+            iconData,
+            size: MediaQuery.of(context).size.width * 0.1,
+            color: Colors.white,
+          ),
+          title: Text(
+            title,
+            style: Theme.of(context).textTheme.headline2,
+          ),
+          subtitle: Text(
+            body,
+            style: Theme.of(context).textTheme.bodyText1,
+          ),
         ),
-        onPressed: () => route == '' || route == null
-            ? notImplementedYetAlert(context)
-            : Navigator.pushNamed(context, route),
-      ),
+        ButtonBar(
+          children: [
+            FlatButton(
+              child: Text('Read More >'),
+              onPressed: () => route == '' || route == null
+                  ? notImplementedYetAlert(context)
+                  : Navigator.pushNamed(context, route),
+            ),
+          ],
+        )
+      ],
     ),
   );
 }
