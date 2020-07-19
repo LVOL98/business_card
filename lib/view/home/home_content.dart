@@ -100,12 +100,8 @@ class HomeContent {
     String body =
         'COMING: This section will contain example of algoritms, with both vizualisation and use cases';
     if (mobile) {
-      try {
-        return normalIconListTile(_context, Icons.settings, title, body, '',
-            margin: _inset);
-      } on RouteException {
-        print('found');
-      }
+      return normalIconListTile(_context, Icons.settings, title, body, '',
+          margin: _inset);
     } else {
       //normalListTile(_context, pictureURL, title, body);
     }
