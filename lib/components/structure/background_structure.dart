@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 
-/// Creates a widget which at the top have a userdefined picture, 
+/// Creates a widget which at the top have a userdefined picture,
 /// with a decoratedbox on top, which will contain the content
-/// 
-/// The [context] variable is needed to set the background color, 
+///
+/// The [context] variable is needed to set the background color,
 /// such that is follows the apps color which should be defined in ThemeData
-/// 
+///
 /// [content] is the content that should go in the main body
-Widget topPictureBackgroundStructure(var context, String pictureURL, Widget content,) {
+Widget topPictureBackgroundStructure(
+  BuildContext context,
+  String pictureURL,
+  Widget content,
+) {
   return DecoratedBox(
     decoration: BoxDecoration(
       image: DecorationImage(

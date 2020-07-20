@@ -18,7 +18,7 @@ class _HomePageMasterState extends State<HomePageMaster> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: TopNav().getDrawer(),
+      drawer: TopNav().getDrawer(context),
       body: ScreenTypeLayout(
         mobile: OrientationLayout(
           portrait: HomePageMobile(),

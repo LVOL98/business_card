@@ -41,7 +41,7 @@ Widget infoCard(
             fit: BoxFit.cover,
           ),
           Padding(
-            padding: EdgeInsets.all(5),
+            padding: EdgeInsets.all(15),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

@@ -7,25 +7,34 @@ class TopNav {
     );
   }
 
-  getDrawer() {
+  getDrawer(BuildContext context) {
     return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: const <Widget>[
-          DrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.green,
+      child: Container(
+        color: Theme.of(context).colorScheme.secondary,
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: const <Widget>[
+            ListTile(
+              leading: Icon(Icons.account_circle),
+              title: Text('About Me'),
+              /* onTap: () {
+                //Navigator.pop(context);
+              }, */
             ),
-            child: Text('Header'),
-          ),
-          ListTile(
-            leading: Icon(Icons.account_circle),
-            title: Text('About Me'),
-            /* onTap: () {
-              //Navigator.pop(context);
-            }, */
-          ),
-        ],
+            ListTile(
+              leading: Icon(Icons.ac_unit),
+              title: Text('Algorithms'),
+            ),
+            ListTile(
+              leading: Icon(Icons.ac_unit),
+              title: Text('Web Development'),
+            ),
+            ListTile(
+              leading: Icon(Icons.info),
+              title: Text('Contact Information'),
+            ),
+          ],
+        ),
       ),
     );
   }
