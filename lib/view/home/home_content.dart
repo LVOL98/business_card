@@ -3,9 +3,8 @@ import 'package:temp/components/buttons/icon_button_text.dart';
 import 'package:temp/components/cards/info_card.dart';
 import 'package:temp/components/cards/normal_icon_listtile.dart';
 import 'package:temp/components/cards/reverse_icon_listtile.dart';
-import 'package:temp/components/cards/standard_card.dart';
 import 'package:temp/components/dialogs/not_implemented.dart';
-import 'package:temp/exceptions/route_exception.dart';
+import 'package:temp/components/nav/web_navigationbar.dart';
 
 class HomeContent {
   var _context;
@@ -13,6 +12,35 @@ class HomeContent {
   double iconSizeMobile = 35.0;
 
   HomeContent(this._context);
+
+  Widget webAppBar() {
+    List<Widget> contentList = [
+      FlatButton(
+        onPressed: () {/* TODO */},
+        child: Text('Test'),
+      ),
+    ];
+
+    return webNavigationBar(_context, contentList);
+    /* return SliverAppBar(
+      expandedHeight: MediaQuery.of(_context).size.height * 0.05,
+      flexibleSpace: FlexibleSpaceBar(
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            FlatButton(
+              onPressed: () {/* TODO */},
+              child: Text('Test'),
+            ),
+            FlatButton(
+              onPressed: () {/* TODO */},
+              child: Text('Test'),
+            ),
+          ],
+        ),
+      ),
+    ); */
+  }
 
   linkdInButton() {
     return iconButtonText(_context, Icons.ac_unit, 'LinkIn',
@@ -103,7 +131,8 @@ class HomeContent {
       return normalIconListTile(_context, Icons.settings, title, body, '',
           margin: _inset);
     } else {
-      return infoCard(_context, pictureURL, title, body, '', cardWidth: MediaQuery.of(_context).size.width * 0.48);
+      return infoCard(_context, pictureURL, title, body, '',
+          cardWidth: MediaQuery.of(_context).size.width * 0.48);
     }
   }
 
@@ -116,7 +145,8 @@ class HomeContent {
       return reverseIconListTile(_context, Icons.code, title, body, '',
           margin: _inset);
     } else {
-      return infoCard(_context, pictureURL, title, body, '', cardWidth: MediaQuery.of(_context).size.width * 0.48);
+      return infoCard(_context, pictureURL, title, body, '',
+          cardWidth: MediaQuery.of(_context).size.width * 0.48);
       //return normalListTile(_context, pictureURL, title, body);
     }
   }

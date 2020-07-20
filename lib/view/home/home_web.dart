@@ -14,10 +14,13 @@ class _HomePageWebState extends State<HomePageWeb> {
   Widget build(BuildContext context) {
     var _homeContent = HomeContent(context);
 
-    return topPictureBackgroundStructure(
-      context,
-      'resources/images/test.jpg',
-      Container(
+    return CustomScrollView(
+      slivers: [
+        _homeContent.webAppBar()
+      ],
+    );
+
+    return Container(
         child: Column(
           children: [
             _homeContent.topButtonRow(),
@@ -30,7 +33,6 @@ class _HomePageWebState extends State<HomePageWeb> {
             ),
           ],
         ),
-      ),
-    );
+      );
   }
 }

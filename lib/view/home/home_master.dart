@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:temp/components/nav/topnav.dart';
+import 'package:temp/view/home/home_content.dart';
 import 'package:temp/view/responsive/device_screen_type.dart';
 import 'package:temp/view/responsive/orientation_layout.dart';
 import 'package:temp/view/responsive/screen_type_layout.dart';
@@ -21,10 +22,16 @@ class _HomePageMasterState extends State<HomePageMaster> {
     }
   }
 
+  shouldUseAppBar(BuildContext context) {
+    // TODO: This shouldn't be here
+    var _homeContent = HomeContent(context);
+    if (getDeviceType(MediaQuery.of(context)) == DeviceScreenType.Desktop) {
+      return _homeContent.webAppBar();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    var test = getDeviceType(MediaQuery.of(context));
-    print(test);
     return Scaffold(
       drawer: shouldUseDrawer(context),
       body: ScreenTypeLayout(
