@@ -24,6 +24,7 @@ class _HomePageWebState extends State<HomePageWeb> {
           children: [
             _homeContent.topButtonRow(),
             _homeContent.aboutInfo(true),
+            
             Row(
               children: [
                 _homeContent.algorithmsInfo(false),

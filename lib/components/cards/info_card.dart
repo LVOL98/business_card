@@ -47,7 +47,7 @@ Widget infoCard(
               children: [
                 Text(
                   title,
-                  style: Theme.of(context).textTheme.headline2,
+                  style: Theme.of(context).textTheme.headline3,
                 ),
                 Text(
                   body,

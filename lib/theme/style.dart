@@ -44,6 +44,11 @@ class AppStyle {
         fontSize: 35,
         fontFamily: GoogleFonts.lato().fontFamily,
       ),
+      headline3: TextStyle(
+        color: _primary_orange,
+        fontSize: 30,
+        fontFamily: GoogleFonts.lato().fontFamily,
+      ),
       subtitle1: TextStyle(
         color: _primary_orange,
         fontFamily: GoogleFonts.lato().fontFamily,
