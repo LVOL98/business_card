@@ -16,30 +16,36 @@ class HomeContent {
   Widget webAppBar() {
     List<Widget> contentList = [
       FlatButton(
+        child: Text(
+          'About Me',
+          style: Theme.of(_context).textTheme.bodyText1,
+        ),
+        onPressed: () { /* TODO */},
+      ),
+      FlatButton(
+        child: Text(
+          'Algorithms',
+          style: Theme.of(_context).textTheme.bodyText1,
+        ),
         onPressed: () {/* TODO */},
-        child: Text('Test'),
+      ),
+      FlatButton(
+        child: Text(
+          'Web Development',
+          style: Theme.of(_context).textTheme.bodyText1,
+        ),
+        onPressed: () {/* TODO */},
+      ),
+      FlatButton(
+        child: Text(
+          'Contact Information',
+          style: Theme.of(_context).textTheme.bodyText1,
+        ),
+        onPressed: () {/* TODO */},
       ),
     ];
 
     return webNavigationBar(_context, contentList);
-    /* return SliverAppBar(
-      expandedHeight: MediaQuery.of(_context).size.height * 0.05,
-      flexibleSpace: FlexibleSpaceBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            FlatButton(
-              onPressed: () {/* TODO */},
-              child: Text('Test'),
-            ),
-            FlatButton(
-              onPressed: () {/* TODO */},
-              child: Text('Test'),
-            ),
-          ],
-        ),
-      ),
-    ); */
   }
 
   linkdInButton() {

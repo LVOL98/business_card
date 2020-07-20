@@ -22,14 +22,6 @@ class _HomePageMasterState extends State<HomePageMaster> {
     }
   }
 
-  shouldUseAppBar(BuildContext context) {
-    // TODO: This shouldn't be here
-    var _homeContent = HomeContent(context);
-    if (getDeviceType(MediaQuery.of(context)) == DeviceScreenType.Desktop) {
-      return _homeContent.webAppBar();
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
