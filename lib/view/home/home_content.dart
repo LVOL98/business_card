@@ -94,7 +94,7 @@ class HomeContent {
     }
   }
 
-  algorithmsInfo(bool mobile, {var width, var height}) {
+  algorithmsInfo(bool mobile) {
     String pictureURL = 'resources/misc/Algo.jpg';
     String title = 'Algorithms';
     String body =
@@ -103,11 +103,11 @@ class HomeContent {
       return normalIconListTile(_context, Icons.settings, title, body, '',
           margin: _inset);
     } else {
-      //normalListTile(_context, pictureURL, title, body);
+      return infoCard(_context, pictureURL, title, body, '', cardWidth: MediaQuery.of(_context).size.width * 0.48);
     }
   }
 
-  webInfo(bool mobile, {var width, var height}) {
+  webInfo(bool mobile) {
     String pictureURL = 'resources/misc/web.jpg';
     String title = 'Web Development';
     String body =
@@ -116,6 +116,7 @@ class HomeContent {
       return reverseIconListTile(_context, Icons.code, title, body, '',
           margin: _inset);
     } else {
+      return infoCard(_context, pictureURL, title, body, '', cardWidth: MediaQuery.of(_context).size.width * 0.48);
       //return normalListTile(_context, pictureURL, title, body);
     }
   }

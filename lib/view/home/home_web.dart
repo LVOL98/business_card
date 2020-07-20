@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:temp/components/structure/background_structure.dart';
 
 import 'home_content.dart';
@@ -23,8 +24,12 @@ class _HomePageWebState extends State<HomePageWeb> {
           children: [
             _homeContent.topButtonRow(),
             _homeContent.aboutInfo(true),
-            _homeContent.algorithmsInfo(true),
-            _homeContent.webInfo(true),
+            Row(
+              children: [
+                _homeContent.algorithmsInfo(false),
+                _homeContent.webInfo(false),
+              ],
+            ),
           ],
         ),
       ),
