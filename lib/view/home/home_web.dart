@@ -16,23 +16,32 @@ class _HomePageWebState extends State<HomePageWeb> {
 
     return CustomScrollView(
       slivers: [
-        _homeContent.webAppBar()
+        _homeContent.webAppBar(),
+        SliverList(
+          delegate: SliverChildListDelegate(
+            [
+              Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 20), child: 
+              _homeContent.topButtonRow()),
+              Image.asset(
+                'resources/images/test.jpg',
+                fit: BoxFit.cover,
+                height: MediaQuery.of(context).size.height * 0.19,
+              ),
+              /* Container(
+                  child: Text('image'),
+                  color: Colors.black), */ // TODO: place an image
+              _homeContent.aboutInfo(true),
+              Wrap(
+                alignment: WrapAlignment.center,
+                children: [
+                  _homeContent.algorithmsInfo(false),
+                  _homeContent.webInfo(false),
+                ],
+              ),
+            ],
+          ),
+        ),
       ],
     );
-
-    return Container(
-        child: Column(
-          children: [
-            _homeContent.topButtonRow(),
-            _homeContent.aboutInfo(true),
-            Wrap(
-              children: [
-                _homeContent.algorithmsInfo(false),
-                _homeContent.webInfo(false),
-              ],
-            ),
-          ],
-        ),
-      );
   }
 }

@@ -11,11 +11,11 @@ Widget iconButtonText(
         // TODO: find a better solution
         width: iconSize + 20,
         height: iconSize + 20,
-        decoration: ShapeDecoration(
+        /* decoration: ShapeDecoration(
           // TODO: shape decoration is not working
           color: Theme.of(context).colorScheme.secondary,
           shape: CircleBorder(),
-        ),
+        ), */
         child: IconButton(
           icon: Icon(
             icon,

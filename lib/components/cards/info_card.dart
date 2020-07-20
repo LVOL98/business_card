@@ -27,53 +27,59 @@ Widget infoCard(
       color: Theme.of(context).colorScheme.secondary,
       shadowColor: Colors.black,
       margin: margin == null ? EdgeInsets.all(15) : margin,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Image.asset(
-            pictureURL,
-            width: imageWidth == null
-                ? MediaQuery.of(context).size.width * 1
-                : imageWidth,
-            height: imageHeight == null
-                ? MediaQuery.of(context).size.height * 0.15
-                : imageHeight,
-            fit: BoxFit.cover,
-          ),
-          Padding(
-            padding: EdgeInsets.all(15),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: Theme.of(context).textTheme.headline3,
-                ),
-                Text(
-                  body,
-                  style: Theme.of(context).textTheme.bodyText1,
-                ),
-              ],
+      child: InkWell(
+        onTap: () {
+          notImplementedYetAlert(context);
+        },
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image.asset(
+              pictureURL,
+              width: imageWidth == null
+                  ? MediaQuery.of(context).size.width * 1
+                  : imageWidth,
+              height: imageHeight == null
+                  ? MediaQuery.of(context).size.height * 0.15
+                  : imageHeight,
+              fit: BoxFit.cover,
             ),
-          ),
-          ButtonBar(
-            children: [
-              if (secondaryTitle != null && secondaryRoute != null)
+            Padding(
+              padding: EdgeInsets.all(15),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: Theme.of(context).textTheme.headline3,
+                  ),
+                  Text(
+                    body,
+                    style: Theme.of(context).textTheme.bodyText1,
+                  ),
+                ],
+              ),
+            ),
+            // TODO: no need for the on tap anymore
+            ButtonBar(
+              children: [
+                if (secondaryTitle != null && secondaryRoute != null) 
+                  FlatButton(
+                    child: Text(secondaryTitle),
+                    onPressed: () => secondaryRoute == '' || route == null
+                        ? notImplementedYetAlert(context)
+                        : Navigator.pushNamed(context, route),
+                  ),
                 FlatButton(
-                  child: Text(secondaryTitle),
-                  onPressed: () => secondaryRoute == '' || route == null
+                  child: Text('Read More >'),
+                  onPressed: () => route == '' || route == null
                       ? notImplementedYetAlert(context)
                       : Navigator.pushNamed(context, route),
                 ),
-              FlatButton(
-                child: Text('Read More >'),
-                onPressed: () => route == '' || route == null
-                    ? notImplementedYetAlert(context)
-                    : Navigator.pushNamed(context, route),
-              ),
-            ],
-          )
-        ],
+              ],
+            )
+          ],
+        ),
       ),
     ),
   );
