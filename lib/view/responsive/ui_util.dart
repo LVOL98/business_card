@@ -5,7 +5,7 @@ import 'device_screen_type.dart';
 DeviceScreenType getDeviceType(MediaQueryData mediaQueryData) {
   double _deviceWidth = mediaQueryData.size.shortestSide;
 
-  if (_deviceWidth > 600) {
+  if (_deviceWidth > 750) {
     return DeviceScreenType.Desktop;
   }
 

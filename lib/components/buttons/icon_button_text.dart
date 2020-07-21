@@ -1,29 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:temp/model2/url_launcher/open_url.dart';
 
-Widget iconButtonText(
-    var context, IconData icon, String description, String url,
-    {double iconSize}) {
+/// A widget with a icon button above a given name
+/// 
+/// Either a [url] or a [route] must be given, or a error
+/// will be thrown. The route should follow the material route
+Widget iconButtonText(BuildContext context, IconData icon, String description,
+    {String url, String route, double iconSize}) {
   return Column(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
       Ink(
-        // TODO: find a better solution
+        // aligns the icon with the text, will need a better solution
         width: iconSize + 20,
         height: iconSize + 20,
-        /* decoration: ShapeDecoration(
-          // TODO: shape decoration is not working
-          color: Theme.of(context).colorScheme.secondary,
-          shape: CircleBorder(),
-        ), */
         child: IconButton(
           icon: Icon(
             icon,
             color: Theme.of(context).colorScheme.secondary,
             size: iconSize,
           ),
+          // TODO: execption
           onPressed: () {
-            openURL(url);
+            url != null ? openURL(url) : Navigator.pushNamed(context, route);
           },
         ),
       ),
