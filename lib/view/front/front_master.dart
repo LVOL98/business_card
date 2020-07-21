@@ -27,7 +27,7 @@ class _FrontPageMasterState extends State<FrontPageMaster> {
                 'Lukas Vinther Offenberg Larsen',
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.headline1,
-              ), // TODO: font styles
+              ),
               Text(
                 'Software Development Student',
                 style: Theme.of(context).textTheme.subtitle1,

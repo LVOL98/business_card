@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 /// such that is follows the apps color which should be defined in ThemeData
 ///
 /// [content] is the content that should go in the main body
-Widget topPictureBackgroundStructure(
+Widget mobileStructure(
   BuildContext context,
   String pictureURL,
   Widget content,

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class FrontContent {
-  Widget standardSquareBox(var context, IconData iconData, String boxText) {
+  Widget standardSquareBox(BuildContext context, IconData iconData, String boxText) {
     return Container(
       width: 450,
       padding: EdgeInsets.all(10),
@@ -21,7 +21,7 @@ class FrontContent {
           SizedBox(
             width: 10,
           ),
-          Text(boxText),
+          Text(boxText, style: Theme.of(context).textTheme.bodyText1,),
         ],
       ),
     );

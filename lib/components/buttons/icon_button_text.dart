@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:temp/model2/url_launcher/open_url.dart';
+import 'package:temp/model/url_launcher/open_url.dart';
 
 /// A widget with a icon button above a given name
 /// 
