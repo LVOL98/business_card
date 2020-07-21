@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-// Colors
-// https://coolors.co/3a405a-4d536b-685044-776155-4b9980-81b29a-a3d1bd-e07a5f-e68f73-f5ad42
-
 class AppStyle {
-  //AppTheme._(); // What does this do?
+  // The code below is a private constructor, such that the
+  // AppStyle becomes a singleton, hence only onw instances can
+  // be made of it
+  AppStyle._();
+
   static const _primary_blue = Color.fromRGBO(58, 64, 90, 1.0);
   static const _secondary_blue = Color.fromRGBO(77, 83, 107, 1.0);
   static const _primary_green = Color.fromRGBO(75, 153, 128, 1.0);
@@ -19,20 +20,16 @@ class AppStyle {
     scaffoldBackgroundColor: _primary_green,
     appBarTheme: AppBarTheme(
       color: _primary_blue,
-      iconTheme: IconThemeData(
-        color: Colors.white, // TODO
-      ),
     ),
     colorScheme: ColorScheme.light(
       primary: _secondary_green,
-      onPrimary: Colors.white, // TODO
       primaryVariant: _tertiary_green,
       secondary: _primary_blue,
-      secondaryVariant: Colors.white, // TODO
     ),
     buttonTheme: ButtonThemeData(
-      buttonColor: _secondary_green, // TODO reference secondary color
+      buttonColor: _secondary_green,
     ),
+    iconTheme: IconThemeData(color: _primary_green),
     textTheme: TextTheme(
       headline1: TextStyle(
         color: _primary_orange,
