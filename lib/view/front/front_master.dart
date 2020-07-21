@@ -9,8 +9,6 @@ class FrontPageMaster extends StatefulWidget {
 }
 
 class _FrontPageMasterState extends State<FrontPageMaster> {
-  FrontContent _frontContent = new FrontContent();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,12 +34,12 @@ class _FrontPageMasterState extends State<FrontPageMaster> {
                 'IT University of Copenhagen',
                 style: Theme.of(context).textTheme.subtitle1,
               ),
-              _frontContent.standardSquareBox(
+              oneLineIconCard(
                 context,
                 Icons.mail,
                 'lukas98@live.dk',
               ),
-              _frontContent.standardSquareBox(
+              oneLineIconCard(
                 context,
                 Icons.phone,
                 '+45 24 78 59 44',
