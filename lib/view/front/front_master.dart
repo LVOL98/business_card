@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:temp/view/front/front_content.dart';
+import 'package:temp/components/cards/one_line_icon_card.dart';
 import 'package:temp/view/home/home_master.dart';
 
 class FrontPageMaster extends StatefulWidget {
