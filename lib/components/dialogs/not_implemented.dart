@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-notImplementedYetAlert(var context) {
+notImplementedYetAlert(BuildContext context) {
   return showDialog(
     context: context,
     builder: (BuildContext context) {

@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:temp/components/nav/topnav.dart';
-import 'package:temp/view/home/home_content.dart';
+import 'package:temp/components/nav/mobile_top_navigation.dart';
 import 'package:temp/view/responsive/device_screen_type.dart';
 import 'package:temp/view/responsive/orientation_layout.dart';
 import 'package:temp/view/responsive/screen_type_layout.dart';
@@ -18,7 +17,7 @@ class HomePageMaster extends StatefulWidget {
 class _HomePageMasterState extends State<HomePageMaster> {
   shouldUseDrawer(BuildContext context) {
     if (getDeviceType(MediaQuery.of(context)) == DeviceScreenType.Mobile) {
-      return TopNav().getDrawer(context);
+      return getDrawer(context);
     }
   }
 

@@ -4,7 +4,7 @@ import 'package:temp/components/cards/info_card.dart';
 import 'package:temp/components/cards/normal_icon_listtile.dart';
 import 'package:temp/components/cards/reverse_icon_listtile.dart';
 import 'package:temp/components/dialogs/not_implemented.dart';
-import 'package:temp/components/nav/web_navigationbar.dart';
+import 'package:temp/components/nav/web_top_navigation.dart';
 
 class HomeContent {
   var _context;
@@ -45,27 +45,27 @@ class HomeContent {
       ),
     ];
 
-    return webNavigationBar(_context, contentList);
+    return webTopNavigation(_context, contentList);
   }
 
   linkdInButton() {
     return iconButtonText(_context, Icons.ac_unit, 'LinkIn',
-        'https://www.linkedin.com/in/lukas-vinther-offenberg-7818a3125/',
+        url: 'https://www.linkedin.com/in/lukas-vinther-offenberg-7818a3125/',
         iconSize: iconSizeMobile);
   }
 
   gitHubButton() {
-    return iconButtonText(_context, Icons.ac_unit, 'GitHub', '',
+    return iconButtonText(_context, Icons.ac_unit, 'GitHub', url: '',
         iconSize: iconSizeMobile);
   }
 
   phoneNumberButton() {
-    return iconButtonText(_context, Icons.call, 'Phone Number', '',
+    return iconButtonText(_context, Icons.call, 'Phone Number', url: '',
         iconSize: iconSizeMobile);
   }
 
   eMailButton() {
-    return iconButtonText(_context, Icons.email, 'E-Mail', '',
+    return iconButtonText(_context, Icons.email, 'E-Mail', url: '',
         iconSize: iconSizeMobile);
   }
 

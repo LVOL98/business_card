@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget webNavigationBar(BuildContext context, List<Widget> content) {
+Widget webTopNavigation(BuildContext context, List<Widget> content) {
   return SliverAppBar(
     expandedHeight: MediaQuery.of(context).size.height * 0.05,
     flexibleSpace: FlexibleSpaceBar(

@@ -4,7 +4,8 @@ import 'package:temp/model2/url_launcher/open_url.dart';
 /// A widget with a icon button above a given name
 /// 
 /// Either a [url] or a [route] must be given, or a error
-/// will be thrown. The route should follow the material route
+/// will be thrown. The route should follow the Material App route structure.
+/// If both a url and a route is given, the url is chosen
 Widget iconButtonText(BuildContext context, IconData icon, String description,
     {String url, String route, double iconSize}) {
   return Column(

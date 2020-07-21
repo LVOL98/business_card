@@ -48,5 +48,3 @@ Widget topPictureBackgroundStructure(
     ),
   );
 }
-
-//https://stackoverflow.com/questions/56204912/flutter-scrollable-stack-with-height-greater-than-screen-height
