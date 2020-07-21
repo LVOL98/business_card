@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+/// Creates the top navigation on web, in which the content is the 
+/// widgets displayed from left to right horizontally on the bar
 Widget webTopNavigation(BuildContext context, List<Widget> content) {
   return SliverAppBar(
     expandedHeight: MediaQuery.of(context).size.height * 0.05,
