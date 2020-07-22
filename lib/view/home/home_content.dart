@@ -20,7 +20,7 @@ class HomeContent {
           'About Me',
           style: Theme.of(_context).textTheme.bodyText1,
         ),
-        onPressed: () { /* TODO */},
+        onPressed: () {/* TODO */},
       ),
       FlatButton(
         child: Text(
@@ -55,18 +55,18 @@ class HomeContent {
   }
 
   gitHubButton() {
-    return iconButtonText(_context, Icons.ac_unit, 'GitHub', url: '',
-        iconSize: iconSizeMobile);
+    return iconButtonText(_context, Icons.ac_unit, 'GitHub',
+        url: '', iconSize: iconSizeMobile);
   }
 
   phoneNumberButton() {
-    return iconButtonText(_context, Icons.call, 'Phone Number', url: '',
-        iconSize: iconSizeMobile);
+    return iconButtonText(_context, Icons.call, 'Phone Number',
+        url: '', iconSize: iconSizeMobile);
   }
 
   eMailButton() {
-    return iconButtonText(_context, Icons.email, 'E-Mail', url: '',
-        iconSize: iconSizeMobile);
+    return iconButtonText(_context, Icons.email, 'E-Mail',
+        url: '', iconSize: iconSizeMobile);
   }
 
   topButtonRow() {
@@ -134,7 +134,8 @@ class HomeContent {
     String body =
         'COMING: This section will contain example of algoritms, with both vizualisation and use cases';
     if (mobile) {
-      return normalIconListTile(_context, Icons.settings, title, body, 'notworking',
+      return normalIconListTile(
+          _context, Icons.settings, title, body, 'notworking',
           margin: _inset);
     } else {
       return infoCard(_context, pictureURL, title, body, '',
@@ -154,6 +155,24 @@ class HomeContent {
       return infoCard(_context, pictureURL, title, body, '',
           cardWidth: MediaQuery.of(_context).size.width * 0.48);
       //return normalListTile(_context, pictureURL, title, body);
+    }
+  }
+
+  errorHandlingInTheProgram(bool mobile) {
+    if (mobile) {
+      return Container(
+        margin: _inset,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Padding(padding: _inset,
+            child: Text('Error handling', style: Theme.of(_context).textTheme.headline2,)),
+            Padding(padding: _inset,
+            child: Divider(color: Colors.black, thickness: 2)),
+            normalIconListTile(_context, Icons.error, 'Unknown Route', 'Go to the unknown route', 'Not A Route'),
+          ],
+        ),
+      );
     }
   }
 }

@@ -26,6 +26,7 @@ class _HomePageMobileState extends State<HomePageMobile> {
             _homeContent.aboutInfo(true),
             _homeContent.algorithmsInfo(true),
             _homeContent.webInfo(true),
+            _homeContent.errorHandlingInTheProgram(true),
           ],
         ),
       ),
