@@ -49,23 +49,23 @@ class HomeContent {
   }
 
   linkdInButton() {
-    return iconButtonText(_context, Icons.ac_unit, 'LinkIn',
+    return new iconButtonText(Icons.ac_unit, 'LinkIn',
         url: 'https://www.linkedin.com/in/lukas-vinther-offenberg-7818a3125/',
         iconSize: iconSizeMobile);
   }
 
   gitHubButton() {
-    return iconButtonText(_context, Icons.ac_unit, 'GitHub',
-        url: '', iconSize: iconSizeMobile);
+    return new iconButtonText(Icons.ac_unit, 'GitHub',
+        url: '', iconSize: iconSizeMobile, notImplemented: true,);
   }
 
   phoneNumberButton() {
-    return iconButtonText(_context, Icons.call, 'Phone Number',
+    return new iconButtonText(Icons.call, 'Phone Number',
         url: '', iconSize: iconSizeMobile);
   }
 
   eMailButton() {
-    return iconButtonText(_context, Icons.email, 'E-Mail',
+    return new iconButtonText(Icons.email, 'E-Mail',
         url: '', iconSize: iconSizeMobile);
   }
 
@@ -170,6 +170,7 @@ class HomeContent {
             Padding(padding: _inset,
             child: Divider(color: Colors.black, thickness: 2)),
             normalIconListTile(_context, Icons.error, 'Unknown Route', 'Go to the unknown route', 'Not A Route'),
+            iconButtonText.placeHolder(),
           ],
         ),
       );
