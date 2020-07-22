@@ -134,7 +134,7 @@ class HomeContent {
     String body =
         'COMING: This section will contain example of algoritms, with both vizualisation and use cases';
     if (mobile) {
-      return normalIconListTile(_context, Icons.settings, title, body, '',
+      return normalIconListTile(_context, Icons.settings, title, body, 'notworking',
           margin: _inset);
     } else {
       return infoCard(_context, pictureURL, title, body, '',
