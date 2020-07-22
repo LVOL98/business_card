@@ -139,8 +139,7 @@ class HomeContent {
     String body =
         'COMING: This section will contain example of algoritms, with both vizualisation and use cases';
     if (mobile) {
-      return normalIconListTile(
-          _context, Icons.settings, title, body, 'notworking',
+      return normalIconListTile(Icons.settings, title, body, 'notworking',
           margin: _inset);
     } else {
       return infoCard(
@@ -160,7 +159,7 @@ class HomeContent {
     String body =
         'COMING: This section will contain various stuff that has connection to the web';
     if (mobile) {
-      return reverseIconListTile(_context, Icons.code, title, body, '',
+      return reverseIconListTile(Icons.code, title, body, '',
           margin: _inset);
     } else {
       return infoCard(
@@ -190,9 +189,9 @@ class HomeContent {
             Padding(
                 padding: _inset,
                 child: Divider(color: Colors.black, thickness: 2)),
-            normalIconListTile(_context, Icons.error, 'Unknown Route',
+            normalIconListTile(Icons.error, 'Unknown Route',
                 'Go to the unknown route', 'Not A Route'),
-            infoCard.placeHolder(),
+            reverseIconListTile.placeholder(),
           ],
         ),
       );
