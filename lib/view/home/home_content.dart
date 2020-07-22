@@ -55,8 +55,13 @@ class HomeContent {
   }
 
   gitHubButton() {
-    return new iconButtonText(Icons.ac_unit, 'GitHub',
-        url: '', iconSize: iconSizeMobile, notImplemented: true,);
+    return new iconButtonText(
+      Icons.ac_unit,
+      'GitHub',
+      url: '',
+      iconSize: iconSizeMobile,
+      notImplemented: true,
+    );
   }
 
   phoneNumberButton() {
@@ -138,8 +143,14 @@ class HomeContent {
           _context, Icons.settings, title, body, 'notworking',
           margin: _inset);
     } else {
-      return infoCard(_context, pictureURL, title, body, '',
-          cardWidth: MediaQuery.of(_context).size.width * 0.48);
+      return infoCard(
+        pictureURL,
+        title,
+        body,
+        '',
+        cardWidth: MediaQuery.of(_context).size.width * 0.48,
+        notImplemented: true,
+      );
     }
   }
 
@@ -152,9 +163,14 @@ class HomeContent {
       return reverseIconListTile(_context, Icons.code, title, body, '',
           margin: _inset);
     } else {
-      return infoCard(_context, pictureURL, title, body, '',
-          cardWidth: MediaQuery.of(_context).size.width * 0.48);
-      //return normalListTile(_context, pictureURL, title, body);
+      return infoCard(
+        pictureURL,
+        title,
+        body,
+        '',
+        cardWidth: MediaQuery.of(_context).size.width * 0.48,
+        notImplemented: true,
+      );
     }
   }
 
@@ -165,12 +181,18 @@ class HomeContent {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Padding(padding: _inset,
-            child: Text('Error handling', style: Theme.of(_context).textTheme.headline2,)),
-            Padding(padding: _inset,
-            child: Divider(color: Colors.black, thickness: 2)),
-            normalIconListTile(_context, Icons.error, 'Unknown Route', 'Go to the unknown route', 'Not A Route'),
-            iconButtonText.placeHolder(),
+            Padding(
+                padding: _inset,
+                child: Text(
+                  'Error handling',
+                  style: Theme.of(_context).textTheme.headline2,
+                )),
+            Padding(
+                padding: _inset,
+                child: Divider(color: Colors.black, thickness: 2)),
+            normalIconListTile(_context, Icons.error, 'Unknown Route',
+                'Go to the unknown route', 'Not A Route'),
+            infoCard.placeHolder(),
           ],
         ),
       );

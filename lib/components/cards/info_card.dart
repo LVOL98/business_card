@@ -6,81 +6,96 @@ import 'package:temp/components/dialogs/not_implemented.dart';
 /// text and a text prompt to read more
 ///
 /// The [route] variable is meant as the route defined in the Material App route structure
-Widget infoCard(
-  var context,
-  String pictureURL,
-  String title,
-  String body,
-  String route, {
-  var imageWidth,
-  var imageHeight,
-  var cardWidth,
-  var cardHeight,
-  var margin,
-  String secondaryRoute,
-  String secondaryTitle,
-}) {
-  return Container(
-    width: cardWidth,
-    height: cardHeight,
-    child: Card(
-      color: Theme.of(context).colorScheme.secondary,
-      shadowColor: Colors.black,
-      margin: margin == null ? EdgeInsets.all(15) : margin,
-      child: InkWell(
-        onTap: () {
-          notImplementedYetAlert(context);
-        },
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Image.asset(
-              pictureURL,
-              width: imageWidth == null
-                  ? MediaQuery.of(context).size.width * 1
-                  : imageWidth,
-              height: imageHeight == null
-                  ? MediaQuery.of(context).size.height * 0.15
-                  : imageHeight,
-              fit: BoxFit.cover,
-            ),
-            Padding(
-              padding: EdgeInsets.all(15),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+class infoCard extends StatelessWidget {
+  String pictureURL;
+  String title;
+  String body;
+  String route;
+  double imageWidth;
+  double imageHeight;
+  double cardWidth;
+  double cardHeight;
+  double margin;
+  bool notImplemented;
+
+  infoCard(this.pictureURL, this.title, this.body, this.route,
+      {this.imageWidth,
+      this.imageHeight,
+      this.cardWidth,
+      this.cardHeight,
+      this.margin,
+      this.notImplemented});
+
+  infoCard.placeHolder() {
+    this.pictureURL = 'resources/misc/placeholder.png';
+    this.title = 'Placeholder';
+    this.body = 'This is a placeholder';
+    this.route = '';
+    notImplemented = true;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: cardWidth,
+      height: cardHeight,
+      child: Card(
+        color: Theme.of(context).colorScheme.secondary,
+        shadowColor: Colors.black,
+        margin: margin == null ? EdgeInsets.all(15) : margin,
+        child: InkWell(
+          onTap: () {
+            if (notImplemented == true) {
+              notImplementedYetAlert(context);
+            } else {
+              Navigator.pushNamed(context, route);
+            }
+          },
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Image.asset(
+                pictureURL,
+                width: imageWidth == null
+                    ? MediaQuery.of(context).size.width * 1
+                    : imageWidth,
+                height: imageHeight == null
+                    ? MediaQuery.of(context).size.height * 0.15
+                    : imageHeight,
+                fit: BoxFit.cover,
+              ),
+              Padding(
+                padding: EdgeInsets.all(15),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: Theme.of(context).textTheme.headline3,
+                    ),
+                    Text(
+                      body,
+                      style: Theme.of(context).textTheme.bodyText1,
+                    ),
+                  ],
+                ),
+              ),
+              ButtonBar(
                 children: [
-                  Text(
-                    title,
-                    style: Theme.of(context).textTheme.headline3,
-                  ),
-                  Text(
-                    body,
-                    style: Theme.of(context).textTheme.bodyText1,
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Text(
+                      'Read More >',
+                      style: TextStyle(
+                          color: Theme.of(context).colorScheme.primary),
+                    ),
                   ),
                 ],
-              ),
-            ),
-            // TODO: no need for the on tap anymore
-            ButtonBar(
-              children: [
-                if (secondaryTitle != null && secondaryRoute != null) 
-                  FlatButton(
-                    child: Text(secondaryTitle),
-                    onPressed: () => secondaryRoute == '' || route == null
-                        ? notImplementedYetAlert(context)
-                        : Navigator.pushNamed(context, route),
-                  ),
-                FlatButton(
-                  child: Text('Read More >'),
-                  onPressed: () => route == '' || route == null
-                      ? notImplementedYetAlert(context)
-                      : Navigator.pushNamed(context, route),
-                ),
-              ],
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 }
