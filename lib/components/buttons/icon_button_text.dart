@@ -38,7 +38,7 @@ class IconButtonText extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Ink(
-          // aligns the icon with the text, will need a better solution
+          // aligns the icon with the text
           width: iconSize + 20,
           height: iconSize + 20,
           child: IconButton(

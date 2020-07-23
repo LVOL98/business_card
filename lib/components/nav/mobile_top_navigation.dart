@@ -36,7 +36,7 @@ class MobileTopNavigation extends StatelessWidget {
               leading: Icon(Icons.info),
               title: Text('Contact Information'),
               onTap: () {
-                notImplementedYetAlert(context);
+                Navigator.pushNamed(context, '/');
               },
             ),
           ],

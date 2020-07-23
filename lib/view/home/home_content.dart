@@ -43,7 +43,7 @@ Widget webAppBar(BuildContext context) {
         style: Theme.of(context).textTheme.bodyText1,
       ),
       onPressed: () {
-        notImplementedYetAlert(context);
+        Navigator.pop(context);
       },
     ),
   ];
@@ -70,9 +70,8 @@ phoneNumberButton() {
   return new IconButtonText(
     Icons.call,
     'Phone Number',
-    url: '',
+    route: '/',
     iconSize: iconSizeMobile,
-    notImplemented: true,
   );
 }
 
@@ -82,7 +81,6 @@ eMailButton() {
     'E-Mail',
     url: '',
     iconSize: iconSizeMobile,
-    notImplemented: true,
   );
 }
 
@@ -163,7 +161,7 @@ webInfo(BuildContext context, bool mobile) {
   String body =
       'COMING: This section will contain various stuff that has connection to the web';
   if (mobile) {
-    return ReverseIconListTile(Icons.code, title, body, '');
+    return NormalIconListTile(Icons.code, title, body, '');
   } else {
     return InfoCard(
       pictureURL,
