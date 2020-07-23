@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 /// Creates the top navigation on web, in which the content is the
 /// widgets displayed from left to right horizontally on the bar
+///
+/// It's placeholder constructor demostrates how to navigation would look
 class WebTopNavigation extends StatelessWidget {
   List<Widget> content;
 
