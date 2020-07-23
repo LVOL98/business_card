@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:temp/components/dialogs/not_implemented.dart';
-import 'package:temp/exceptions/route_exception.dart';
-import 'package:temp/theme/style.dart';
 
 /// Creates a card with the flutter ListTile layout, where the [iconData]
 /// will be shown to the left of the text, and the next arrow will be
@@ -10,7 +8,7 @@ import 'package:temp/theme/style.dart';
 ///
 /// [route] is required unless [notImplemented] is set to true, and if a
 /// given route can't not be executed, the unknownRoute will be used
-/// 
+///
 /// A placeholder is given, if the user wants to see how to componenet looks
 class NormalIconListTile extends StatelessWidget {
   IconData iconData;

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:temp/components/nav/mobile_top_navigation.dart';
 import 'package:temp/view/responsive/device_screen_type.dart';

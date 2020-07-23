@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:temp/components/buttons/icon_button_text.dart';
 import 'package:temp/components/cards/info_card.dart';
 import 'package:temp/components/cards/normal_icon_listtile.dart';
-import 'package:temp/components/cards/one_line_icon_card.dart';
 import 'package:temp/components/cards/reverse_icon_listtile.dart';
 import 'package:temp/components/dialogs/not_implemented.dart';
 import 'package:temp/components/nav/web_top_navigation.dart';

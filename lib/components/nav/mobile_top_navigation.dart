@@ -6,42 +6,42 @@ class MobileTopNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-    child: Container(
-      color: Theme.of(context).colorScheme.secondary,
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          ListTile(
-            leading: Icon(Icons.account_circle),
-            title: Text('About Me'),
-            onTap: () {
-              notImplementedYetAlert(context);
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.ac_unit),
-            title: Text('Algorithms'),
-            onTap: () {
-              notImplementedYetAlert(context);
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.ac_unit),
-            title: Text('Web Development'),
-            onTap: () {
-              notImplementedYetAlert(context);
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.info),
-            title: Text('Contact Information'),
-            onTap: () {
-              notImplementedYetAlert(context);
-            },
-          ),
-        ],
+      child: Container(
+        color: Theme.of(context).colorScheme.secondary,
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            ListTile(
+              leading: Icon(Icons.account_circle),
+              title: Text('About Me'),
+              onTap: () {
+                notImplementedYetAlert(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.ac_unit),
+              title: Text('Algorithms'),
+              onTap: () {
+                notImplementedYetAlert(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.ac_unit),
+              title: Text('Web Development'),
+              onTap: () {
+                notImplementedYetAlert(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.info),
+              title: Text('Contact Information'),
+              onTap: () {
+                notImplementedYetAlert(context);
+              },
+            ),
+          ],
+        ),
       ),
-    ),
-  );
+    );
   }
 }

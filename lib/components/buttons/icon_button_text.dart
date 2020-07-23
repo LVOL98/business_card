@@ -4,13 +4,13 @@ import 'package:temp/model/url_launcher/open_url.dart';
 
 /// A widget with a icon button above a given name
 ///
-/// If [notImplemented] is set to false, either a [url] or a [route] 
-/// must be given, or the program will go to the unknown page. The 
+/// If [notImplemented] is set to false, either a [url] or a [route]
+/// must be given, or the program will go to the unknown page. The
 /// route should follow the Material App route structure.
-/// 
+///
 /// If both a url and a route is given, the url is chosen
-/// 
-/// The placeholder constructor creates a placeholder which is a 
+///
+/// The placeholder constructor creates a placeholder which is a
 /// standard version of this component
 class IconButtonText extends StatelessWidget {
   IconData icon;

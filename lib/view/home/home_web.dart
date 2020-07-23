@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:temp/components/structure/mobile_page_structure.dart';
-
 import 'home_content.dart';
 
 class HomePageWeb extends StatefulWidget {
@@ -12,15 +9,17 @@ class HomePageWeb extends StatefulWidget {
 class _HomePageWebState extends State<HomePageWeb> {
   @override
   Widget build(BuildContext context) {
-    
     return CustomScrollView(
       slivers: [
-        webAppBar(context, ),
+        webAppBar(
+          context,
+        ),
         SliverList(
           delegate: SliverChildListDelegate(
             [
-              Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 20), child: 
-              topButtonRow()),
+              Padding(
+                  padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
+                  child: topButtonRow()),
               Image.asset(
                 'resources/images/test.jpg',
                 fit: BoxFit.cover,

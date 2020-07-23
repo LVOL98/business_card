@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 /// such that is follows the apps color which should be defined in ThemeData
 ///
 /// [content] is the content that should go in the main body
-/// 
+///
 /// The placeholder constructor lets the user get a preview of
 /// how to page would look
 class MobilePageStructure extends StatelessWidget {

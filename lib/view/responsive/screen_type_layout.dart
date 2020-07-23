@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:temp/view/responsive/responsive_builder.dart';
-
 import 'device_screen_type.dart';
 
 /// Return which device type the builder should choose, defined
@@ -9,8 +8,7 @@ class ScreenTypeLayout extends StatelessWidget {
   final Widget mobile;
   final Widget desktop;
 
-  const ScreenTypeLayout(
-      {Key key, @required this.mobile, this.desktop})
+  const ScreenTypeLayout({Key key, @required this.mobile, this.desktop})
       : super(key: key);
 
   @override
@@ -21,7 +19,7 @@ class ScreenTypeLayout extends StatelessWidget {
           return desktop;
         }
       }
-      
+
       return mobile;
     });
   }

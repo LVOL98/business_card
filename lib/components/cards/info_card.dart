@@ -1,16 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:temp/components/dialogs/not_implemented.dart';
 
-/// Creates a card with a defined picture as backgrind, Which 
+/// Creates a card with a defined picture as backgrind, Which
 /// then contains a title togheter with text and a text prompt
 /// to read more
 ///
 /// The [route] is required unless [notImplemented] is set to true,
 /// if the route isn't accesible, the program will open the
 /// unknownRoute
-/// 
-/// A placeholder constructor is given, if the user wants to test the 
+///
+/// A placeholder constructor is given, if the user wants to test the
 /// use of the card before implementing
 class InfoCard extends StatelessWidget {
   String pictureURL;
