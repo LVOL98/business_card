@@ -12,7 +12,7 @@ import 'package:temp/components/dialogs/not_implemented.dart';
 /// 
 /// A placeholder constructor is given, if the user wants to test the 
 /// use of the card before implementing
-class infoCard extends StatelessWidget {
+class InfoCard extends StatelessWidget {
   String pictureURL;
   String title;
   String body;
@@ -24,7 +24,7 @@ class infoCard extends StatelessWidget {
   double margin;
   bool notImplemented;
 
-  infoCard(this.pictureURL, this.title, this.body, this.route,
+  InfoCard(this.pictureURL, this.title, this.body, this.route,
       {this.imageWidth,
       this.imageHeight,
       this.cardWidth,
@@ -32,7 +32,7 @@ class infoCard extends StatelessWidget {
       this.margin,
       this.notImplemented});
 
-  infoCard.placeHolder() {
+  InfoCard.placeHolder() {
     this.pictureURL = 'resources/misc/placeholder.png';
     this.title = 'Placeholder';
     this.body = 'This is a placeholder';

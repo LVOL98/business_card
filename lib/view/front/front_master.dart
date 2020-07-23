@@ -34,11 +34,11 @@ class _FrontPageMasterState extends State<FrontPageMaster> {
                 'IT University of Copenhagen',
                 style: Theme.of(context).textTheme.subtitle1,
               ),
-              oneLineIconCard(
+              OneLineIconCard(
                 Icons.mail,
                 'lukas98@live.dk',
               ),
-              oneLineIconCard(
+              OneLineIconCard(
                 Icons.phone,
                 '+45 24 78 59 44',
               ),

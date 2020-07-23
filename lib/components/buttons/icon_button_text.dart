@@ -12,7 +12,7 @@ import 'package:temp/model/url_launcher/open_url.dart';
 /// 
 /// The placeholder constructor creates a placeholder which is a 
 /// standard version of this component
-class iconButtonText extends StatelessWidget {
+class IconButtonText extends StatelessWidget {
   IconData icon;
   String description;
   String url;
@@ -20,10 +20,10 @@ class iconButtonText extends StatelessWidget {
   double iconSize;
   bool notImplemented;
 
-  iconButtonText(this.icon, this.description,
+  IconButtonText(this.icon, this.description,
       {this.url, this.route, this.iconSize, this.notImplemented});
 
-  iconButtonText.placeHolder() {
+  IconButtonText.placeHolder() {
     this.icon = Icons.ac_unit;
     this.description = 'This is a placeholder';
     this.url = '';

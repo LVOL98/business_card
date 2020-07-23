@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:temp/components/dialogs/not_implemented.dart';
 
 /// Creates the drawer used in the mobile version
-getDrawer(BuildContext context) {
-  return Drawer(
+class MobileTopNavigation extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
     child: Container(
       color: Theme.of(context).colorScheme.secondary,
       child: ListView(
@@ -41,4 +43,5 @@ getDrawer(BuildContext context) {
       ),
     ),
   );
+  }
 }

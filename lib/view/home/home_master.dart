@@ -17,7 +17,7 @@ class HomePageMaster extends StatefulWidget {
 class _HomePageMasterState extends State<HomePageMaster> {
   shouldUseDrawer(BuildContext context) {
     if (getDeviceType(MediaQuery.of(context)) == DeviceScreenType.Mobile) {
-      return getDrawer(context);
+      return MobileTopNavigation();
     }
   }
 

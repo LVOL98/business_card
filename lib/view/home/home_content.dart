@@ -50,13 +50,13 @@ class HomeContent {
   }
 
   linkdInButton() {
-    return new iconButtonText(Icons.ac_unit, 'LinkIn',
+    return new IconButtonText(Icons.ac_unit, 'LinkIn',
         url: 'https://www.linkedin.com/in/lukas-vinther-offenberg-7818a3125/',
         iconSize: iconSizeMobile);
   }
 
   gitHubButton() {
-    return new iconButtonText(
+    return new IconButtonText(
       Icons.ac_unit,
       'GitHub',
       url: '',
@@ -66,12 +66,12 @@ class HomeContent {
   }
 
   phoneNumberButton() {
-    return new iconButtonText(Icons.call, 'Phone Number',
+    return new IconButtonText(Icons.call, 'Phone Number',
         url: '', iconSize: iconSizeMobile);
   }
 
   eMailButton() {
-    return new iconButtonText(Icons.email, 'E-Mail',
+    return new IconButtonText(Icons.email, 'E-Mail',
         url: '', iconSize: iconSizeMobile);
   }
 
@@ -140,10 +140,10 @@ class HomeContent {
     String body =
         'COMING: This section will contain example of algoritms, with both vizualisation and use cases';
     if (mobile) {
-      return normalIconListTile(Icons.settings, title, body, 'notworking',
+      return NormalIconListTile(Icons.settings, title, body, 'notworking',
           margin: _inset);
     } else {
-      return infoCard(
+      return InfoCard(
         pictureURL,
         title,
         body,
@@ -160,10 +160,10 @@ class HomeContent {
     String body =
         'COMING: This section will contain various stuff that has connection to the web';
     if (mobile) {
-      return reverseIconListTile(Icons.code, title, body, '',
+      return ReverseIconListTile(Icons.code, title, body, '',
           margin: _inset);
     } else {
-      return infoCard(
+      return InfoCard(
         pictureURL,
         title,
         body,
@@ -190,9 +190,9 @@ class HomeContent {
             Padding(
                 padding: _inset,
                 child: Divider(color: Colors.black, thickness: 2)),
-            normalIconListTile(Icons.error, 'Unknown Route',
+            NormalIconListTile(Icons.error, 'Unknown Route',
                 'Go to the unknown route', 'Not A Route'),
-            oneLineIconCard.placeholder(),
+            OneLineIconCard.placeholder(),
           ],
         ),
       );

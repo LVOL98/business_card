@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 /// Creates a box with a icon on the left, with some text next to it
 /// 
 /// A placeholder is given via the .placeholder constructor
-class oneLineIconCard extends StatelessWidget {
+class OneLineIconCard extends StatelessWidget {
   IconData iconData;
   String text;
 
-  oneLineIconCard(this.iconData, this.text);
+  OneLineIconCard(this.iconData, this.text);
 
-  oneLineIconCard.placeholder() {
+  OneLineIconCard.placeholder() {
     this.iconData = Icons.ac_unit;
     this.text = 'This is a placeholder';
   }

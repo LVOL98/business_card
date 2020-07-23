@@ -10,7 +10,7 @@ import 'package:temp/components/dialogs/not_implemented.dart';
 /// given route can't not be executed, the unknownRoute will be used
 ///
 /// A placeholder is given, if the user wants to see how to componenet looks
-class reverseIconListTile extends StatelessWidget {
+class ReverseIconListTile extends StatelessWidget {
   IconData iconData;
   String title;
   String body;
@@ -20,10 +20,10 @@ class reverseIconListTile extends StatelessWidget {
   EdgeInsets margin;
   bool notImplemented;
 
-  reverseIconListTile(this.iconData, this.title, this.body, this.route,
+  ReverseIconListTile(this.iconData, this.title, this.body, this.route,
       {this.widthSize, this.heightSize, this.margin, this.notImplemented});
 
-  reverseIconListTile.placeholder() {
+  ReverseIconListTile.placeholder() {
     this.iconData = Icons.ac_unit;
     this.title = 'Placeholder';
     this.body = 'This is a placeholder';
