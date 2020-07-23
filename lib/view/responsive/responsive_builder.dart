@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:temp/view/responsive/sizing_information.dart';
 import 'package:temp/view/responsive/ui_util.dart';
 
+// TODO: doc
 class ResponsiveBuilder extends StatelessWidget {
   final Widget Function(
     BuildContext context,
