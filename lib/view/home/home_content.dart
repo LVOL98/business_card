@@ -21,28 +21,36 @@ class HomeContent {
           'About Me',
           style: Theme.of(_context).textTheme.bodyText1,
         ),
-        onPressed: () {/* TODO */},
+        onPressed: () {
+          notImplementedYetAlert(_context);
+        },
       ),
       FlatButton(
         child: Text(
           'Algorithms',
           style: Theme.of(_context).textTheme.bodyText1,
         ),
-        onPressed: () {/* TODO */},
+        onPressed: () {
+          notImplementedYetAlert(_context);
+        },
       ),
       FlatButton(
         child: Text(
           'Web Development',
           style: Theme.of(_context).textTheme.bodyText1,
         ),
-        onPressed: () {/* TODO */},
+        onPressed: () {
+          notImplementedYetAlert(_context);
+        },
       ),
       FlatButton(
         child: Text(
           'Contact Information',
           style: Theme.of(_context).textTheme.bodyText1,
         ),
-        onPressed: () {/* TODO */},
+        onPressed: () {
+          notImplementedYetAlert(_context);
+        },
       ),
     ];
 
@@ -59,20 +67,29 @@ class HomeContent {
     return new IconButtonText(
       Icons.ac_unit,
       'GitHub',
+      url: 'https://github.com/LVOL98',
+      iconSize: iconSizeMobile,
+    );
+  }
+
+  phoneNumberButton() {
+    return new IconButtonText(
+      Icons.call,
+      'Phone Number',
       url: '',
       iconSize: iconSizeMobile,
       notImplemented: true,
     );
   }
 
-  phoneNumberButton() {
-    return new IconButtonText(Icons.call, 'Phone Number',
-        url: '', iconSize: iconSizeMobile);
-  }
-
   eMailButton() {
-    return new IconButtonText(Icons.email, 'E-Mail',
-        url: '', iconSize: iconSizeMobile);
+    return new IconButtonText(
+      Icons.email,
+      'E-Mail',
+      url: '',
+      iconSize: iconSizeMobile,
+      notImplemented: true,
+    );
   }
 
   topButtonRow() {
@@ -160,8 +177,7 @@ class HomeContent {
     String body =
         'COMING: This section will contain various stuff that has connection to the web';
     if (mobile) {
-      return ReverseIconListTile(Icons.code, title, body, '',
-          margin: _inset);
+      return ReverseIconListTile(Icons.code, title, body, '', margin: _inset);
     } else {
       return InfoCard(
         pictureURL,
