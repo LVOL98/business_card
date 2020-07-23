@@ -98,47 +98,45 @@ topButtonRow() {
   );
 }
 
-aboutInfo(BuildContext context, bool mobile) {
+aboutInfo(BuildContext context) {
   String title = 'About Me';
   String body =
       'COMING: If you want to learn more about me and who I am, you can look into this section, where I tell about what I like to do besides programming';
   String route = '';
-  if (mobile) {
-    return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            title,
-            style: Theme.of(context).textTheme.headline2,
-          ),
-          Text(
-            body,
-            style: Theme.of(context).textTheme.bodyText1,
-          ),
-          ButtonBar(
-            children: [
-              FlatButton(
-                child: Text(
-                  'Read More >',
-                  style:
-                      TextStyle(color: Theme.of(context).colorScheme.secondary),
-                ),
-                onPressed: () => route == '' || route == null
-                    ? notImplementedYetAlert(context)
-                    : Navigator.pushNamed(context, route),
+  return Container(
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Text(
+          title,
+          style: Theme.of(context).textTheme.headline2,
+        ),
+        Text(
+          body,
+          style: Theme.of(context).textTheme.bodyText1,
+        ),
+        ButtonBar(
+          children: [
+            FlatButton(
+              child: Text(
+                'Read More >',
+                style:
+                    TextStyle(color: Theme.of(context).colorScheme.secondary),
               ),
-            ],
-          ),
-          Divider(
-            color: Colors.black,
-            thickness: 2,
-            indent: 20,
-          ),
-        ],
-      ),
-    );
-  }
+              onPressed: () => route == '' || route == null
+                  ? notImplementedYetAlert(context)
+                  : Navigator.pushNamed(context, route),
+            ),
+          ],
+        ),
+        Divider(
+          color: Colors.black,
+          thickness: 2,
+          //indent: 20,
+        ),
+      ],
+    ),
+  );
 }
 
 algorithmsInfo(BuildContext context, bool mobile) {

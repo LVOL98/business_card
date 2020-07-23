@@ -18,14 +18,18 @@ class _HomePageWebState extends State<HomePageWeb> {
           delegate: SliverChildListDelegate(
             [
               Padding(
-                  padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
-                  child: topButtonRow()),
+                padding: EdgeInsets.fromLTRB(50, 0, 50, 20),
+                child: topButtonRow(),
+              ),
               Image.asset(
                 'resources/images/test.jpg',
                 fit: BoxFit.cover,
                 height: MediaQuery.of(context).size.height * 0.19,
               ),
-              aboutInfo(context, true),
+              Padding(
+                padding: EdgeInsets.all(20),
+                child: aboutInfo(context),
+              ),
               Wrap(
                 alignment: WrapAlignment.center,
                 children: [

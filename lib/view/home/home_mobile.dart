@@ -18,7 +18,7 @@ class _HomePageMobileState extends State<HomePageMobile> {
         child: Column(
           children: [
             topButtonRow(),
-            aboutInfo(context, true),
+            aboutInfo(context),
             algorithmsInfo(context, true),
             webInfo(context, true),
             errorHandlingInTheProgram(context, true),
