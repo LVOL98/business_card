@@ -3,7 +3,8 @@ import 'package:temp/view/responsive/responsive_builder.dart';
 
 import 'device_screen_type.dart';
 
-// TODO doc
+/// Return which device type the builder should choose, defined
+/// by the size of the screen of the device
 class ScreenTypeLayout extends StatelessWidget {
   final Widget mobile;
   final Widget desktop;
