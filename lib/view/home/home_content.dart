@@ -144,7 +144,7 @@ algorithmsInfo(BuildContext context, bool mobile) {
   String body =
       'COMING: about algorithms';
   if (mobile) {
-    return NormalIconListTile(Icons.settings, title, body, 'notworking');
+    return NormalIconListTile(Icons.settings, title, body, 'notworking', notImplemented: true,);
   } else {
     return InfoCard(
       pictureURL,
@@ -163,7 +163,7 @@ webInfo(BuildContext context, bool mobile) {
   String body =
       'COMING: about web development';
   if (mobile) {
-    return NormalIconListTile(Icons.code, title, body, '');
+    return NormalIconListTile(Icons.code, title, body, '', notImplemented: true,);
   } else {
     return InfoCard(
       pictureURL,
