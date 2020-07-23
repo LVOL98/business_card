@@ -52,7 +52,8 @@ Widget webAppBar(BuildContext context) {
 }
 
 linkdInButton() {
-  return new IconButtonText(Icons.ac_unit, 'LinkIn',
+  return new IconButtonText(
+      IconData(0xf30c, fontFamily: 'LinkdInLogo', fontPackage: null), 'LinkdIn',
       url: 'https://www.linkedin.com/in/lukas-vinther-offenberg-7818a3125/',
       iconSize: iconSizeMobile);
 }
@@ -112,6 +113,7 @@ aboutInfo(BuildContext context) {
         Text(
           body,
           style: Theme.of(context).textTheme.bodyText1,
+          textAlign: TextAlign.center,
         ),
         ButtonBar(
           children: [
@@ -140,7 +142,7 @@ algorithmsInfo(BuildContext context, bool mobile) {
   String pictureURL = 'resources/misc/Algo.jpg';
   String title = 'Algorithms';
   String body =
-      'COMING: This section will contain example of algoritms, with both vizualisation and use cases';
+      'COMING: about algorithms';
   if (mobile) {
     return NormalIconListTile(Icons.settings, title, body, 'notworking');
   } else {
@@ -156,10 +158,10 @@ algorithmsInfo(BuildContext context, bool mobile) {
 }
 
 webInfo(BuildContext context, bool mobile) {
-  String pictureURL = 'resources/misc/web.jpg';
+  String pictureURL = 'resources/misc/web-development.jpg';
   String title = 'Web Development';
   String body =
-      'COMING: This section will contain various stuff that has connection to the web';
+      'COMING: about web development';
   if (mobile) {
     return NormalIconListTile(Icons.code, title, body, '');
   } else {
@@ -180,28 +182,28 @@ errorHandlingInTheProgram(BuildContext context, bool mobile) {
   String unknownRouteBody = 'Go to the unknown route';
   String unknownRoute = 'Not a Route';
 
-    return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Padding(
-            padding: EdgeInsets.all(20),
-            child: Text(
-              'Error handling',
-              style: Theme.of(context).textTheme.headline2,
-            ),
+  return Container(
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Padding(
+          padding: EdgeInsets.all(20),
+          child: Text(
+            'Error handling',
+            style: Theme.of(context).textTheme.headline2,
           ),
-          Divider(color: Colors.black, thickness: 2),
-          mobile == true
-              ? NormalIconListTile(Icons.error, unknownRouteTitle,
-                  unknownRouteBody, unknownRoute)
-              : InfoCard(
-                  pictureURLUnknown,
-                  unknownRouteTitle,
-                  unknownRouteBody,
-                  unknownRoute,
-                ),
-        ],
-      ),
-    );
+        ),
+        Divider(color: Colors.black, thickness: 2),
+        mobile == true
+            ? NormalIconListTile(
+                Icons.error, unknownRouteTitle, unknownRouteBody, unknownRoute)
+            : InfoCard(
+                pictureURLUnknown,
+                unknownRouteTitle,
+                unknownRouteBody,
+                unknownRoute,
+              ),
+      ],
+    ),
+  );
 }

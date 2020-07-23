@@ -19,14 +19,14 @@ class MobileTopNavigation extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: Icon(Icons.ac_unit),
+              leading: Icon(Icons.settings),
               title: Text('Algorithms'),
               onTap: () {
                 notImplementedYetAlert(context);
               },
             ),
             ListTile(
-              leading: Icon(Icons.ac_unit),
+              leading: Icon(Icons.code),
               title: Text('Web Development'),
               onTap: () {
                 notImplementedYetAlert(context);

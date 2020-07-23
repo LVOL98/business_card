@@ -12,7 +12,7 @@ class _HomePageMobileState extends State<HomePageMobile> {
   @override
   Widget build(BuildContext context) {
     return MobilePageStructure(
-      'resources/images/test.jpg',
+      'resources/images/surfing-small.jpg',
       Container(
         margin: EdgeInsets.all(20),
         child: Column(

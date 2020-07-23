@@ -23,7 +23,7 @@ class _HomePageWebState extends State<HomePageWeb> {
                 child: topButtonRow(),
               ),
               Image.asset(
-                'resources/images/test.jpg',
+                'resources/images/surfing-face.jpg',
                 fit: BoxFit.cover,
                 height: MediaQuery.of(context).size.height * 0.19,
               ),
