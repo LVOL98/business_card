@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:temp/components/cards/info_card.dart';
 import 'home_content.dart';
 
 class HomePageWeb extends StatefulWidget {
@@ -35,6 +36,11 @@ class _HomePageWebState extends State<HomePageWeb> {
                 children: [
                   algorithmsInfo(context, false),
                   webInfo(context, false),
+                ],
+              ),
+              Wrap(
+                children: [
+                  errorHandlingInTheProgram(context, false),
                 ],
               ),
             ],

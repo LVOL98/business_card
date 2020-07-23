@@ -132,7 +132,6 @@ aboutInfo(BuildContext context) {
         Divider(
           color: Colors.black,
           thickness: 2,
-          //indent: 20,
         ),
       ],
     ),
@@ -178,22 +177,33 @@ webInfo(BuildContext context, bool mobile) {
 }
 
 errorHandlingInTheProgram(BuildContext context, bool mobile) {
-  if (mobile) {
+  String pictureURLUnknown = 'resources/misc/placeholder.png';
+  String unknownRouteTitle = 'Unknown Route';
+  String unknownRouteBody = 'Go to the unknown route';
+  String unknownRoute = 'Not a Route';
+
     return Container(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
-              padding: EdgeInsets.all(20),
-              child: Text(
-                'Error handling',
-                style: Theme.of(context).textTheme.headline2,
-              )),
+            padding: EdgeInsets.all(20),
+            child: Text(
+              'Error handling',
+              style: Theme.of(context).textTheme.headline2,
+            ),
+          ),
           Divider(color: Colors.black, thickness: 2),
-          NormalIconListTile(Icons.error, 'Unknown Route',
-              'Go to the unknown route', 'Not A Route'),
+          mobile == true
+              ? NormalIconListTile(Icons.error, unknownRouteTitle,
+                  unknownRouteBody, unknownRoute)
+              : InfoCard(
+                  pictureURLUnknown,
+                  unknownRouteTitle,
+                  unknownRouteBody,
+                  unknownRoute,
+                ),
         ],
       ),
     );
-  }
 }
