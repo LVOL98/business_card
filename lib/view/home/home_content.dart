@@ -179,7 +179,6 @@ webInfo(BuildContext context, bool mobile) {
   }
 }
 
-// TODO: should this be removed
 errorHandlingInTheProgram(BuildContext context, bool mobile) {
   if (mobile) {
     return Container(
