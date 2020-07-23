@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:temp/components/structure/mobile_structure.dart';
+import 'package:temp/components/structure/mobile_page_structure.dart';
 
 import 'home_content.dart';
 
@@ -16,8 +16,7 @@ class _HomePageMobileState extends State<HomePageMobile> {
     var _homeContent = HomeContent(context);
     var _cardHeight = MediaQuery.of(context).size.height * 0.25;
 
-    return mobileStructure(
-      context,
+    return MobilePageStructure(
       'resources/images/test.jpg',
       Container(
         child: Column(

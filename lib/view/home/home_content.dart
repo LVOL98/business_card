@@ -46,7 +46,7 @@ class HomeContent {
       ),
     ];
 
-    return webTopNavigation(_context, contentList);
+    return WebTopNavigation(contentList);
   }
 
   linkdInButton() {
