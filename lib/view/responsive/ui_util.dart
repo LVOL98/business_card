@@ -11,5 +11,3 @@ DeviceScreenType getDeviceType(MediaQueryData mediaQueryData) {
 
   return DeviceScreenType.Mobile;
 }
-
-// https://www.youtube.com/watch?v=udsysUj-X4w&feature=youtu.be

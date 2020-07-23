@@ -7,10 +7,11 @@ class SizingInformation {
   final Size screenSize;
   final Size localWidgetSize;
 
-  SizingInformation({this.deviceScreenType, this.screenSize, this.localWidgetSize});
+  SizingInformation(
+      {this.deviceScreenType, this.screenSize, this.localWidgetSize});
 
   @override
   String toString() {
-    return 'welp'; // TODO
+    return 'Device Screen Type: $deviceScreenType, Screen size: $screenSize, Local Widget Size: $localWidgetSize';
   }
 }
