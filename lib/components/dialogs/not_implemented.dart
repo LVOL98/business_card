@@ -13,8 +13,7 @@ notImplementedYetAlert(BuildContext context) {
         content: SingleChildScrollView(
           child: ListBody(
             children: <Widget>[
-              Text(
-                  'The feature that is currently beeing accessed is still in development \n'),
+              Text('This feature is currently in development'),
               Text('Please check back later!'),
             ],
           ),

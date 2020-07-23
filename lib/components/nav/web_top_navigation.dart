@@ -19,6 +19,7 @@ class WebTopNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
+      leading: Container(),
       expandedHeight: MediaQuery.of(context).size.height * 0.05,
       flexibleSpace: FlexibleSpaceBar(
         title: Row(
