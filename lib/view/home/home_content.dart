@@ -59,7 +59,7 @@ linkdInButton() {
 
 gitHubButton() {
   return new IconButtonText(
-    Icons.ac_unit,
+    IconData(0xf056, fontFamily: 'GitHubLogo', fontPackage: null),
     'GitHub',
     url: 'https://github.com/LVOL98',
     iconSize: iconSizeMobile,

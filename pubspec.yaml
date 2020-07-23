@@ -25,6 +25,11 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
+  fonts:
+    - family: GitHubLogo
+      fonts:
+      - asset: resources/fonts/GitHubLogo.ttf
+
   assets:
     - resources/images/avatar/
     - resources/images/
