@@ -35,46 +35,49 @@ class NormalIconListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: margin == null ? EdgeInsets.all(0) : EdgeInsets.all(20),
-      color: Theme.of(context).colorScheme.secondary,
-      child: Column(
-        children: [
-          ListTile(
-            leading: Icon(
-              iconData,
-              size: MediaQuery.of(context).size.width * 0.1,
-              color: Colors.white,
-            ),
-            title: Text(
-              title,
-              style: Theme.of(context).textTheme.headline2,
-            ),
-            subtitle: Text(
-              body,
-              style: Theme.of(context).textTheme.bodyText1,
-            ),
-            trailing: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Transform.rotate(
-                  angle: 180 * 3.14 / 180,
-                  child: Icon(
-                    Icons.arrow_back_ios,
-                    color: Theme.of(context).colorScheme.primary,
+    return Padding(
+      padding: const EdgeInsets.all(8),
+      child: Card(
+        margin: margin == null ? EdgeInsets.all(0) : EdgeInsets.all(20),
+        color: Theme.of(context).colorScheme.secondary,
+        child: Column(
+          children: [
+            ListTile(
+              leading: Icon(
+                iconData,
+                size: MediaQuery.of(context).size.width * 0.1,
+                color: Colors.white,
+              ),
+              title: Text(
+                title,
+                style: Theme.of(context).textTheme.headline2,
+              ),
+              subtitle: Text(
+                body,
+                style: Theme.of(context).textTheme.bodyText1,
+              ),
+              trailing: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Transform.rotate(
+                    angle: 180 * 3.14 / 180,
+                    child: Icon(
+                      Icons.arrow_back_ios,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
+              onTap: () {
+                if (notImplemented == true) {
+                  notImplementedYetAlert(context);
+                } else {
+                  Navigator.pushNamed(context, route);
+                }
+              },
             ),
-            onTap: () {
-              if (notImplemented == true) {
-                notImplementedYetAlert(context);
-              } else {
-                Navigator.pushNamed(context, route);
-              }
-            },
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

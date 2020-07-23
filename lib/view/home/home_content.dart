@@ -7,7 +7,6 @@ import 'package:temp/components/cards/reverse_icon_listtile.dart';
 import 'package:temp/components/dialogs/not_implemented.dart';
 import 'package:temp/components/nav/web_top_navigation.dart';
 
-EdgeInsets _inset = EdgeInsets.all(20);
 double iconSizeMobile = 35.0;
 
 Widget webAppBar(BuildContext context) {
@@ -89,30 +88,24 @@ eMailButton() {
 }
 
 topButtonRow() {
-  return Padding(
-    padding: const EdgeInsets.fromLTRB(40, 0, 40, 0),
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        linkdInButton(),
-        gitHubButton(),
-        phoneNumberButton(),
-        eMailButton(),
-      ],
-    ),
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      linkdInButton(),
+      gitHubButton(),
+      phoneNumberButton(),
+      eMailButton(),
+    ],
   );
 }
 
 aboutInfo(BuildContext context, bool mobile) {
-  String pictureURL = 'resources/misc/ITU2.jpg';
-  IconData iconData = Icons.perm_contact_calendar;
   String title = 'About Me';
   String body =
       'COMING: If you want to learn more about me and who I am, you can look into this section, where I tell about what I like to do besides programming';
   String route = '';
   if (mobile) {
     return Container(
-      margin: _inset,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -129,8 +122,8 @@ aboutInfo(BuildContext context, bool mobile) {
               FlatButton(
                 child: Text(
                   'Read More >',
-                  style: TextStyle(
-                      color: Theme.of(context).colorScheme.secondary),
+                  style:
+                      TextStyle(color: Theme.of(context).colorScheme.secondary),
                 ),
                 onPressed: () => route == '' || route == null
                     ? notImplementedYetAlert(context)
@@ -138,12 +131,14 @@ aboutInfo(BuildContext context, bool mobile) {
               ),
             ],
           ),
-          Divider(color: Colors.black, thickness: 2),
+          Divider(
+            color: Colors.black,
+            thickness: 2,
+            indent: 20,
+          ),
         ],
       ),
     );
-  } else {
-    //return normalListTile(context, pictureURL, title, body);
   }
 }
 
@@ -153,8 +148,7 @@ algorithmsInfo(BuildContext context, bool mobile) {
   String body =
       'COMING: This section will contain example of algoritms, with both vizualisation and use cases';
   if (mobile) {
-    return NormalIconListTile(Icons.settings, title, body, 'notworking',
-        margin: _inset);
+    return NormalIconListTile(Icons.settings, title, body, 'notworking');
   } else {
     return InfoCard(
       pictureURL,
@@ -173,7 +167,7 @@ webInfo(BuildContext context, bool mobile) {
   String body =
       'COMING: This section will contain various stuff that has connection to the web';
   if (mobile) {
-    return ReverseIconListTile(Icons.code, title, body, '', margin: _inset);
+    return ReverseIconListTile(Icons.code, title, body, '');
   } else {
     return InfoCard(
       pictureURL,
@@ -186,25 +180,22 @@ webInfo(BuildContext context, bool mobile) {
   }
 }
 
+// TODO: should this be removed
 errorHandlingInTheProgram(BuildContext context, bool mobile) {
   if (mobile) {
     return Container(
-      margin: _inset,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
-              padding: _inset,
+              padding: EdgeInsets.all(20),
               child: Text(
                 'Error handling',
                 style: Theme.of(context).textTheme.headline2,
               )),
-          Padding(
-              padding: _inset,
-              child: Divider(color: Colors.black, thickness: 2)),
+          Divider(color: Colors.black, thickness: 2),
           NormalIconListTile(Icons.error, 'Unknown Route',
               'Go to the unknown route', 'Not A Route'),
-          OneLineIconCard.placeholder(),
         ],
       ),
     );

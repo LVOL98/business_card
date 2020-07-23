@@ -15,6 +15,7 @@ class _HomePageMobileState extends State<HomePageMobile> {
     return MobilePageStructure(
       'resources/images/test.jpg',
       Container(
+        margin: EdgeInsets.all(20),
         child: Column(
           children: [
             topButtonRow(),
