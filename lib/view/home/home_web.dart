@@ -12,30 +12,26 @@ class HomePageWeb extends StatefulWidget {
 class _HomePageWebState extends State<HomePageWeb> {
   @override
   Widget build(BuildContext context) {
-    var _homeContent = HomeContent(context);
-
+    
     return CustomScrollView(
       slivers: [
-        _homeContent.webAppBar(),
+        webAppBar(context, ),
         SliverList(
           delegate: SliverChildListDelegate(
             [
               Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 20), child: 
-              _homeContent.topButtonRow()),
+              topButtonRow()),
               Image.asset(
                 'resources/images/test.jpg',
                 fit: BoxFit.cover,
                 height: MediaQuery.of(context).size.height * 0.19,
               ),
-              /* Container(
-                  child: Text('image'),
-                  color: Colors.black), */ // TODO: place an image
-              _homeContent.aboutInfo(true),
+              aboutInfo(context, true),
               Wrap(
                 alignment: WrapAlignment.center,
                 children: [
-                  _homeContent.algorithmsInfo(false),
-                  _homeContent.webInfo(false),
+                  algorithmsInfo(context, false),
+                  webInfo(context, false),
                 ],
               ),
             ],
