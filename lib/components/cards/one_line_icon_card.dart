@@ -2,9 +2,22 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /// Creates a box with a icon on the left, with some text next to it
-Widget oneLineIconCard(
-    BuildContext context, IconData iconData, String boxText) {
-  return Container(
+/// 
+/// A placeholder is given via the .placeholder constructor
+class oneLineIconCard extends StatelessWidget {
+  IconData iconData;
+  String text;
+
+  oneLineIconCard(this.iconData, this.text);
+
+  oneLineIconCard.placeholder() {
+    this.iconData = Icons.ac_unit;
+    this.text = 'This is a placeholder';
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
     width: 450,
     padding: EdgeInsets.all(10),
     margin: EdgeInsets.all(10),
@@ -23,10 +36,11 @@ Widget oneLineIconCard(
           width: 10,
         ),
         Text(
-          boxText,
+          text,
           style: Theme.of(context).textTheme.bodyText1,
         ),
       ],
     ),
   );
+  }
 }

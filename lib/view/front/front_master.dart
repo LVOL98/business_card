@@ -35,12 +35,10 @@ class _FrontPageMasterState extends State<FrontPageMaster> {
                 style: Theme.of(context).textTheme.subtitle1,
               ),
               oneLineIconCard(
-                context,
                 Icons.mail,
                 'lukas98@live.dk',
               ),
               oneLineIconCard(
-                context,
                 Icons.phone,
                 '+45 24 78 59 44',
               ),
