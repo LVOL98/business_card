@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:temp/components/sorting_visualization/bar_sorting.dart';
 
 class AlgorithmPageMobile extends StatefulWidget {
   @override
@@ -8,8 +9,8 @@ class AlgorithmPageMobile extends StatefulWidget {
 class _AlgorithmPageMobileState extends State<AlgorithmPageMobile> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    return Scaffold(
+      body: BarSorting(),
     );
   }
 }

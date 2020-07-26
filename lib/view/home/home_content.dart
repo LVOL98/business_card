@@ -25,7 +25,7 @@ Widget webAppBar(BuildContext context) {
         style: Theme.of(context).textTheme.bodyText1,
       ),
       onPressed: () {
-        notImplementedYetAlert(context);
+        Navigator.pushNamed(context, '/home/algorithms');
       },
     ),
     FlatButton(
@@ -141,18 +141,21 @@ aboutInfo(BuildContext context) {
 algorithmsInfo(BuildContext context, bool mobile) {
   String pictureURL = 'resources/misc/Algo.jpg';
   String title = 'Algorithms';
-  String body =
-      'COMING: about algorithms';
+  String body = 'COMING: about algorithms';
   if (mobile) {
-    return NormalIconListTile(Icons.settings, title, body, 'notworking', notImplemented: true,);
+    return NormalIconListTile(
+      Icons.settings,
+      title,
+      body,
+      '/home/algorithms',
+    );
   } else {
     return InfoCard(
       pictureURL,
       title,
       body,
-      '',
+      '/home/algorithms',
       cardWidth: MediaQuery.of(context).size.width * 0.48,
-      notImplemented: true,
     );
   }
 }
@@ -160,10 +163,15 @@ algorithmsInfo(BuildContext context, bool mobile) {
 webInfo(BuildContext context, bool mobile) {
   String pictureURL = 'resources/misc/web-development.jpg';
   String title = 'Web Development';
-  String body =
-      'COMING: about web development';
+  String body = 'COMING: about web development';
   if (mobile) {
-    return NormalIconListTile(Icons.code, title, body, '', notImplemented: true,);
+    return NormalIconListTile(
+      Icons.code,
+      title,
+      body,
+      '',
+      notImplemented: true,
+    );
   } else {
     return InfoCard(
       pictureURL,
