@@ -1,16 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:temp/view/algorithms.dart';
-import 'package:temp/view/login.dart';
-import 'package:temp/view/master_algorithm_page.dart';
-import 'package:temp/view/theme.dart';
+import 'package:temp/routes.dart';
+import 'package:temp/theme/style.dart';
+import 'package:temp/view/front/front_master.dart';
+import 'package:temp/view/unknown/unknown_page.dart';
 
-void main() {
-  runApp(MaterialApp(
-    theme: AppTheme.lighTheme,
-    title: 'TODO',
-    home: AlgorithmPage(), // TODO: problably shouldn't be home
-  ));
+class Main extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: AppStyle.lighTheme,
+      title: 'LVOL',
+      initialRoute: '/',
+      routes: routes,
+      onUnknownRoute: (RouteSettings settigns) {
+        return MaterialPageRoute(
+          settings: settigns,
+          builder: (BuildContext context) => UnknownPage(),
+        );
+      },
+    );
+  }
 }
 
-// Colors
-// https://coolors.co/3a405a-4d536b-685044-776155-81b29a-a3d1bd-e07a5f-e68f73
+void main() => runApp(Main());
