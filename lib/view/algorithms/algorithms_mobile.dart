@@ -10,7 +10,7 @@ class _AlgorithmPageMobileState extends State<AlgorithmPageMobile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BarSorting(),
+      body: BarSorting(null),
     );
   }
 }
