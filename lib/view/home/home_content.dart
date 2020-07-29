@@ -101,7 +101,7 @@ aboutInfo(BuildContext context) {
   String title = 'About Me';
   String body =
       'COMING: If you want to learn more about me and who I am, you can look into this section, where I tell about what I like to do besides programming';
-  String route = '';
+  String route = '/home/about';
   return Container(
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.center,

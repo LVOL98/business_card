@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:temp/components/structure/mobile_page_structure.dart';
+import 'package:temp/view/about/about_content.dart';
 
 class AboutMobile extends StatefulWidget {
   @override
@@ -8,8 +10,15 @@ class AboutMobile extends StatefulWidget {
 class _AboutMobileState extends State<AboutMobile> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    return new MobilePageStructure(
+      'resources/images/surfing-small.jpg',
+      SafeArea(
+        child: Column(
+          children: [
+            martialArts(),
+          ],
+        ),
+      ),
     );
   }
 }

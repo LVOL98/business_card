@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:temp/view/about/about_mobile.dart';
 import 'package:temp/view/responsive/orientation_layout.dart';
 import 'package:temp/view/responsive/screen_type_layout.dart';
 
@@ -13,7 +14,7 @@ class _AboutMasterState extends State<AboutMaster> {
     return Scaffold(
       body: ScreenTypeLayout(
         mobile: OrientationLayout(
-          portrait: null,
+          portrait: AboutMobile(),
           landscape: null,
         ),
         desktop: OrientationLayout(
@@ -22,6 +23,5 @@ class _AboutMasterState extends State<AboutMaster> {
         ),
       ),
     );
-  }
   }
 }
