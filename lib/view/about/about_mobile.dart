@@ -15,7 +15,10 @@ class _AboutMobileState extends State<AboutMobile> {
       SafeArea(
         child: Column(
           children: [
+            shortDescriptionAboutMe(),
             martialArts(),
+            crossfit(),
+            interestInProgramming(),
           ],
         ),
       ),
