@@ -10,8 +10,8 @@ class AlgorithmPage extends StatefulWidget {
 }
 
 class _AlgorithmPageState extends State<AlgorithmPage> {
-  var insertionSort = InsertionSort();
-  var quickSort = QuickSort();
+  //var insertionSort = InsertionSort();
+  //var quickSort = QuickSort();
   List insertionSortList = RandomGenerator().generatRandomIntegers(100, 100);
   List quickSortList = RandomGenerator().generatRandomIntegers(100, 100);
 
@@ -21,9 +21,9 @@ class _AlgorithmPageState extends State<AlgorithmPage> {
   }
 
   _sortAnimation() {
-    quickSort.setState(setState);
-    insertionSort.sortAnimation(insertionSortList, setState);
-    quickSort.sort(quickSortList);
+    //quickSort.setState(setState);
+    //insertionSort.sortAnimation(insertionSortList, setState);
+    //quickSort.sort(quickSortList);
   }
 
   void initState() {

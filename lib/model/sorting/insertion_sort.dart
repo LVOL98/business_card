@@ -1,6 +1,11 @@
+import 'package:temp/model/sorting/sort.dart';
 import 'package:temp/model/util/random_generator.dart';
 
-class InsertionSort {
+class InsertionSort extends Sort {
+  Function state;
+
+  InsertionSort(this.state);
+
   void sort(List toBeSorted) {
     if (toBeSorted.length == 0) return;
 
@@ -12,10 +17,10 @@ class InsertionSort {
     }
   }
 
-  void sortAnimation(List toBeSorted, Function state) async {
+  @override
+  void sortAnimation(List toBeSorted) async {
     if (toBeSorted.length == 0) return;
 
-    int length = toBeSorted.length;
     for (int i = 0; i < toBeSorted.length; i++) {
       for (int j = i; j > 0 && _less(toBeSorted[j], toBeSorted[j - 1]); j--) {
         _exchange(toBeSorted, j, j - 1);
@@ -26,11 +31,10 @@ class InsertionSort {
     }
   }
 
-  void sortAnimationLoop(List toBeSorted, Function state) async {
+  void sortAnimationLoop(List toBeSorted) async {
     while (true) {
       if (toBeSorted.length == 0) return;
 
-      int length = toBeSorted.length;
       for (int i = 0; i < toBeSorted.length; i++) {
         for (int j = i; j > 0 && _less(toBeSorted[j], toBeSorted[j - 1]); j--) {
           _exchange(toBeSorted, j, j - 1);

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:temp/model/sorting/insertion_sort.dart';
+import 'package:temp/model/sorting/sort.dart';
 import 'package:temp/model/util/random_generator.dart';
 
 class BarSorting extends StatefulWidget {
-  var sortingMethod;
+  final Sort sortingMethod;
 
   BarSorting(this.sortingMethod);
 
@@ -12,21 +13,21 @@ class BarSorting extends StatefulWidget {
 }
 
 class _BarSortingState extends State<BarSorting> {
-  var sortingMethod;
+  final Sort sortingMethod;
 
   _BarSortingState(this.sortingMethod);
 
   static const int _bar_size = 100;
 
-  List _insertionSortList = RandomGenerator().generatRandomIntegers(100, _bar_size);
-  InsertionSort _insertionSort = InsertionSort();
+  List _listBeingSorted =
+      RandomGenerator().generatRandomIntegers(_bar_size, _bar_size);
 
   _sortAnimation() {
-    _insertionSort.sortAnimation(_insertionSortList, setState);
+    sortingMethod.sortAnimation(_listBeingSorted);
   }
 
   _clearSort() {
-    _insertionSortList = RandomGenerator().generatRandomIntegers(100, 100);
+    _listBeingSorted = RandomGenerator().generatRandomIntegers(100, 100);
     setState(() {});
   }
 
@@ -37,7 +38,7 @@ class _BarSortingState extends State<BarSorting> {
     return Column(
       children: [
         Row(
-          children: _insertionSortList.map(
+          children: _listBeingSorted.map(
             (number) {
               countOfBars++;
 
@@ -76,7 +77,8 @@ class BarPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     canvas.drawLine(
         Offset((MediaQuery.of(context).size.width * 0.225) + (width * row), 0),
-        Offset((MediaQuery.of(context).size.width * 0.225) + (width * row), length.ceilToDouble()),
+        Offset((MediaQuery.of(context).size.width * 0.225) + (width * row),
+            length.ceilToDouble()),
         Paint());
   }
 

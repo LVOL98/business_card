@@ -1,40 +1,43 @@
-class QuickSort {
+import 'package:temp/model/sorting/sort.dart';
+
+class QuickSort extends Sort {
+  @override
   Function state;
+
+  QuickSort(this.state);
+
+/*   Function state;
 
   setState(Function state) {
     this.state = state;
+  } */
+
+  void sort(List toBeSorted) {
+    toBeSorted.shuffle();
+    _sort(toBeSorted, 0, toBeSorted.length - 1);
   }
 
-  void sort(List list) {
-    list.shuffle();
-    _sort(list, 0, list.length - 1);
-  }
-
-  void _sort(List list, int low, int high) {
+  void _sort(List toBeSorted, int low, int high) {
     if (high <= low) return;
-    int j = _partition(list, low, high);
-    _sort(list, low, j - 1);
-    _sort(list, j + 1, high);
+    int j = _partition(toBeSorted, low, high);
+    _sort(toBeSorted, low, j - 1);
+    _sort(toBeSorted, j + 1, high);
   }
 
-  _partition(List list, int low, int high) async {
+  _partition(List toBeSorted, int low, int high) async {
     int i = low;
     int j = high + 1;
 
-    var toCompare = list[low];
+    var toCompare = toBeSorted[low];
 
     while (true) {
-      while (_less(list[++i], toCompare)) if (i == high) break;
-      while (_less(toCompare, list[--j])) if (j == low) break;
+      while (_less(toBeSorted[++i], toCompare)) if (i == high) break;
+      while (_less(toCompare, toBeSorted[--j])) if (j == low) break;
       if (j <= i) break;
-      _exchange(list, i, j);
+      _exchange(toBeSorted, i, j);
 
-      await Future.delayed(Duration(microseconds: 500));
-      state(() {});
     }
-    _exchange(list, low, j);
-    await Future.delayed(Duration(microseconds: 500));
-    state(() {});
+    _exchange(toBeSorted, low, j);
 
     return j;
   }
@@ -43,9 +46,44 @@ class QuickSort {
     return v.compareTo(w) < 0;
   }
 
-  void _exchange(List list, int i, int j) {
-    var temp = list[i];
-    list[i] = list[j];
-    list[j] = temp;
+  void _exchange(List toBeSorted, int i, int j) {
+    var temp = toBeSorted[i];
+    toBeSorted[i] = toBeSorted[j];
+    toBeSorted[j] = temp;
+  }
+
+  @override
+  void sortAnimation(List toBeSorted) {
+    toBeSorted.shuffle();
+    _sortAnimation(toBeSorted, 0, toBeSorted.length - 1);
+  }
+
+  void _sortAnimation(List toBeSorted, int low, int high) async {
+    if (high <= low) return;
+    int j = await _partitionAnimation(toBeSorted, low, high);
+    _sortAnimation(toBeSorted, low, j - 1);
+    _sortAnimation(toBeSorted, j + 1, high);
+  }
+
+  _partitionAnimation(List toBeSorted, int low, int high) async {
+    int i = low;
+    int j = high + 1;
+
+    var toCompare = toBeSorted[low];
+
+    while (true) {
+      while (_less(toBeSorted[++i], toCompare)) if (i == high) break;
+      while (_less(toCompare, toBeSorted[--j])) if (j == low) break;
+      if (j <= i) break;
+      _exchange(toBeSorted, i, j);
+
+      await Future.delayed(Duration(microseconds: 100000));
+      state(() {});
+    }
+    _exchange(toBeSorted, low, j);
+    await Future.delayed(Duration(microseconds: 100000));
+    state(() {});
+
+    return j;
   }
 }
