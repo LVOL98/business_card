@@ -80,7 +80,7 @@ eMailButton() {
   return new IconButtonText(
     Icons.email,
     'E-Mail',
-    url: '',
+    route: '/',
     iconSize: iconSizeMobile,
   );
 }
