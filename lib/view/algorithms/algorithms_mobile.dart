@@ -12,7 +12,12 @@ class _AlgorithmPageMobileState extends State<AlgorithmPageMobile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BarSorting(new QuickSort(setState)),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Center(child: BarSorting(new QuickSort(setState), MediaQuery.of(context).size.width * 0.225)),
+        ],
+      ),
     );
   }
 }

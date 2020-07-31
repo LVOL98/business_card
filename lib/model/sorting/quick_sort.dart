@@ -54,7 +54,6 @@ class QuickSort extends Sort {
 
   @override
   void sortAnimation(List toBeSorted) {
-    toBeSorted.shuffle();
     _sortAnimation(toBeSorted, 0, toBeSorted.length - 1);
   }
 
