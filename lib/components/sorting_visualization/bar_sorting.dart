@@ -4,20 +4,22 @@ import 'package:temp/model/sorting/sort.dart';
 import 'package:temp/model/util/random_generator.dart';
 
 class BarSorting extends StatefulWidget {
+  final String title;
   final Sort sortingMethod;
   final double width;
 
-  BarSorting(this.sortingMethod, this.width);
+  BarSorting(this.title, this.sortingMethod, this.width);
 
   @override
-  _BarSortingState createState() => _BarSortingState(sortingMethod, width);
+  _BarSortingState createState() => _BarSortingState(title, sortingMethod, width);
 }
 
 class _BarSortingState extends State<BarSorting> {
+  final String title;
   final Sort sortingMethod;
   final double width;
 
-  _BarSortingState(this.sortingMethod, this.width);
+  _BarSortingState(this.title, this.sortingMethod, this.width);
 
   List _listBeingSorted;
 
@@ -44,6 +46,13 @@ class _BarSortingState extends State<BarSorting> {
         color: Theme.of(context).colorScheme.secondary,
         child: Column(
           children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+              child: Text(
+                title,
+                style: Theme.of(context).textTheme.headline4,
+              ),
+            ),
             Row(
               children: _listBeingSorted.map(
                 (number) {
