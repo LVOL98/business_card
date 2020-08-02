@@ -13,8 +13,9 @@ import 'package:flutter/material.dart';
 class MobilePageStructure extends StatelessWidget {
   String pictureURL;
   Widget content;
+  Color topRightIconColor;
 
-  MobilePageStructure(this.pictureURL, this.content);
+  MobilePageStructure(this.pictureURL, this.content, {this.topRightIconColor});
 
   MobilePageStructure.placeholder() {
     this.pictureURL = 'resources/misc/ITU2.jpg';
@@ -38,6 +39,7 @@ class MobilePageStructure extends StatelessWidget {
       child: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
+            iconTheme: IconThemeData(color: topRightIconColor),
             backgroundColor: Colors.transparent,
             expandedHeight: 100,
             flexibleSpace: FlexibleSpaceBar(

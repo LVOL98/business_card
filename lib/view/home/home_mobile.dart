@@ -25,6 +25,7 @@ class _HomePageMobileState extends State<HomePageMobile> {
           ],
         ),
       ),
+      topRightIconColor: Colors.white,
     );
   }
 }
