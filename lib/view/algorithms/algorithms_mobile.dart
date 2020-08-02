@@ -20,8 +20,7 @@ class _AlgorithmPageMobileState extends State<AlgorithmPageMobile> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            title(context),
-            introText(context),
+            pageTitle(context),
             sortTitle(context),
             Center(
               child: insertionSortBar(context, setState),
